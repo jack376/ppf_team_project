@@ -4,17 +4,10 @@ using UnityEngine.AI;
 
 public class Enemy : LivingEntity
 {
-    [Header("공격력(float)")]
-    public float attackDamage = 25f;
-
-    [Header("공격 간격(float)")]
-    public float attackInterval = 0.5f;
-
-    [Header("추적 대상(Layer)")]
+    public EnemyData enemyData;
     public LayerMask whatIsTarget;
 
     private float searchRadius = 100f;
-    private float lastAttackTime;
     private LivingEntity targetEntity;
     private NavMeshAgent pathFinder;
 
@@ -69,7 +62,6 @@ public class Enemy : LivingEntity
             hitEffect.transform.position = hitPoint;
             hitEffect.transform.rotation = Quaternion.LookRotation(hitNormal);
             hitEffect.Play();
-            enemyAudioPlayer.PlayOneShot(hitSound);
         }
         */
 
@@ -92,7 +84,7 @@ public class Enemy : LivingEntity
 
     private void OnTriggerStay(Collider other)
     {
-        if (!dead && Time.time >= lastAttackTime + attackInterval)
+        if (!dead && Time.time >= enemyData.attackDelay + enemyData.attackSpeed)
         {
             LivingEntity attackTarget = other.GetComponent<LivingEntity>();
             if (attackTarget != null)
@@ -100,8 +92,8 @@ public class Enemy : LivingEntity
                 Vector3 hitPoint = other.ClosestPoint(transform.position);
                 Vector3 hitNormal = transform.position - other.transform.position;
 
-                attackTarget.OnDamage(attackDamage, hitPoint, hitNormal);
-                lastAttackTime = Time.time;
+                attackTarget.OnDamage(enemyData.attackDamage, hitPoint, hitNormal);
+                enemyData.attackDelay = Time.time;
             }
         }
     }

@@ -1,27 +1,20 @@
 [System.Serializable]
 public class SkillData
 {
-    public int ID;
-    public SkillType type;
-    public string name;
-    public string info;
+    public int ID = 200000;
+    public SkillType type = 0;
+    public string name = "스킬 이름"; 
+    public string info = "스킬 정보";
 
-    public int projectileCount;
+    public float size = 1f;
+    public float speed = 5f;
+    public float splash = 1f;
+    public float damage = 10f;
+    public float cooldown = 1f;
+    public float duration = 0f;
+    public float lifeTime = 3f;
 
-    public float projectileMinSize;
-    public float projectileMaxSize;
-    public float projectileSpeed;
-
-    public float startPoint;
-    public float targetPoint;
-    public float splash;
-
-    public float damage;
-    public float cooldown;
-    public float duration;
-    public float lifeTime;
-
-    public int currentLevel;
+    public int currentLevel = 1; 
     public int minLevel = 1;
     public int maxLevel = 5;
 }

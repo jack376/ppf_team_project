@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class LivingEntity : MonoBehaviour, IDamageable
 {
-    [Header("생명력(float)")]
+    //[Header("생명력(float)")]
     public float startingHealth = 100f;
 
     public float health { get; protected set; }

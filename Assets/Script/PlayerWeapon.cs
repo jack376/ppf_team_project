@@ -21,7 +21,7 @@ public class PlayerWeapon : MonoBehaviour
         if (Input.GetKeyUp(KeyCode.Q))
         {
             Debug.Log("Q");
-            int id = 11100033;
+            int id = 12340002;
             ids.Add(id);
             StartCoroutine(UseSkillCoroutine(id));
         }
@@ -29,7 +29,7 @@ public class PlayerWeapon : MonoBehaviour
         if (Input.GetKeyUp(KeyCode.W))
         {
             Debug.Log("W");
-            int id = 12345678;
+            int id = 12340001;
             ids.Add(id);
             StartCoroutine(UseSkillCoroutine(id));
         }

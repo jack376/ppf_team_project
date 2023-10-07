@@ -17,7 +17,7 @@ public class PlayerHealth : LivingEntity
         base.OnEnable();
 
         playerController.enabled = true;
-        //playerShooter.enabled    = true;
+        //playerShooter.enabled  = true;
     }
 
     public override void RestoreHealth(float newHealth)
