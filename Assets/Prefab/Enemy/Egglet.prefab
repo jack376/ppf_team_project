@@ -120,20 +120,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7427d6b3d263e2498031dbd5379c18f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingHealth: 100
   enemyData:
     ID: 500000
     type: 0
     name: "\uBAAC\uC2A4\uD130 \uC774\uB984"
     info: "\uBAAC\uC2A4\uD130 \uC815\uBCF4"
-    maxHealth: 100
+    spawnCycleSecond: 0.5
+    maxHealth: 300
+    defense: 0
     bodyScale: 1
     moveSpeed: 2
     attackDamage: 5
     attackSpeed: 0.5
     attackDelay: 1
-    statRatio: 1.05
-    spawnCycleSecond: 0.5
+    maxHealthRatio: 1.02
+    moveSpeedRatio: 1.02
+    attackDamageRatio: 1.02
     currentLevel: 1
     minLevel: 1
     maxLevel: 99
@@ -148,10 +150,80 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5898012270991567244}
     m_Modifications:
+    - target: {fileID: 7610133508913660993, guid: 4cc22bc9bbfb9074782265ec91ae0660,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7610133508913660995, guid: 4cc22bc9bbfb9074782265ec91ae0660,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7610133508913660997, guid: 4cc22bc9bbfb9074782265ec91ae0660,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7610133508913660999, guid: 4cc22bc9bbfb9074782265ec91ae0660,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7610133508913661001, guid: 4cc22bc9bbfb9074782265ec91ae0660,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7610133508913661003, guid: 4cc22bc9bbfb9074782265ec91ae0660,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7610133508913661005, guid: 4cc22bc9bbfb9074782265ec91ae0660,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 7610133508913661007, guid: 4cc22bc9bbfb9074782265ec91ae0660,
         type: 3}
       propertyPath: m_Name
       value: Egglet
+      objectReference: {fileID: 0}
+    - target: {fileID: 7610133508913661007, guid: 4cc22bc9bbfb9074782265ec91ae0660,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7610133508913661013, guid: 4cc22bc9bbfb9074782265ec91ae0660,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7610133508913661015, guid: 4cc22bc9bbfb9074782265ec91ae0660,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7610133508913661017, guid: 4cc22bc9bbfb9074782265ec91ae0660,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7610133508913661019, guid: 4cc22bc9bbfb9074782265ec91ae0660,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7610133508913661021, guid: 4cc22bc9bbfb9074782265ec91ae0660,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7610133508913661023, guid: 4cc22bc9bbfb9074782265ec91ae0660,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 7610133508914092143, guid: 4cc22bc9bbfb9074782265ec91ae0660,
         type: 3}

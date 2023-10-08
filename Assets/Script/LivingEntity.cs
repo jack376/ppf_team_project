@@ -3,9 +3,6 @@ using UnityEngine;
 
 public class LivingEntity : MonoBehaviour, IDamageable
 {
-    //[Header("ปýธํทย(float)")]
-    public float startingHealth = 100f;
-
     public float health { get; protected set; }
     public bool  dead   { get; protected set; }
 
@@ -14,7 +11,6 @@ public class LivingEntity : MonoBehaviour, IDamageable
     protected virtual void OnEnable()
     {
         dead = false;
-        health = startingHealth;
     }
 
     public virtual void OnDamage(float damage, Vector3 hitPoint, Vector3 hitNormal)
