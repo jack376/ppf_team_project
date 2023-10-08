@@ -78,5 +78,63 @@ crashlytics-build.properties
 *.asset
 *.psd
 *.unitypackage
-*.unity
 *.tif
+
+Assets/ATART/Character/Archer/Scenes/AnimationList.unity
+Assets/ATART/Character/Archer/Scenes/Model.unity
+Assets/ATART/Character/Archer/Scenes/Sample_Platformer.unity
+Assets/ATART/Character/Wizard/Scenes/AnimationList.unity
+Assets/ATART/Character/Wizard/Scenes/Model.unity
+Assets/ATART/Character/Wizard/Scenes/Sample_Platformer.unity
+Assets/GUI PRO Kit - Casual Game/Scenes/DemoScene_(v3.0).unity
+Assets/Hovl Studio/AAA Projectiles Vol 2/Demo scene/Demo projectiles Vol 2.unity
+Assets/Hovl Studio/AOE Magic spells Vol.1/Demo AOE skills/Demo AOE skills.unity
+Assets/Hovl Studio/Epic toon VFX 3/Demo scene/Demo scene.unity
+Assets/Hovl Studio/Epic toon VFX/Demo scene/Demo Toon VFX.unity
+Assets/Hovl Studio/PBR Fantasy staff/Demo scene/Demo PBR Fantasy staff.unity
+Assets/Hovl Studio/Sword slash VFX/Demo scene/Sword slash demo.unity
+Assets/Hovl Studio/Wizard spells pack/Demo scene/Spelll variation.unity
+Assets/Hovl Studio/Wizard spells pack/Demo scene/Wizard spells pack.unity
+Assets/Joystick Pack/Examples/Example Scene.unity
+Assets/Monsters Ultimate Pack 01 Cute Series/Bat Cute Series/Scenes/Demo.unity
+Assets/Monsters Ultimate Pack 01 Cute Series/Bat Lord Cute Series/Scenes/Demo.unity
+Assets/Monsters Ultimate Pack 01 Cute Series/Bee Cute Series/Scenes/Demo.unity
+Assets/Monsters Ultimate Pack 01 Cute Series/Bird Cute Series/Scenes/Demo.unity
+Assets/Monsters Ultimate Pack 01 Cute Series/Bumble Cute Series/Scenes/Demo.unity
+Assets/Monsters Ultimate Pack 01 Cute Series/Chick Cute Series/Scenes/Demo.unity
+Assets/Monsters Ultimate Pack 01 Cute Series/Egg Cute Series/Scenes/Demo.unity
+Assets/Monsters Ultimate Pack 01 Cute Series/Fledgling Cute Series/Scenes/Demo.unity
+Assets/Monsters Ultimate Pack 01 Cute Series/Flower Pot Monster Cute Series/Scenes/Demo.unity
+Assets/Monsters Ultimate Pack 01 Cute Series/Fungi Cute Series/Scenes/Demo.unity
+Assets/Monsters Ultimate Pack 01 Cute Series/Ghost Cute Series/Scenes/Demo.unity
+Assets/Monsters Ultimate Pack 01 Cute Series/Mushroom Cute Series/Scenes/Demo.unity
+Assets/Monsters Ultimate Pack 01 Cute Series/Phantom Cute Series/Scenes/Demo.unity
+Assets/Monsters Ultimate Pack 01 Cute Series/Seed Cute Series/Scenes/Demo.unity
+Assets/Monsters Ultimate Pack 01 Cute Series/Shade Cute Series/Scenes/Demo.unity
+Assets/Monsters Ultimate Pack 01 Cute Series/Shadow Cute Series/Scenes/Demo.unity
+Assets/Monsters Ultimate Pack 01 Cute Series/Spider Cute Series/Scenes/Demo.unity
+Assets/Monsters Ultimate Pack 01 Cute Series/Spider King Cute Series/Scenes/Demo.unity
+Assets/Monsters Ultimate Pack 01 Cute Series/Spider Toxin Cute Series/Scenes/Demo.unity
+Assets/Monsters Ultimate Pack 01 Cute Series/Spook Cute Series/Scenes/Demo.unity
+Assets/Monsters Ultimate Pack 01 Cute Series/Sprout Cute Series/Scenes/Demo.unity
+Assets/Monsters Ultimate Pack 01 Cute Series/Sting Cute Series/Scenes/Demo.unity
+Assets/Monsters Ultimate Pack 01 Cute Series/Toadstool Cute Series/Scenes/Demo.unity
+Assets/Monsters Ultimate Pack 01 Cute Series/Vampire Bat Cute Series/Scenes/Demo.unity
+Assets/Monsters Ultimate Pack 04 Cute Series/Earthworm Cute Series/Scenes/Demo.unity
+Assets/Monsters Ultimate Pack 04 Cute Series/Gloom Cute Series/Scenes/Demo.unity
+Assets/Monsters Ultimate Pack 04 Cute Series/Golem Earth Cute Series/Scenes/Demo.unity
+Assets/Monsters Ultimate Pack 04 Cute Series/Golem Fire Cute Series/Scenes/Demo.unity
+Assets/Monsters Ultimate Pack 04 Cute Series/Golem Ice Cute Series/Scenes/Demo.unity
+Assets/Monsters Ultimate Pack 04 Cute Series/Grim Reaper Cute Series/Scenes/Demo.unity
+Assets/Monsters Ultimate Pack 04 Cute Series/Plant Chewer Cute Series/Scenes/Demo.unity
+Assets/Monsters Ultimate Pack 04 Cute Series/Pollen Cute Series/Scenes/Demo.unity
+Assets/Monsters Ultimate Pack 04 Cute Series/Queen Worm Cute Series/Scenes/Demo.unity
+Assets/Monsters Ultimate Pack 04 Cute Series/Scorpion Cute Series/Scenes/Demo.unity
+Assets/Monsters Ultimate Pack 04 Cute Series/Scorpion King Cute Series/Scenes/Demo.unity
+Assets/Monsters Ultimate Pack 04 Cute Series/Scorpling Cute Series/Scenes/Demo.unity
+Assets/Monsters Ultimate Pack 04 Cute Series/Spore Cute Series/Scenes/Demo Scene 01.unity
+Assets/Monsters Ultimate Pack 04 Cute Series/Worm Cute Series/Scenes/Demo.unity
+Assets/Monsters Ultimate Pack 04 Cute Series/Wraith Cute Series/Scenes/Demo.unity
+Assets/Scenes/demoscene_wildlands_nature 1.unity
+Assets/Story Wildlands Nature/scene/demoscene_wildlands_nature.unity
+Assets/Story Wildlands Nature/scene/demoscene_wildlands_nature_assets.unity
