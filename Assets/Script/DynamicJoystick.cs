@@ -1,6 +1,5 @@
-﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
 public class DynamicJoystick : Joystick
@@ -8,6 +7,22 @@ public class DynamicJoystick : Joystick
     public float MoveThreshold { get { return moveThreshold; } set { moveThreshold = Mathf.Abs(value); } }
 
     [SerializeField] private float moveThreshold = 1;
+
+    // GUI PRO LED 점등용 필드 - 하이어라키 상에서 Play_Joystick 비활성화 하지 말 것
+    private GameObject topImageR;
+    private GameObject topImageL;
+    private GameObject botImageR;
+    private GameObject botImageL;
+
+    private float threshold = 0.05f;
+
+    private void Awake()
+    {
+        topImageR = GameObject.Find("Move_Focus_tl");
+        topImageL = GameObject.Find("Move_Focus_tr");
+        botImageR = GameObject.Find("Move_Focus_bl");
+        botImageL = GameObject.Find("Move_Focus_br");
+    }
 
     protected override void Start()
     {
@@ -36,6 +51,13 @@ public class DynamicJoystick : Joystick
             Vector2 difference = normalised * (magnitude - moveThreshold) * radius;
             background.anchoredPosition += difference;
         }
+
+        // 기존 조이스틱 코드에 GUI PRO LED 기능 추가
+        topImageL.SetActive(normalised.x >  threshold && normalised.y >  threshold ? true : false);
+        topImageR.SetActive(normalised.x < -threshold && normalised.y >  threshold ? true : false);
+        botImageR.SetActive(normalised.x < -threshold && normalised.y < -threshold ? true : false);
+        botImageL.SetActive(normalised.x >  threshold && normalised.y < -threshold ? true : false);
+
         base.HandleInput(magnitude, normalised, radius, cam);
     }
 }

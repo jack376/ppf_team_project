@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemySpawner : MonoBehaviour
 {
     public static List<Enemy> currentEnemies = new List<Enemy>();
-    // °ÔÀÓ ½ÃÀÛºÎÅÍ ³¡±îÁö¸¸ À¯ÁöÇÏµµ·Ï ÀÌµû°¡ ¼öÁ¤ÇÏ±â
+    // ê²Œì„ ì‹œì‘ë¶€í„° ëê¹Œì§€ë§Œ ìœ ì§€í•˜ë„ë¡ ë‚˜ì¤‘ì— ìˆ˜ì •í•˜ê¸°
 
     public List<Enemy> enemyGroup = new List<Enemy>();
     public Transform[] spawnPoints;
@@ -20,10 +20,12 @@ public class EnemySpawner : MonoBehaviour
 
     private IEnumerator SpawnWaveCoroutine()
     {
+        yield return new WaitUntil(() => GameManager.isGameover == false);
+
         while (true)
         {
             //yield return new WaitUntil(() => currentEnemies.Count <= 0); 
-            // ¸Ê¿¡ ¸ó½ºÅÍ°¡ ¾øÀ» ¶§
+            // ë§µì— ëª¬ìŠ¤í„°ê°€ ì—†ì„ ë•Œ 
 
             wave++;
             for (int i = 0; i < spawnPoints.Length; i++)
@@ -31,8 +33,9 @@ public class EnemySpawner : MonoBehaviour
                 CreateEnemies(spawnPoints[i]);
                 yield return new WaitForSeconds(0.5f);
             }
+ 
 
-            yield return new WaitForSeconds(60f); // 60ÃÊ°¡ Áö³µÀ» °æ¿ì
+            yield return new WaitForSeconds(60f);
         }
     }
 

@@ -1,74 +1,67 @@
-﻿using UnityEngine;
+using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI;
+using TMPro;
 using System.Collections;
 
 public class UIManager : MonoBehaviour 
 {
-    public static UIManager instance
-    {
-        get
-        {
-            if (m_instance == null)
-            {
-                m_instance = FindObjectOfType<UIManager>();
-            }
+    public static UIManager Instance { get; private set; }
 
-            return m_instance;
-        }
-    }
-
-    private static UIManager m_instance;
-
-    public Image fadeOutImage;
-    public float fadeDuration = 1f;
-
-    public Text ammoText;
-    public Text scoreText;
+    public TextMeshProUGUI countdownText;
     public GameObject gameoverUI;
 
-    public void StartFadeOut()
+    private void Awake()
     {
-        StartCoroutine(FadeImageOut());
-    }
-
-    IEnumerator FadeImageOut()
-    {
-        Color imageColor = fadeOutImage.color;
-        float elapsedTime = 0f;
-
-        while (elapsedTime < fadeDuration)
+        if (Instance == null)
         {
-            elapsedTime += Time.deltaTime;
-            float alpha = Mathf.Lerp(0f, 1f, elapsedTime / fadeDuration);
-            fadeOutImage.color = new Color(imageColor.r, imageColor.g, imageColor.b, alpha);
-            yield return null;
+            Instance = this;
         }
-
-        fadeOutImage.color = new Color(imageColor.r, imageColor.g, imageColor.b, 1f); 
+        else if (Instance != this)
+        {
+            Destroy(gameObject);
+        }
     }
 
-    public void UpdateAmmoText(int magAmmo, int remainAmmo) 
+    private void Start()
     {
-        ammoText.text = magAmmo + "/" + remainAmmo;
+        StartCoroutine(StartCountdown());
     }
 
-    public void UpdateScoreText(int newScore) 
+    private void Update()
     {
-        scoreText.text = "Score : " + newScore;
+        if (GameManager.isGameover && Input.GetKeyDown(KeyCode.R))
+        {
+            GameRestart();
+        }
     }
 
+    // 게임 오버 시 게임 오버 UI 활성화
     public void SetActiveGameoverUI(bool active) 
     {
         gameoverUI.SetActive(active);
-        if (active)
-        {
-            StartFadeOut();
-        }
     }
 
+    // 게임 재시작 시 씬 다시 로드
     public void GameRestart() 
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    // 카운트 다운 코루틴
+    private IEnumerator StartCountdown()
+    {
+        countdownText.gameObject.SetActive(true);
+        int count = 3;
+
+        while (count > 0)
+        {
+            countdownText.text = count.ToString();
+            yield return new WaitForSeconds(1f);
+            count--;
+        }
+
+        countdownText.text = "GO!";
+        yield return new WaitForSeconds(1f);
+        countdownText.gameObject.SetActive(false);
     }
 }

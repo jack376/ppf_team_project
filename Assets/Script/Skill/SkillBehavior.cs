@@ -2,18 +2,26 @@ using UnityEngine;
 
 public class SkillBehavior : MonoBehaviour
 {
+    [Header("스킬 데이터"), Space(5f)]
     public SkillData skillData;
+
+    [Header("추적 대상 레이어 Enemy, Ground"), Space(5f)]
     public LayerMask targetLayer;
     public LayerMask groundLayer;
 
-    public float searchRadius = 1000f;
-    public Vector3 targetDirection;
+    [Header("스킬 추적 범위 (현재 최대치)"), Space(5f)]
+    public float searchRadius = Mathf.Infinity;
 
+    [Header("스킬 피격 이펙트"), Space(5f)]
     public GameObject hit;
+
+    [Header("스킬 발사 이펙트"), Space(5f)]
     public GameObject flash;
+
+    [Header("스킬 트레일(꼬리) 이펙트"), Space(5f)]
     public GameObject[] Detached;
 
-    private Rigidbody rigidBody;
+    private Vector3 targetDirection;
     private float hoverHeight = 1f;
 
     private void Awake()
@@ -21,10 +29,9 @@ public class SkillBehavior : MonoBehaviour
         ProjectileDirection();
     }
 
+    // 발사체가 발사될 때 플래시 파티클 재생 
     private void Start()
     { 
-        rigidBody = GetComponent<Rigidbody>();
-
         float modifyScale = skillData.size;
         transform.localScale = new Vector3(modifyScale, modifyScale, modifyScale);
 
@@ -47,6 +54,7 @@ public class SkillBehavior : MonoBehaviour
         ProjectileHover();
     }
 
+    // 발사체가 타겟 레이어에게 충돌 시 데미지 적용 및 히트 파티클 재생
     private void OnCollisionEnter(Collision collision)
     {
         if ((targetLayer & (1 << collision.gameObject.layer)) == 0)
@@ -66,6 +74,7 @@ public class SkillBehavior : MonoBehaviour
         Destroy(gameObject);
     }
 
+    // 발사체가 사라질 때 히트 파티클 재생
     private void OnDestroy()
     {
         var hitInstance = Instantiate(hit, transform.position, Quaternion.identity);
@@ -73,21 +82,32 @@ public class SkillBehavior : MonoBehaviour
         Destroy(hitInstance, hitParticle.main.duration);
     }
     
+    // 발사체 시작 방향
     public void ProjectileDirection()
     {
-        targetDirection = (FindNearTarget().position - transform.position).normalized;
+        if(targetDirection != null)
+        {
+            targetDirection = (FindNearTarget().position - transform.position).normalized;
+        }
+        else
+        {
+            targetDirection = Vector3.forward;
+        }
     }
 
+    // 발사체 실시간 움직임
     public void ProjectileMovement()
     {
         transform.Translate(Vector3.forward * (skillData.speed * Time.fixedDeltaTime));
     }
 
+    // 발사체 실시간 방향
     public void ProjectileLookRotation()
     {
         transform.rotation = Quaternion.LookRotation(targetDirection);
     }
 
+    // 발사체가 땅에 부딪히지 않도록 y축으로 1f만큼 공중 부양 
     public void ProjectileHover()
     {
         RaycastHit hit;
@@ -99,6 +119,7 @@ public class SkillBehavior : MonoBehaviour
         }
     }
 
+    // 리스트 내에서 가장 가까운 타겟 검사
     public Transform FindNearTarget()
     {
         Transform neartarget = null;
