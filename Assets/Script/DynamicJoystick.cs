@@ -43,14 +43,15 @@ public class DynamicJoystick : Joystick
         background.gameObject.SetActive(false);
         base.OnPointerUp(eventData);
     }
-
+    
     protected override void HandleInput(float magnitude, Vector2 normalised, Vector2 radius, Camera cam)
     {
-        if (magnitude > moveThreshold)
+        // 조이스틱 위치 고정
+        /* if (magnitude > moveThreshold)
         {
             Vector2 difference = normalised * (magnitude - moveThreshold) * radius;
             background.anchoredPosition += difference;
-        }
+        } */
 
         // 기존 조이스틱 코드에 GUI PRO LED 기능 추가
         topImageL.SetActive(normalised.x >  threshold && normalised.y >  threshold ? true : false);

@@ -6,6 +6,7 @@ public class PlayerWeapon : MonoBehaviour
 {
     private SkillManager skillManager;
     private List<int> ids = new List<int>();
+    private Dictionary<int, Coroutine> activeCoroutines = new Dictionary<int, Coroutine>();
 
     private void Start()
     {
@@ -14,28 +15,19 @@ public class PlayerWeapon : MonoBehaviour
         {
             StartCoroutine(UseSkillCoroutine(id));
         }
+
+        Invoke("GetBaseAttack", 3f);
     }
 
     private void Update()
     {
-        if (Input.GetKeyUp(KeyCode.Q))
+        if (GameManager.isGameover)
         {
-            Debug.Log("Q");
-            int id = 12340002;
-            ids.Add(id);
-            StartCoroutine(UseSkillCoroutine(id));
-        }
-
-        if (Input.GetKeyUp(KeyCode.W))
-        {
-            Debug.Log("W");
-            int id = 12340001;
-            ids.Add(id);
-            StartCoroutine(UseSkillCoroutine(id));
+            StopAllSkills();
         }
     }
 
-    IEnumerator UseSkillCoroutine(int id) // ³ªÁß¿¡ ÃÖÀûÈ­, ¿ÀºêÁ§Æ®Ç®¸µ Àû¿ë
+    IEnumerator UseSkillCoroutine(int id) // ë‚˜ì¤‘ì— ìµœì í™”, ì˜¤ë¸Œì íŠ¸í’€ë§ ì ìš© 
     {
         GameObject skillPrefab = skillManager.GetSkillPrefab(id);
         SkillBehavior skillBehavior = skillPrefab.GetComponent<SkillBehavior>();
@@ -52,5 +44,30 @@ public class PlayerWeapon : MonoBehaviour
                 Instantiate(skillPrefab, transform);
             }
         }
+    }
+
+    public void StopAllSkills()
+    {
+        foreach (Coroutine coroutine in activeCoroutines.Values)
+        {
+            StopCoroutine(coroutine);
+        }
+        activeCoroutines.Clear();
+    }
+
+    public void GetSkill()
+    {
+        Debug.Log("Get Skill");
+        int id = 12340001;
+        ids.Add(id);
+        activeCoroutines[id] = StartCoroutine(UseSkillCoroutine(id));
+
+        UIManager.Instance.CloseSkillSelectWindow();
+    }
+
+    public void GetBaseAttack()
+    {
+        ids.Add(12340002);
+        StartCoroutine(UseSkillCoroutine(12340002));
     }
 }

@@ -10,6 +10,9 @@ public class Enemy : LivingEntity
     [Header("추적할 대상 레이어"), Space(5f)]
     public LayerMask whatIsTarget;
 
+    // 아이템 스포너
+    private ItemSpawner itemSpawner;
+
     // EnemyData에서 넘겨받을 필드
     private float attackDelay;
     private float attackSpeed;
@@ -48,20 +51,16 @@ public class Enemy : LivingEntity
         attackSpeed = enemyData.attackSpeed;
     }
 
-    // 아직 미사용 중, 몬스터의 스탯을 변경할 때 사용되는 메서드
-    public void Setup(float newHealth, float newDamage, float newSpeed, float newDefense, Color skinColor)
-    {
-        enemyData.maxHealth = newHealth;
-        enemyData.attackDamage = newDamage;
-        enemyData.defense = newDefense;
-        pathFinder.speed = newSpeed;
-        enemyRenderer.material.color = skinColor;
-    }
-
     // 플레이어 탐색 코루틴 시작
     private void Start()
     {
         StartCoroutine(UpdatePath());
+
+        itemSpawner = GetComponent<ItemSpawner>();
+        if (itemSpawner != null)
+        {
+            onDeath += itemSpawner.DropItem;
+        }
     }
 
     // 0.25초마다 searchRadius 범위에 죽지 않은 플레이어가 존재하는지 탐색
@@ -93,10 +92,20 @@ public class Enemy : LivingEntity
         }
     }
 
-    // 오버라이드된 LivingEntity 부모 클래스의 OnDamage 호출
-    public override void OnDamage(float damage, Vector3 hitPoint, Vector3 hitNormal)
+    // 아직 미사용 중, 몬스터의 스탯을 변경할 때 사용되는 메서드
+    public void Setup(float newHealth, float newDamage, float newSpeed, float newDefense, Color skinColor)
     {
-        base.OnDamage(damage, hitPoint, hitNormal);
+        enemyData.maxHealth = newHealth;
+        enemyData.attackDamage = newDamage;
+        enemyData.defense = newDefense;
+        pathFinder.speed = newSpeed;
+        enemyRenderer.material.color = skinColor;
+    }
+
+    // 오버라이드된 LivingEntity 부모 클래스의 TakeDamage 호출
+    public override void TakeDamage(float damage, Vector3 hitPoint, Vector3 hitNormal)
+    {
+        base.TakeDamage(damage, hitPoint, hitNormal);
         StartCoroutine(DamagedHitColor());
     }
 
@@ -117,6 +126,7 @@ public class Enemy : LivingEntity
     public override void Die()
     {
         base.Die();
+        GameManager.gameTimeLimit += 1f;
 
         Collider[] colliders = GetComponents<Collider>();
         foreach (Collider collider in colliders)
@@ -146,7 +156,7 @@ public class Enemy : LivingEntity
                 Vector3 hitPoint = other.ClosestPoint(transform.position);
                 Vector3 hitNormal = transform.position - other.transform.position;
 
-                attackTarget.OnDamage(enemyData.attackDamage, hitPoint, hitNormal);
+                attackTarget.TakeDamage(enemyData.attackDamage, hitPoint, hitNormal);
                 attackDelay = Time.time;
             }
         }

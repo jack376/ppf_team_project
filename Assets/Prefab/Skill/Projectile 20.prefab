@@ -32,7 +32,7 @@ Transform:
   m_GameObject: {fileID: 1066843573042574}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -4955,7 +4955,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 0.05
+  m_Radius: 0.6
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!108 &108014936755814536
 Light:
@@ -5060,11 +5060,10 @@ MonoBehaviour:
     name: qwer
     info: asdf
     size: 1
-    speed: 8
+    speed: 15
     splash: 0
     damage: 100
     cooldown: 1
-    duration: 1
     lifeTime: 3
     currentLevel: 1
     minLevel: 1
@@ -5075,8 +5074,7 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 256
-  searchRadius: 0
-  targetDirection: {x: 0, y: 0, z: 0}
+  searchRadius: 2000
   hit: {fileID: 1767841913861676, guid: 039d035b48e441c409a2b8e2d8534185, type: 3}
   flash: {fileID: 1840367976591474, guid: e0fc176a5967da142aabe2e419340152, type: 3}
   Detached:

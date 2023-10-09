@@ -283,6 +283,11 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 7908f1a2bde075d478e43a6e8b8277be,
+        type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: -877334150551890704, guid: 7908f1a2bde075d478e43a6e8b8277be,
         type: 3}
       propertyPath: m_Layer
@@ -602,6 +607,10 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: -927199367670048503, guid: 7908f1a2bde075d478e43a6e8b8277be,
         type: 3}
       insertIndex: -1
+      addedObject: {fileID: 3745767433576590716}
+    - targetCorrespondingSourceObject: {fileID: -927199367670048503, guid: 7908f1a2bde075d478e43a6e8b8277be,
+        type: 3}
+      insertIndex: -1
       addedObject: {fileID: -5451814079686965442}
     - targetCorrespondingSourceObject: {fileID: -927199367670048503, guid: 7908f1a2bde075d478e43a6e8b8277be,
         type: 3}
@@ -641,7 +650,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b91e44bd741fffe4080a641960ab9897, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingHealth: 100
+  healthSlider: {fileID: 0}
 --- !u!114 &1611453562524029028
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -654,6 +663,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40a8926142c068e40b2af135ec4ab15c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &3745767433576590716
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5257615441061724979}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26cdd5e04d922374c9f32257421b5f5d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  expSlider: {fileID: 0}
+  currentLevel: 1
+  minLevel: 1
+  maxLevel: 99
+  currentExp: 0
+  needExp: 99
+  expRatio: 1.5
 --- !u!136 &-5451814079686965442
 CapsuleCollider:
   m_ObjectHideFlags: 0

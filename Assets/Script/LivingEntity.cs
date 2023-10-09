@@ -18,7 +18,7 @@ public class LivingEntity : MonoBehaviour, IDamageable
     }
 
     // damage(피해량) 만큼 health(체력) 감소, 죽지 않은 상태에서 health가 0이 되면 Die() 메서드 호출
-    public virtual void OnDamage(float damage, Vector3 hitPoint, Vector3 hitNormal)
+    public virtual void TakeDamage(float damage, Vector3 hitPoint, Vector3 hitNormal)
     {
         health -= damage;
         if (health <= 0 && !dead)

@@ -10,7 +10,7 @@ public class SkillBehavior : MonoBehaviour
     public LayerMask groundLayer;
 
     [Header("스킬 추적 범위 (현재 최대치)"), Space(5f)]
-    public float searchRadius = Mathf.Infinity;
+    public float searchRadius = 500f;
 
     [Header("스킬 피격 이펙트"), Space(5f)]
     public GameObject hit;
@@ -22,7 +22,7 @@ public class SkillBehavior : MonoBehaviour
     public GameObject[] Detached;
 
     private Vector3 targetDirection;
-    private float hoverHeight = 1f;
+    private float hoverHeight = 2f;
 
     private void Awake()
     {
@@ -31,7 +31,7 @@ public class SkillBehavior : MonoBehaviour
 
     // 발사체가 발사될 때 플래시 파티클 재생 
     private void Start()
-    { 
+    {
         float modifyScale = skillData.size;
         transform.localScale = new Vector3(modifyScale, modifyScale, modifyScale);
 
@@ -65,7 +65,7 @@ public class SkillBehavior : MonoBehaviour
         IDamageable target = collision.gameObject.GetComponent<IDamageable>();
         if (target != null)
         {
-            target.OnDamage(skillData.damage, collision.contacts[0].point, collision.contacts[0].normal);
+            target.TakeDamage(skillData.damage, collision.contacts[0].point, collision.contacts[0].normal);
         }
 
         var hitInstance = Instantiate(hit, collision.contacts[0].point, Quaternion.identity);
@@ -85,9 +85,11 @@ public class SkillBehavior : MonoBehaviour
     // 발사체 시작 방향
     public void ProjectileDirection()
     {
-        if(targetDirection != null)
+        Transform target = FindNearTarget();
+
+        if (target != null)
         {
-            targetDirection = (FindNearTarget().position - transform.position).normalized;
+            targetDirection = (target.position - transform.position).normalized;
         }
         else
         {
@@ -123,10 +125,15 @@ public class SkillBehavior : MonoBehaviour
     public Transform FindNearTarget()
     {
         Transform neartarget = null;
-        float nearDistance = Mathf.Infinity;
+        float nearDistance = searchRadius;
 
         foreach (Enemy enemy in EnemySpawner.currentEnemies)
         {
+            if (enemy == null)
+            {
+                continue; // 널 체크로 땜빵
+            }
+
             float distanceToTarget = (enemy.transform.position - transform.position).sqrMagnitude;
 
             if (distanceToTarget < nearDistance)

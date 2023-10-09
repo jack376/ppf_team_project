@@ -21,10 +21,14 @@ public class EnemyData
     public float attackDelay = 1f;
     public float bodyScale = 1f;
 
-    [Header("성장 계수 - 최대 생명력, 이동속도, 공격력"), Space(5f)]
+    [Header("성장 계수(배율) - 최대 생명력, 이동속도, 공격력"), Space(5f)]
     public float maxHealthRatio = 1.02f;
     public float moveSpeedRatio = 1.02f;
     public float attackDamageRatio = 1.02f;
+
+    // 경험치
+    // 경험치 배율
+    // 아이템 드랍률
 
     [Header("레벨 - 현재, 최소, 최대"), Space(5f)]
     public int currentLevel = 1;
