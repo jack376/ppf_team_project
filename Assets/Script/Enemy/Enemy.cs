@@ -126,7 +126,7 @@ public class Enemy : LivingEntity
     public override void Die()
     {
         base.Die();
-        GameManager.gameTimeLimit += 1f;
+        GameManager.gameTimeLimit += 0.1f;
 
         Collider[] colliders = GetComponents<Collider>();
         foreach (Collider collider in colliders)

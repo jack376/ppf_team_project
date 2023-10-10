@@ -5079,7 +5079,7 @@ MonoBehaviour:
   m_VolumeFrameworkUpdateModeOption: 2
   m_RenderPostProcessing: 1
   m_Antialiasing: 2
-  m_AntialiasingQuality: 2
+  m_AntialiasingQuality: 1
   m_StopNaN: 0
   m_Dithering: 0
   m_ClearDepth: 1
@@ -9836,7 +9836,7 @@ MonoBehaviour:
   - {fileID: 972895023}
   spawnRadius: 4
   spawnInterval: 0.1
-  spawnTime: 15
+  spawnTime: 10
   corpseDestroyTime: 1
 --- !u!114 &1673218007 stripped
 MonoBehaviour:
