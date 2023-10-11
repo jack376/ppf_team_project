@@ -56,7 +56,7 @@ MonoBehaviour:
     cooldown: 1
     speed: 30
     splash: 0
-    damage: 5
+    damage: 15
     lifeTime: 3
     isPierceHitPlay: 1
     currentLevel: 1

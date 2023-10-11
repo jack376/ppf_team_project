@@ -75,7 +75,6 @@ crashlytics-build.properties
 *.wav
 *.anim
 *.tga
-*.asset
 *.psd
 *.unitypackage
 *.tif
@@ -138,3 +137,92 @@ Assets/Monsters Ultimate Pack 04 Cute Series/Wraith Cute Series/Scenes/Demo.unit
 Assets/Scenes/demoscene_wildlands_nature 1.unity
 Assets/Story Wildlands Nature/scene/demoscene_wildlands_nature.unity
 Assets/Story Wildlands Nature/scene/demoscene_wildlands_nature_assets.unity
+Assets/GUI PRO Kit - Casual Game/ResourcesData/Fonts/LilitaOne-Regular Outline 120 SDF.asset
+Assets/GUI PRO Kit - Casual Game/ResourcesData/Fonts/LilitaOne-Regular Outline 210 SDF.asset
+Assets/GUI PRO Kit - Casual Game/ResourcesData/Fonts/LilitaOne-Regular Outline 32 SDF.asset
+Assets/GUI PRO Kit - Casual Game/ResourcesData/Fonts/LilitaOne-Regular Outline 40 SDF.asset
+Assets/GUI PRO Kit - Casual Game/ResourcesData/Fonts/LilitaOne-Regular Outline 50 SDF.asset
+Assets/GUI PRO Kit - Casual Game/ResourcesData/Fonts/LilitaOne-Regular Outline 54 SDF.asset
+Assets/GUI PRO Kit - Casual Game/ResourcesData/Fonts/LilitaOne-Regular Outline 64 SDF.asset
+Assets/GUI PRO Kit - Casual Game/ResourcesData/Fonts/LilitaOne-Regular Outline 72 SDF.asset
+Assets/GUI PRO Kit - Casual Game/ResourcesData/Fonts/LilitaOne-Regular Outline_Extended ASCII_120 SDF.asset
+Assets/GUI PRO Kit - Casual Game/ResourcesData/Fonts/LilitaOne-Regular Outline_Extended ASCII_210 SDF.asset
+Assets/GUI PRO Kit - Casual Game/ResourcesData/Fonts/LilitaOne-Regular Outline_Extended ASCII_32 SDF.asset
+Assets/GUI PRO Kit - Casual Game/ResourcesData/Fonts/LilitaOne-Regular Outline_Extended ASCII_40 SDF.asset
+Assets/GUI PRO Kit - Casual Game/ResourcesData/Fonts/LilitaOne-Regular Outline_Extended ASCII_50 SDF.asset
+Assets/GUI PRO Kit - Casual Game/ResourcesData/Fonts/LilitaOne-Regular Outline_Extended ASCII_54 SDF.asset
+Assets/GUI PRO Kit - Casual Game/ResourcesData/Fonts/LilitaOne-Regular Outline_Extended ASCII_64 SDF.asset
+Assets/GUI PRO Kit - Casual Game/ResourcesData/Fonts/LilitaOne-Regular Outline_Extended ASCII_72 SDF.asset
+Assets/GUI PRO Kit - Casual Game/ResourcesData/Fonts/LilitaOne-Regular SDF.asset
+Assets/Hovl Studio/AAA Projectiles Vol 2/Demo scene/LightingData.asset
+Assets/Hovl Studio/AOE Magic spells Vol.1/Demo AOE skills/LightingData.asset
+Assets/Hovl Studio/Epic toon VFX 3/Demo scene/Demo scene files/LightingData.asset
+Assets/Hovl Studio/Epic toon VFX/Demo scene/LightingData.asset
+Assets/Hovl Studio/HSFiles/Settings/PP low.asset
+Assets/Hovl Studio/Sword slash VFX/Demo scene/LightingData.asset
+Assets/Hovl Studio/Wizard spells pack/Demo scene/Lightning/LightingData.asset
+Assets/Monsters Ultimate Pack 01 Cute Series/Cute series demo assets/Cute Ortho.asset
+Assets/Monsters Ultimate Pack 01 Cute Series/Cute series demo assets/Cute Perspective.asset
+Assets/Monsters Ultimate Pack 01 Cute Series/Cute series demo assets/Cute Series.asset
+Assets/Scenes/InGame/LightingData.asset
+Assets/Scenes/InGame/NavMesh-NavMesh Surface (1).asset
+Assets/Scenes/InGame/NavMesh-NavMesh Surface.asset
+Assets/Scenes/InGame/InGame/NavMesh-NavMesh Surface 1.asset
+Assets/Scenes/InGame/InGame/NavMesh-NavMesh Surface.asset
+Assets/Settings/Balanced_PipelineAsset.asset
+Assets/Settings/Balanced_PipelineAsset_ForwardRenderer.asset
+Assets/Settings/High Fidelity_PipelineAsset.asset
+Assets/Settings/High Fidelity_PipelineAsset_ForwardRenderer.asset
+Assets/Settings/High_PipelineAsset.asset
+Assets/Settings/High_PipelineAsset_ForwardRenderer.asset
+Assets/Settings/Low_PipelineAsset.asset
+Assets/Settings/Low_PipelineAsset_ForwardRenderer.asset
+Assets/Settings/Medium_PipelineAsset.asset
+Assets/Settings/Medium_PipelineAsset_ForwardRenderer.asset
+Assets/Settings/Performant_PipelineAsset.asset
+Assets/Settings/Performant_PipelineAsset_ForwardRenderer.asset
+Assets/Settings/SampleSceneProfile.asset
+Assets/Settings/Ultra_PipelineAsset.asset
+Assets/Settings/Ultra_PipelineAsset_ForwardRenderer.asset
+Assets/Settings/URP-Balanced.asset
+Assets/Settings/URP-Balanced-Renderer.asset
+Assets/Settings/URP-HighFidelity.asset
+Assets/Settings/URP-HighFidelity-Renderer.asset
+Assets/Settings/URP-Performant.asset
+Assets/Settings/URP-Performant-Renderer.asset
+Assets/Settings/Very High_PipelineAsset.asset
+Assets/Settings/Very High_PipelineAsset_ForwardRenderer.asset
+Assets/Settings/Very Low_PipelineAsset.asset
+Assets/Settings/Very Low_PipelineAsset_ForwardRenderer.asset
+Assets/Story Wildlands Nature/settings/PPP_demoscene_story_wildlands.asset
+Assets/Story Wildlands Nature/settings/legacy/PPP_demoscene.asset
+Assets/Story Wildlands Nature/settings/legacy/PPP_demoscene_assets.asset
+Assets/Story Wildlands Nature/terrain_data/Terrain_01.1.asset
+Assets/Story Wildlands Nature/terrain_data/Terrain_02.1.asset
+Assets/Story Wildlands Nature/terrain_data/Terrain_03.1.asset
+Assets/Story Wildlands Nature/terrain_data/Terrain_04.1.asset
+Assets/Story Wildlands Nature/terrain_data/Terrain_05.1.asset
+Assets/Story Wildlands Nature/terrain_data/Terrain_06.1.asset
+Assets/Story Wildlands Nature/terrain_data/Terrain_07.1.asset
+Assets/Story Wildlands Nature/terrain_data/Terrain_08.1.asset
+Assets/Story Wildlands Nature/terrain_data/Terrain_09.1.asset
+Assets/Story Wildlands Nature/terrain_data/Terrain_10.1.asset
+Assets/Story Wildlands Nature/terrain_data/Terrain_11.1.asset
+Assets/Story Wildlands Nature/terrain_data/Terrain_12.1.asset
+Assets/Story Wildlands Nature/terrain_data/Terrain_13.1.asset
+Assets/Story Wildlands Nature/terrain_data/Terrain_14.1.asset
+Assets/Story Wildlands Nature/terrain_data/Terrain_15.1.asset
+Assets/Story Wildlands Nature/terrain_data/Terrain_16.1.asset
+Assets/Story Wildlands Nature/terrain_data/Terrain_17.1.asset
+Assets/Story Wildlands Nature/terrain_data/Terrain_18.1.asset
+Assets/Story Wildlands Nature/terrain_data/Terrain_19.1.asset
+Assets/Story Wildlands Nature/terrain_data/Terrain_20.1.asset
+Assets/Story Wildlands Nature/terrain_data/Terrain_21.1.asset
+Assets/Story Wildlands Nature/terrain_data/Terrain_22.1.asset
+Assets/Story Wildlands Nature/terrain_data/Terrain_23.1.asset
+Assets/Story Wildlands Nature/terrain_data/Terrain_24.1.asset
+Assets/TextMesh Pro/Resources/TMP Settings.asset
+Assets/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF - Fallback.asset
+Assets/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF.asset
+Assets/TextMesh Pro/Resources/Sprite Assets/EmojiOne.asset
+Assets/TextMesh Pro/Resources/Style Sheets/Default Style Sheet.asset
