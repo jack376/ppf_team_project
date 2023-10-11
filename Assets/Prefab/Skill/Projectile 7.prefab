@@ -4855,7 +4855,7 @@ GameObject:
   - component: {fileID: 54347867007870338}
   - component: {fileID: 135713622178651324}
   - component: {fileID: 8096045039088846173}
-  - component: {fileID: -6012292219653377055}
+  - component: {fileID: 66476611093577213}
   m_Layer: 9
   m_Name: Projectile 7
   m_TagString: Untagged
@@ -4872,8 +4872,8 @@ Transform:
   m_GameObject: {fileID: 1519322442116508}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: 0}
-  m_LocalScale: {x: 0.75, y: 0.75, z: 0.75}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 4953462558359860}
@@ -9879,7 +9879,7 @@ MonoBehaviour:
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
   m_SoftShadowQuality: 0
---- !u!114 &-6012292219653377055
+--- !u!114 &66476611093577213
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -9888,35 +9888,24 @@ MonoBehaviour:
   m_GameObject: {fileID: 1519322442116508}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8e0f5892da95307449213d00af379c09, type: 3}
+  m_Script: {fileID: 11500000, guid: 5958f36a36a9bed43ab72500d66eefd9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skillData:
-    ID: 12340002
-    type: 0
-    name: qwer
-    info: asdf
-    size: 1
-    speed: 30
-    splash: 0
-    damage: 50
-    cooldown: 0.5
-    lifeTime: 3
-    currentLevel: 1
-    minLevel: 1
-    maxLevel: 5
-  targetLayer:
-    serializedVersion: 2
-    m_Bits: 128
-  groundLayer:
-    serializedVersion: 2
-    m_Bits: 256
-  searchRadius: 2000
   hit: {fileID: 1900636369659048, guid: a3b03d790be7d704a80e87c9a6f260b3, type: 3}
   flash: {fileID: 1687680602027628, guid: 9097e0539320d2742ba27f6577b29997, type: 3}
-  Detached:
-  - {fileID: 1510226138140356}
-  - {fileID: 1702276184313894}
+  Detached: []
+  type: 0
+  isPierceHitPlay: 0
+  targetLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  speed: 5
+  splash: 1
+  damage: 10
+  lifeTime: 3
 --- !u!1 &1702276184313894
 GameObject:
   m_ObjectHideFlags: 0

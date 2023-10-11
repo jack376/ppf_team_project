@@ -1,128 +1,42 @@
+using System.Collections;
 using UnityEngine;
 
 public class SkillBehavior : MonoBehaviour
 {
-    [Header("스킬 데이터"), Space(5f)]
     public SkillData skillData;
+    public GameObject skillProjectilePrefab;
 
-    [Header("추적 대상 레이어 Enemy, Ground"), Space(5f)]
+    public float searchRadius = 1000f;
+
     public LayerMask targetLayer;
     public LayerMask groundLayer;
 
-    [Header("스킬 추적 범위 (현재 최대치)"), Space(5f)]
-    public float searchRadius = 500f;
+    private Transform targetTransform;
+    private Quaternion targetQuaternion;
 
-    [Header("스킬 피격 이펙트"), Space(5f)]
-    public GameObject hit;
-
-    [Header("스킬 발사 이펙트"), Space(5f)]
-    public GameObject flash;
-
-    [Header("스킬 트레일(꼬리) 이펙트"), Space(5f)]
-    public GameObject[] Detached;
-
-    private Vector3 targetDirection;
-    private float hoverHeight = 2f;
-
-    private void Awake()
-    {
-        ProjectileDirection();
-    }
-
-    // 발사체가 발사될 때 플래시 파티클 재생 
     private void Start()
     {
-        float modifyScale = skillData.size;
-        transform.localScale = new Vector3(modifyScale, modifyScale, modifyScale);
+        targetTransform = FindNearTarget();
+        targetQuaternion = Quaternion.LookRotation(targetTransform.position - transform.position);
 
-        if (flash != null)
+        if (skillData.count > 1)
         {
-            var flashInstance = Instantiate(flash, transform.position, Quaternion.identity);
-            flashInstance.transform.forward = gameObject.transform.forward;
-
-            var flashParticle = flashInstance.GetComponent<ParticleSystem>();
-
-            Destroy(flashInstance, flashParticle.main.duration);
-        }
-        Destroy(gameObject, skillData.lifeTime);
-    }
-
-    private void FixedUpdate()
-    {
-        ProjectileMovement();
-        ProjectileLookRotation();
-        ProjectileHover();
-    }
-
-    // 발사체가 타겟 레이어에게 충돌 시 데미지 적용 및 히트 파티클 재생
-    private void OnCollisionEnter(Collision collision)
-    {
-        if ((targetLayer & (1 << collision.gameObject.layer)) == 0)
-        {
-            return;
-        }
-
-        IDamageable target = collision.gameObject.GetComponent<IDamageable>();
-        if (target != null)
-        {
-            target.TakeDamage(skillData.damage, collision.contacts[0].point, collision.contacts[0].normal);
-        }
-
-        var hitInstance = Instantiate(hit, collision.contacts[0].point, Quaternion.identity);
-        var hitParticle = hitInstance.GetComponent<ParticleSystem>();
-        Destroy(hitInstance, hitParticle.main.duration);
-        Destroy(gameObject);
-    }
-
-    // 발사체가 사라질 때 히트 파티클 재생
-    private void OnDestroy()
-    {
-        var hitInstance = Instantiate(hit, transform.position, Quaternion.identity);
-        var hitParticle = hitInstance.GetComponent<ParticleSystem>();
-        Destroy(hitInstance, hitParticle.main.duration);
-    }
-    
-    // 발사체 시작 방향
-    public void ProjectileDirection()
-    {
-        Transform target = FindNearTarget();
-
-        if (target != null)
-        {
-            targetDirection = (target.position - transform.position).normalized;
+            if (skillData.shotType == ShotType.Burstshot)
+            {
+                StartCoroutine(CreateProjectileBurst());
+            }
+            else if (skillData.shotType == ShotType.Multishot)
+            {
+                CreateProjectileMulti();
+            }
         }
         else
         {
-            targetDirection = Vector3.forward;
+            CreateProjectile();
         }
     }
 
-    // 발사체 실시간 움직임
-    public void ProjectileMovement()
-    {
-        transform.Translate(Vector3.forward * (skillData.speed * Time.fixedDeltaTime));
-    }
-
-    // 발사체 실시간 방향
-    public void ProjectileLookRotation()
-    {
-        transform.rotation = Quaternion.LookRotation(targetDirection);
-    }
-
-    // 발사체가 땅에 부딪히지 않도록 y축으로 1f만큼 공중 부양 
-    public void ProjectileHover()
-    {
-        RaycastHit hit;
-        if (Physics.Raycast(transform.position, Vector3.down, out hit, Mathf.Infinity, groundLayer))
-        {
-            Vector3 fixPosition = hit.point;
-            fixPosition.y += hoverHeight;
-            transform.position = fixPosition;
-        }
-    }
-
-    // 리스트 내에서 가장 가까운 타겟 검사
-    public Transform FindNearTarget()
+    public Transform FindNearTarget() // 리스트 내에서 가장 가까운 타겟 검사
     {
         Transform neartarget = null;
         float nearDistance = searchRadius;
@@ -131,7 +45,7 @@ public class SkillBehavior : MonoBehaviour
         {
             if (enemy == null)
             {
-                continue; // 널 체크로 땜빵
+                continue; // 널 체크로 땜빵, 널 발생 시 엄청난 렉 발생 중임
             }
 
             float distanceToTarget = (enemy.transform.position - transform.position).sqrMagnitude;
@@ -144,5 +58,46 @@ public class SkillBehavior : MonoBehaviour
         }
 
         return neartarget;
+    }
+
+    public void CreateProjectile()
+    {
+        var skill = Instantiate(skillProjectilePrefab, GameManager.weapon.transform.position, targetQuaternion);
+        var skillProjectile = skill.GetComponent<SkillProjectile>();
+
+        skillProjectile.type = skillData.skillType;
+        skillProjectile.isPierceHitPlay = skillData.isPierceHitPlay;
+        skillProjectile.targetLayer = targetLayer;
+        skillProjectile.groundLayer = groundLayer;
+        skillProjectile.speed = skillData.speed;
+        skillProjectile.splash = skillData.splash;
+        skillProjectile.damage = skillData.damage;
+        skillProjectile.lifeTime = skillData.lifeTime;
+    }
+
+    private IEnumerator CreateProjectileBurst()
+    {
+        for (int i = 0; i < skillData.count; i++)
+        {
+            CreateProjectile();
+            yield return new WaitForSeconds(skillData.interval);
+        }
+    }
+
+    private void CreateProjectileMulti()
+    {
+        Quaternion originalRotation = targetQuaternion;
+
+        float totalSpread = skillData.angle;
+        float deltaAngle = totalSpread / (skillData.count - 1);
+        float startAngle = -totalSpread / 2;
+
+        for (int i = 0; i < skillData.count; i++)
+        {
+            float currentAngle = startAngle + (deltaAngle * i);
+            targetQuaternion = originalRotation * Quaternion.Euler(0f, currentAngle, 0f);
+            CreateProjectile();
+        }
+        targetQuaternion = originalRotation;
     }
 }

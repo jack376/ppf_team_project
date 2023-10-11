@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Diagnostics;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -38,7 +39,7 @@ public class Enemy : LivingEntity
     }
 
     // 컴포넌트 할당 및 필드 초기화
-    private void Awake() 
+    private void Awake()
     {
         pathFinder = GetComponent<NavMeshAgent>();
         enemyAnimator = GetComponentInChildren<Animator>();
@@ -103,9 +104,9 @@ public class Enemy : LivingEntity
     }
 
     // 오버라이드된 LivingEntity 부모 클래스의 TakeDamage 호출
-    public override void TakeDamage(float damage, Vector3 hitPoint, Vector3 hitNormal)
+    public override void TakeDamage(float damage)
     {
-        base.TakeDamage(damage, hitPoint, hitNormal);
+        base.TakeDamage(damage);
         StartCoroutine(DamagedHitColor());
     }
 
@@ -153,12 +154,9 @@ public class Enemy : LivingEntity
             LivingEntity attackTarget = other.GetComponent<LivingEntity>();
             if (attackTarget != null)
             {
-                Vector3 hitPoint = other.ClosestPoint(transform.position);
-                Vector3 hitNormal = transform.position - other.transform.position;
-
-                attackTarget.TakeDamage(enemyData.attackDamage, hitPoint, hitNormal);
-                attackDelay = Time.time;
+                attackTarget.TakeDamage(enemyData.attackDamage);
             }
+            attackDelay = Time.time;
         }
     }
 }

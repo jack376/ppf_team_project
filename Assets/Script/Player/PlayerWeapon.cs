@@ -41,7 +41,7 @@ public class PlayerWeapon : MonoBehaviour
         {
             yield return new WaitForSeconds(skillBehavior.skillData.cooldown);
             {
-                Instantiate(skillPrefab, transform);
+                Instantiate(skillPrefab, GameManager.weapon.transform.position, Quaternion.identity);
             }
         }
     }
@@ -58,16 +58,15 @@ public class PlayerWeapon : MonoBehaviour
     public void GetSkill()
     {
         Debug.Log("Get Skill");
-        int id = 12340001;
-        ids.Add(id);
-        activeCoroutines[id] = StartCoroutine(UseSkillCoroutine(id));
+        int id = 12340002;
+        StartCoroutine(UseSkillCoroutine(id));
 
         UIManager.Instance.CloseSkillSelectWindow();
     }
 
     public void GetBaseAttack()
     {
-        int id = 12340002;
+        int id = 12340001;
         ids.Add(id);
         StartCoroutine(UseSkillCoroutine(id));
     }

@@ -55,9 +55,9 @@ public class PlayerHealth : LivingEntity
     }
 
     // 오버라이드된 LivingEntity 부모 클래스의 TakeDamage 호출
-    public override void TakeDamage(float damage, Vector3 hitPoint, Vector3 hitDirection)
+    public override void TakeDamage(float damage)
     {
-        base.TakeDamage(damage, hitPoint, hitDirection);
+        base.TakeDamage(damage);
         StartCoroutine(DamagedHitColor());
         healthSlider.value = health;
     }

@@ -6,6 +6,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
     public static bool isGameover { get; private set; } = true;
+    public static GameObject weapon;
 
     public float timeLimit = 10f;
     public static float gameTimeLimit;
@@ -25,6 +26,8 @@ public class GameManager : MonoBehaviour
     // 게임 시작 시 PlayerHealth 클래스를 찾고 onDeath 이벤트 메서드 구독, onDeath 메서드 실행 시 EndGame 실행
     private void Start()
     {
+        weapon = GameObject.FindWithTag("Weapon");
+
         gameTimeLimit = timeLimit;
         FindObjectOfType<PlayerHealth>().onDeath += EndGame;
         StartCoroutine(StartGame());

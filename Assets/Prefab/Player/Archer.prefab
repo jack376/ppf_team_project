@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &7272862505992235027
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4580978057930217586}
+  m_Layer: 0
+  m_Name: Weapon
+  m_TagString: Weapon
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4580978057930217586
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7272862505992235027}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.1, z: 0.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 9128115554211672352}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &4311950856524700218
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -72,6 +103,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Layer
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: -6294680690320554280, guid: 7908f1a2bde075d478e43a6e8b8277be,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: -6190122955639018155, guid: 7908f1a2bde075d478e43a6e8b8277be,
         type: 3}
@@ -151,7 +187,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 7908f1a2bde075d478e43a6e8b8277be,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 16.36
+      value: 15.65
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 7908f1a2bde075d478e43a6e8b8277be,
         type: 3}
@@ -590,7 +626,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: -4216859302048453862, guid: 7908f1a2bde075d478e43a6e8b8277be,
+        type: 3}
+      insertIndex: 0
+      addedObject: {fileID: 4580978057930217586}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: -927199367670048503, guid: 7908f1a2bde075d478e43a6e8b8277be,
         type: 3}
@@ -732,3 +772,9 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 80
   m_CollisionDetection: 0
+--- !u!4 &9128115554211672352 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: 7908f1a2bde075d478e43a6e8b8277be,
+    type: 3}
+  m_PrefabInstance: {fileID: 4311950856524700218}
+  m_PrefabAsset: {fileID: 0}
