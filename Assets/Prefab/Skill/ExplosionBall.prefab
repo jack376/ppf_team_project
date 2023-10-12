@@ -50,21 +50,21 @@ MonoBehaviour:
     name: 324
     info: 3234562
     shotType: 1
+    shotTypeValue: 15
     count: 3
-    angle: 25
-    interval: 0
     cooldown: 2
-    speed: 15
-    splash: 3
+    speed: 25
+    splash: 5
     damage: 5
-    lifeTime: 3
-    isPierceHitPlay: 0
+    lifeTime: 0
+    isPierceHitPlay: 1
     currentLevel: 1
     minLevel: 1
     maxLevel: 5
-  skillProjectilePrefab: {fileID: 1066843573042574, guid: 24f43fe43fc48724ba286d8379cf648f,
-    type: 3}
-  searchRadius: 1000
+  projectile: {fileID: 1066843573042574, guid: c98ce42aa8b5fb64fa955a3b0924a0e6, type: 3}
+  hit: {fileID: 1767841913861676, guid: 7e33fe33aff4f49449f51ed88f138e9c, type: 3}
+  flash: {fileID: 1840367976591474, guid: e9d1f52e709876143b75f93f52a48156, type: 3}
+  Detached: []
   targetLayer:
     serializedVersion: 2
     m_Bits: 128

@@ -120,7 +120,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7427d6b3d263e2498031dbd5379c18f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingHealth: 100
   enemyData:
     ID: 500000
     type: 0
@@ -129,11 +128,11 @@ MonoBehaviour:
     spawnCycleSecond: 0.5
     maxHealth: 100
     defense: 0
-    bodyScale: 1
-    moveSpeed: 2
     attackDamage: 5
     attackSpeed: 0.5
+    moveSpeed: 2
     attackDelay: 1
+    bodyScale: 1
     maxHealthRatio: 1.02
     moveSpeedRatio: 1.02
     attackDamageRatio: 1.02

@@ -9,11 +9,12 @@ public class SkillData
     public string name = "스킬 이름"; 
     public string info = "스킬 정보";
 
-    [Header("발사 타입, 총알 갯수, 각도, 간격, 쿨다운")]
+    [Header("발사 타입, 각도 & 연발간격 값")]
     public ShotType shotType = 0;
+    public float shotTypeValue = 15f;
+
+    [Header("총알 갯수, 쿨다운")]
     public int count = 1;
-    public float angle = 0;
-    public float interval = 0;
     public float cooldown = 1f;
 
     [Header("탄속, 폭발범위, 데미지, 생명주기")]
@@ -33,12 +34,14 @@ public class SkillData
 
 public enum SkillType
 {
-    None      = 0,
+    Explosion = 0,
     Pierce    = 1,
-    Explosion = 2,
+    Nova      = 2,
+    Airstrike = 3,
 }
 public enum ShotType
 {
-    Burstshot = 0,
-    Multishot = 1,
+    Single = 0,
+    Burst  = 1,
+    Multi  = 2,
 }

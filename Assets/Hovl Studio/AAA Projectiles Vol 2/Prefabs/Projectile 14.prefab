@@ -10,13 +10,13 @@ GameObject:
   m_Component:
   - component: {fileID: 4778643779538310}
   - component: {fileID: 198574560645227440}
-  - component: {fileID: 114972768729341038}
   - component: {fileID: 199069760737636358}
   - component: {fileID: 108950823119357486}
   - component: {fileID: 54530307865729164}
   - component: {fileID: 135664649076355494}
   - component: {fileID: 1776292943211507736}
-  m_Layer: 0
+  - component: {fileID: -68614120582051361}
+  m_Layer: 9
   m_Name: Projectile 14
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3896,7 +3896,7 @@ ParticleSystem:
       emitProbability: 1
   LightsModule:
     enabled: 1
-    ratio: 1
+    ratio: 0.1
     light: {fileID: 108950823119357486}
     randomDistribution: 1
     color: 1
@@ -4832,26 +4832,6 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
---- !u!114 &114972768729341038
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1228652472414832}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 605a456cfc02f6b499a64717539a27e8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 15
-  hitOffset: 0.1
-  UseFirePointRotation: 0
-  rotationOffset: {x: 0, y: 0, z: 0}
-  hit: {fileID: 1270335207818070, guid: 8f5e087c57b11ef4cbed619d26886292, type: 3}
-  flash: {fileID: 1558033086931108, guid: c42932cbc55cdd94c992455a94bfd523, type: 3}
-  Detached:
-  - {fileID: 1993799643894748}
 --- !u!199 &199069760737636358
 ParticleSystemRenderer:
   serializedVersion: 6
@@ -5057,6 +5037,18 @@ MonoBehaviour:
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
   m_SoftShadowQuality: 0
+--- !u!114 &-68614120582051361
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1228652472414832}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5958f36a36a9bed43ab72500d66eefd9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1715675216902642
 GameObject:
   m_ObjectHideFlags: 0
@@ -5068,7 +5060,7 @@ GameObject:
   - component: {fileID: 4485841805693622}
   - component: {fileID: 198682728377463958}
   - component: {fileID: 199569994304127986}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Drop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9917,7 +9909,7 @@ GameObject:
   - component: {fileID: 4274804163080188}
   - component: {fileID: 198338959649452208}
   - component: {fileID: 199870305160396900}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Water
   m_TagString: Untagged
   m_Icon: {fileID: 0}

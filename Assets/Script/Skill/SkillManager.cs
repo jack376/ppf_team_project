@@ -4,10 +4,8 @@ using UnityEngine;
 public class SkillManager : MonoBehaviour
 {
     public static SkillManager Instance;
-
     public List<GameObject> allSkillPrefabs = new List<GameObject>();
-
-    private Dictionary<int, GameObject> skillDictionary = new Dictionary<int, GameObject>();
+    public Dictionary<int, GameObject> skillDictionary = new Dictionary<int, GameObject>();
 
     private void Awake()
     {

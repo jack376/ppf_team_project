@@ -4,31 +4,34 @@ using UnityEngine;
 public class SkillBehavior : MonoBehaviour
 {
     public SkillData skillData;
-    public GameObject skillProjectilePrefab;
 
-    public float searchRadius = 1000f;
+    public GameObject projectile;
+    public GameObject hit;
+    public GameObject flash;
+    public GameObject[] Detached;
 
     public LayerMask targetLayer;
     public LayerMask groundLayer;
 
+    private float searchRadius = 1500f;
     private Transform targetTransform;
     private Quaternion targetQuaternion;
 
     private void Start()
     {
-        targetTransform = FindNearTarget();
-        targetQuaternion = Quaternion.LookRotation(targetTransform.position - transform.position);
-
-        if (skillData.count > 1)
+        FindNearTarget();
+        if (targetQuaternion != null)
         {
-            if (skillData.shotType == ShotType.Burstshot)
-            {
-                StartCoroutine(CreateProjectileBurst());
-            }
-            else if (skillData.shotType == ShotType.Multishot)
-            {
-                CreateProjectileMulti();
-            }
+            targetQuaternion = Quaternion.LookRotation(targetTransform.position - transform.position);
+        }
+
+        if (skillData.shotType == ShotType.Burst)
+        {
+            StartCoroutine(CreateProjectileBurst());
+        }
+        else if (skillData.shotType == ShotType.Multi)
+        {
+            CreateProjectileMulti();
         }
         else
         {
@@ -36,35 +39,34 @@ public class SkillBehavior : MonoBehaviour
         }
     }
 
-    public Transform FindNearTarget() // 리스트 내에서 가장 가까운 타겟 검사
+    private void FindNearTarget() // 리스트 내에서 가장 가까운 타겟 검사
     {
-        Transform neartarget = null;
         float nearDistance = searchRadius;
 
         foreach (Enemy enemy in EnemySpawner.currentEnemies)
         {
             if (enemy == null)
             {
-                continue; // 널 체크로 땜빵, 널 발생 시 엄청난 렉 발생 중임
+                continue;
             }
 
             float distanceToTarget = (enemy.transform.position - transform.position).sqrMagnitude;
-
             if (distanceToTarget < nearDistance)
             {
                 nearDistance = distanceToTarget;
-                neartarget = enemy.transform;
+                targetTransform = enemy.transform;
             }
         }
-
-        return neartarget;
     }
 
     public void CreateProjectile()
     {
-        var skill = Instantiate(skillProjectilePrefab, GameManager.weapon.transform.position, targetQuaternion);
-        var skillProjectile = skill.GetComponent<SkillProjectile>();
+        GameObject skill = Instantiate(projectile, GameManager.weapon.transform.position, targetQuaternion);
+        SkillProjectile skillProjectile = skill.GetComponent<SkillProjectile>();
 
+        skillProjectile.hit = hit;
+        skillProjectile.flash = flash;
+        skillProjectile.Detached = Detached;
         skillProjectile.type = skillData.skillType;
         skillProjectile.isPierceHitPlay = skillData.isPierceHitPlay;
         skillProjectile.targetLayer = targetLayer;
@@ -77,10 +79,11 @@ public class SkillBehavior : MonoBehaviour
 
     private IEnumerator CreateProjectileBurst()
     {
+        float burstInterval = skillData.shotTypeValue * 0.1f;
         for (int i = 0; i < skillData.count; i++)
         {
             CreateProjectile();
-            yield return new WaitForSeconds(skillData.interval);
+            yield return new WaitForSeconds(burstInterval);
         }
     }
 
@@ -88,9 +91,9 @@ public class SkillBehavior : MonoBehaviour
     {
         Quaternion originalRotation = targetQuaternion;
 
-        float totalSpread = skillData.angle;
-        float deltaAngle = totalSpread / (skillData.count - 1);
-        float startAngle = -totalSpread / 2;
+        float totalAngle = skillData.shotTypeValue;
+        float deltaAngle = totalAngle / (skillData.count - 1);
+        float startAngle = -totalAngle / 2;
 
         for (int i = 0; i < skillData.count; i++)
         {
@@ -100,4 +103,6 @@ public class SkillBehavior : MonoBehaviour
         }
         targetQuaternion = originalRotation;
     }
+
+
 }

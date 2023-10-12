@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4816033911684292}
   - component: {fileID: 198971832761314498}
   - component: {fileID: 199265274957548016}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Glow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4860,7 +4860,7 @@ GameObject:
   - component: {fileID: 4880521554087078}
   - component: {fileID: 198972288435834998}
   - component: {fileID: 199118803832768436}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: ShockWave
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9767,7 +9767,7 @@ GameObject:
   - component: {fileID: 4831499067876256}
   - component: {fileID: 198791489903056928}
   - component: {fileID: 199425093718077730}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Fire
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14606,13 +14606,13 @@ GameObject:
   m_Component:
   - component: {fileID: 4999751882091942}
   - component: {fileID: 198117080305305632}
-  - component: {fileID: 114777770064651874}
   - component: {fileID: 199828426782813410}
   - component: {fileID: 108558352681175776}
   - component: {fileID: 54729807578932012}
   - component: {fileID: 135951470721667518}
   - component: {fileID: 5655267352999438101}
-  m_Layer: 0
+  - component: {fileID: 8326899923458865296}
+  m_Layer: 9
   m_Name: Projectile 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18513,7 +18513,7 @@ ParticleSystem:
       emitProbability: 1
   LightsModule:
     enabled: 1
-    ratio: 1
+    ratio: 0.1
     light: {fileID: 108558352681175776}
     randomDistribution: 1
     color: 1
@@ -19449,26 +19449,6 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
---- !u!114 &114777770064651874
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1449260960837898}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 605a456cfc02f6b499a64717539a27e8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 25
-  hitOffset: 0.1
-  UseFirePointRotation: 0
-  rotationOffset: {x: 0, y: 0, z: 0}
-  hit: {fileID: 1339124478685776, guid: 983ffc7b1f02f0d46a330ab4d104d17d, type: 3}
-  flash: {fileID: 1738175644799202, guid: c9e6ddab55c69eb4b81803e860d80c55, type: 3}
-  Detached:
-  - {fileID: 1112018524344104}
 --- !u!199 &199828426782813410
 ParticleSystemRenderer:
   serializedVersion: 6
@@ -19675,6 +19655,18 @@ MonoBehaviour:
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
   m_SoftShadowQuality: 0
+--- !u!114 &8326899923458865296
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1449260960837898}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5958f36a36a9bed43ab72500d66eefd9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1450556779679700
 GameObject:
   m_ObjectHideFlags: 0
@@ -19686,7 +19678,7 @@ GameObject:
   - component: {fileID: 4473626720661134}
   - component: {fileID: 198193361827360536}
   - component: {fileID: 199946171430480246}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Conus
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -17,7 +17,7 @@ public class Enemy : LivingEntity
     // EnemyData에서 넘겨받을 필드
     private float attackDelay;
     private float attackSpeed;
-    private float searchRadius = 50f;
+    private float searchRadius = 250f;
 
     // 피격 시 컬러 변경에 쓰일 필드
     private Color hitFlickerColor = Color.red;

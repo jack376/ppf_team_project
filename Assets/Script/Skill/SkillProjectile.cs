@@ -2,9 +2,11 @@ using UnityEngine;
 
 public class SkillProjectile : MonoBehaviour
 {
-    public GameObject hit;
-    public GameObject flash;
-    public GameObject[] Detached;
+    internal SkillProjectile skillProjectile;
+
+    internal GameObject hit;
+    internal GameObject flash;
+    internal GameObject[] Detached;
 
     internal SkillType type = 0;
     internal bool isPierceHitPlay = false;
@@ -17,7 +19,7 @@ public class SkillProjectile : MonoBehaviour
     internal float damage = 10f;
     internal float lifeTime = 3f;
 
-    private float hoverHeight = 2f;
+    private float hoverHeight = 1f;
 
     private void Start() // 발사체가 발사될 때 플래시 파티클 재생 
     {
@@ -25,6 +27,12 @@ public class SkillProjectile : MonoBehaviour
         {
             ParticlePlayFlash();
         }
+
+        if (type == SkillType.Nova)
+        {
+            lifeTime = 0f;
+        }
+
         Destroy(gameObject, lifeTime);
     }
 
@@ -46,19 +54,12 @@ public class SkillProjectile : MonoBehaviour
             Destroy(gameObject);
         }
 
-        if (splash >= 1f) // 탄이 닿는 기준으로 skillData.splash 범위 데미지
-        {
-            Collider[] hitColliders = Physics.OverlapSphere(transform.position, splash, targetLayer);
-            MultiTarget(hitColliders);
+        Collider[] hitColliders = Physics.OverlapSphere(transform.position, splash, targetLayer);
+        MultiTarget(hitColliders);
 
-            if (isPierceHitPlay)
-            {
-                ParticlePlayFlash();
-            }
-        }
-        else // 탄이 닿는 기준으로 데미지
+        if (isPierceHitPlay)
         {
-            SingleTarget(collision);
+            ParticlePlayFlash();
         }
 
         ParticlePlayHit();
@@ -86,7 +87,7 @@ public class SkillProjectile : MonoBehaviour
         }
     }
 
-    public void SingleTarget(Collision collision)
+    public void SingleTarget(Collision collision) // 일일히 콜라이더 체크하기 번거로우므로 폐기
     {
         IDamageable target = collision.gameObject.GetComponent<IDamageable>();
         if (target != null)
@@ -109,18 +110,32 @@ public class SkillProjectile : MonoBehaviour
 
     public void ParticlePlayHit() // 히트 파티클 재생
     {
-        GameObject hitInstance = Instantiate(hit, transform.position, Quaternion.identity);
+        if (null != hit)
+        {
+            GameObject hitInstance = Instantiate(hit, transform.position, Quaternion.identity);
 
-        ParticleSystem hitParticle = hitInstance.GetComponent<ParticleSystem>();
-        Destroy(hitInstance, hitParticle.main.duration);
+            ParticleSystem hitParticle = hitInstance.GetComponent<ParticleSystem>();
+            Destroy(hitInstance, hitParticle.main.duration);
+        }
     }
 
     public void ParticlePlayFlash() // 플래쉬 파티클 재생
     {
-        GameObject flashInstance = Instantiate(flash, transform.position, Quaternion.identity);
-        flashInstance.transform.forward = gameObject.transform.forward;
+        if (null != flash)
+        {
+            GameObject flashInstance = Instantiate(flash, transform.position, Quaternion.identity);
+            flashInstance.transform.forward = gameObject.transform.forward;
 
-        ParticleSystem flashParticle = flashInstance.GetComponent<ParticleSystem>();
-        Destroy(flashInstance, flashParticle.main.duration);
+            ParticleSystem flashParticle = flashInstance.GetComponent<ParticleSystem>();
+            Destroy(flashInstance, flashParticle.main.duration);
+        }
     }
+
+    public void NovaTakeDamage()
+    {
+
+
+        //Collider[] hitColliders = Physics.OverlapSphere(center, radius, targetLayer);
+    }
+
 }

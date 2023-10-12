@@ -10,13 +10,13 @@ GameObject:
   m_Component:
   - component: {fileID: 4478544775713322}
   - component: {fileID: 198214531995712820}
-  - component: {fileID: 114777609882855616}
   - component: {fileID: 199170733352616202}
   - component: {fileID: 108270398590740674}
   - component: {fileID: 54997735773319930}
   - component: {fileID: 135307989530499592}
   - component: {fileID: 93632654234241852}
-  m_Layer: 0
+  - component: {fileID: 6272249267575978961}
+  m_Layer: 9
   m_Name: Projectile 17
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3896,7 +3896,7 @@ ParticleSystem:
       emitProbability: 1
   LightsModule:
     enabled: 0
-    ratio: 1
+    ratio: 0.1
     light: {fileID: 108270398590740674}
     randomDistribution: 1
     color: 1
@@ -4832,26 +4832,6 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
---- !u!114 &114777609882855616
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1162549101967096}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 605a456cfc02f6b499a64717539a27e8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 15
-  hitOffset: 0.1
-  UseFirePointRotation: 1
-  rotationOffset: {x: 0, y: 0, z: 0}
-  hit: {fileID: 1684641875971996, guid: 953acd63f3feb604da8867d4f55f7351, type: 3}
-  flash: {fileID: 0}
-  Detached:
-  - {fileID: 1735297479392808}
 --- !u!199 &199170733352616202
 ParticleSystemRenderer:
   serializedVersion: 6
@@ -5057,6 +5037,18 @@ MonoBehaviour:
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
   m_SoftShadowQuality: 0
+--- !u!114 &6272249267575978961
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1162549101967096}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5958f36a36a9bed43ab72500d66eefd9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1691057967600586
 GameObject:
   m_ObjectHideFlags: 0
@@ -5068,7 +5060,7 @@ GameObject:
   - component: {fileID: 4937464707622018}
   - component: {fileID: 198201053788868498}
   - component: {fileID: 199315544735424468}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Smoke
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9917,7 +9909,7 @@ GameObject:
   - component: {fileID: 4781331910621024}
   - component: {fileID: 198507400043038998}
   - component: {fileID: 199854269442691580}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Sparks
   m_TagString: Untagged
   m_Icon: {fileID: 0}

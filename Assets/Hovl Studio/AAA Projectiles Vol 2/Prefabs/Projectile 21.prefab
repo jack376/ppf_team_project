@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4621329186527994}
   - component: {fileID: 198741877215741616}
   - component: {fileID: 199486298604746758}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Spiral
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4968,7 +4968,7 @@ GameObject:
   - component: {fileID: 4219989313957308}
   - component: {fileID: 198350922855048194}
   - component: {fileID: 199588092980158680}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Lightning
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9872,7 +9872,7 @@ GameObject:
   - component: {fileID: 4424798454221260}
   - component: {fileID: 198539147046286758}
   - component: {fileID: 199691814781739082}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Darkness
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14716,7 +14716,7 @@ GameObject:
   - component: {fileID: 4459804747225038}
   - component: {fileID: 198107866682351550}
   - component: {fileID: 199409316376825634}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SideAura
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19632,7 +19632,7 @@ GameObject:
   - component: {fileID: 4441575915630564}
   - component: {fileID: 198271405244063478}
   - component: {fileID: 199874086736191684}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: CenterAura
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24547,13 +24547,13 @@ GameObject:
   m_Component:
   - component: {fileID: 4353062385674998}
   - component: {fileID: 198061838050104678}
-  - component: {fileID: 114512895694731992}
   - component: {fileID: 199345261193979196}
   - component: {fileID: 54506116816268022}
   - component: {fileID: 135178183695366598}
   - component: {fileID: 108625486811999762}
   - component: {fileID: 6511312769122353282}
-  m_Layer: 0
+  - component: {fileID: 4345341431343742432}
+  m_Layer: 9
   m_Name: Projectile 21
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28437,7 +28437,7 @@ ParticleSystem:
       emitProbability: 1
   LightsModule:
     enabled: 1
-    ratio: 1
+    ratio: 0.1
     light: {fileID: 108625486811999762}
     randomDistribution: 1
     color: 1
@@ -29373,25 +29373,6 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
---- !u!114 &114512895694731992
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1980571578861810}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 605a456cfc02f6b499a64717539a27e8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 30
-  hitOffset: 0.1
-  UseFirePointRotation: 0
-  rotationOffset: {x: 0, y: 0, z: 0}
-  hit: {fileID: 1159183624466508, guid: 7ca99df88fbdb8d4180250684a943ef5, type: 3}
-  flash: {fileID: 1418520085859340, guid: f68d36db88ab7d146b688c487aaace5c, type: 3}
-  Detached: []
 --- !u!199 &199345261193979196
 ParticleSystemRenderer:
   serializedVersion: 6
@@ -29597,3 +29578,15 @@ MonoBehaviour:
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
   m_SoftShadowQuality: 0
+--- !u!114 &4345341431343742432
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1980571578861810}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5958f36a36a9bed43ab72500d66eefd9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

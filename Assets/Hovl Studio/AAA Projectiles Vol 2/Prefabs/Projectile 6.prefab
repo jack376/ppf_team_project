@@ -10,13 +10,13 @@ GameObject:
   m_Component:
   - component: {fileID: 4903523721451584}
   - component: {fileID: 198524469710358768}
-  - component: {fileID: 114896872521589134}
   - component: {fileID: 199317234387275066}
   - component: {fileID: 108176094184806404}
   - component: {fileID: 54347867007870338}
   - component: {fileID: 135713622178651324}
   - component: {fileID: 1488574820056132642}
-  m_Layer: 0
+  - component: {fileID: 7568769160457338120}
+  m_Layer: 9
   m_Name: Projectile 6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3896,7 +3896,7 @@ ParticleSystem:
       emitProbability: 1
   LightsModule:
     enabled: 1
-    ratio: 1
+    ratio: 0.1
     light: {fileID: 108176094184806404}
     randomDistribution: 1
     color: 1
@@ -4832,26 +4832,6 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
---- !u!114 &114896872521589134
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1519322442116508}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 605a456cfc02f6b499a64717539a27e8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 25
-  hitOffset: 0.1
-  UseFirePointRotation: 0
-  rotationOffset: {x: 0, y: 0, z: 0}
-  hit: {fileID: 1021820888038418, guid: 4754d1c93d0ffde46a4b52472f289725, type: 3}
-  flash: {fileID: 1013902274184218, guid: 8f3f932519e18564e81c0a4c89d87f11, type: 3}
-  Detached:
-  - {fileID: 1984230739644340}
 --- !u!199 &199317234387275066
 ParticleSystemRenderer:
   serializedVersion: 6
@@ -5058,6 +5038,18 @@ MonoBehaviour:
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
   m_SoftShadowQuality: 0
+--- !u!114 &7568769160457338120
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1519322442116508}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5958f36a36a9bed43ab72500d66eefd9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1984230739644340
 GameObject:
   m_ObjectHideFlags: 0
@@ -5069,7 +5061,7 @@ GameObject:
   - component: {fileID: 4369520064312368}
   - component: {fileID: 198869416552647626}
   - component: {fileID: 199040640481881862}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Sparks
   m_TagString: Untagged
   m_Icon: {fileID: 0}

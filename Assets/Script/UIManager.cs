@@ -3,6 +3,7 @@ using UnityEngine.SceneManagement;
 using TMPro;
 using System.Collections;
 using UnityEngine.UI;
+using System.Collections.Generic;
 
 public class UIManager : MonoBehaviour
 {
@@ -13,8 +14,12 @@ public class UIManager : MonoBehaviour
     public TextMeshProUGUI currentLevelUI;
 
     public GameObject gameoverUI;
-    public GameObject skillSelectWindowUI;
+    //public GameObject skillSelectWindowUI;
 
+    public Button[] skillSelectButtons;
+
+    private PlayerWeapon playerWeapon;
+    private int[] randomIds = new int[3];
     private bool paused = false;
 
     private void Awake()
@@ -31,6 +36,9 @@ public class UIManager : MonoBehaviour
 
     private void Start()
     {
+        playerWeapon = FindObjectOfType<PlayerWeapon>();
+
+
         StartCoroutine(StartCountdown());
     }
 
@@ -64,6 +72,7 @@ public class UIManager : MonoBehaviour
         countdownText.text = "GO!";
         yield return new WaitForSeconds(1f);
         countdownText.gameObject.SetActive(false);
+
         StartCoroutine(UpdateTimer());
     }
 
@@ -90,14 +99,33 @@ public class UIManager : MonoBehaviour
 
     public void OpenSkillSelectWindow()
     {
-        skillSelectWindowUI.SetActive(true);
+        foreach(Button button in skillSelectButtons)
+        {
+            button.gameObject.SetActive(true);
+        }
         Time.timeScale = 0;
+
+        List<GameObject> allSkillPrefabs = SkillManager.Instance.allSkillPrefabs;
+        int skillFrontNumber = 12340000;
+
+        for (int i = 0; i < 3; i++)
+        {
+            int randomCount = Random.Range(1, allSkillPrefabs.Count);
+            randomIds[i] = randomCount + skillFrontNumber;
+        }
     }
 
-    public void CloseSkillSelectWindow()
+    public void OnSkillButtonClicked(int buttonIndex)
     {
-        skillSelectWindowUI.SetActive(false);
+        playerWeapon.LearnSkill(randomIds[buttonIndex]);
+
+        foreach (Button button in skillSelectButtons)
+        {
+            button.gameObject.SetActive(false);
+        }
         Time.timeScale = 1;
+
+        Debug.Log("Button clicked: " + buttonIndex);
     }
 
     public void PausedButton()

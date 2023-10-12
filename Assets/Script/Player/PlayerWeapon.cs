@@ -1,35 +1,25 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerWeapon : MonoBehaviour
 {
-    private SkillManager skillManager;
     private List<int> ids = new List<int>();
-    private Dictionary<int, Coroutine> activeCoroutines = new Dictionary<int, Coroutine>();
 
     private void Start()
     {
-        skillManager = SkillManager.Instance;
         foreach (int id in ids)
         {
             StartCoroutine(UseSkillCoroutine(id));
         }
 
-        Invoke("GetBaseAttack", 3f);
-    }
-
-    private void Update()
-    {
-        if (GameManager.isGameover)
-        {
-            StopAllSkills();
-        }
+        Invoke("LearnBaseAttack", 3f);
     }
 
     IEnumerator UseSkillCoroutine(int id) // 나중에 최적화, 오브젝트풀링 적용 
     {
-        GameObject skillPrefab = skillManager.GetSkillPrefab(id);
+        GameObject skillPrefab = SkillManager.Instance.GetSkillPrefab(id);
         SkillBehavior skillBehavior = skillPrefab.GetComponent<SkillBehavior>();
 
         if (skillBehavior == null || skillPrefab == null)
@@ -46,25 +36,14 @@ public class PlayerWeapon : MonoBehaviour
         }
     }
 
-    public void StopAllSkills()
+    public void LearnSkill(int id)
     {
-        foreach (Coroutine coroutine in activeCoroutines.Values)
-        {
-            StopCoroutine(coroutine);
-        }
-        activeCoroutines.Clear();
-    }
-
-    public void GetSkill()
-    {
-        Debug.Log("Get Skill");
-        int id = 12340002;
+        Debug.Log("Get Skill" + id);
+        ids.Add(id);
         StartCoroutine(UseSkillCoroutine(id));
-
-        UIManager.Instance.CloseSkillSelectWindow();
     }
 
-    public void GetBaseAttack()
+    public void LearnBaseAttack()
     {
         int id = 12340001;
         ids.Add(id);

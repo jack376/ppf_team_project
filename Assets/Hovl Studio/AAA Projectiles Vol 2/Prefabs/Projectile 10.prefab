@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4874681785835578}
   - component: {fileID: 198032771267645886}
   - component: {fileID: 199858790215094820}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SmokeHQ
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4859,13 +4859,13 @@ GameObject:
   m_Component:
   - component: {fileID: 4767738837032136}
   - component: {fileID: 198215664331079948}
-  - component: {fileID: 114284774029778334}
   - component: {fileID: 199500896755526810}
   - component: {fileID: 108427654974949236}
   - component: {fileID: 54406299046715380}
   - component: {fileID: 135464267038536590}
   - component: {fileID: 7587747508980557334}
-  m_Layer: 0
+  - component: {fileID: 8799956785544447361}
+  m_Layer: 9
   m_Name: Projectile 10
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8745,7 +8745,7 @@ ParticleSystem:
       emitProbability: 1
   LightsModule:
     enabled: 1
-    ratio: 1
+    ratio: 0.1
     light: {fileID: 108427654974949236}
     randomDistribution: 1
     color: 1
@@ -9681,26 +9681,6 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
---- !u!114 &114284774029778334
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1307497385501450}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 605a456cfc02f6b499a64717539a27e8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 15
-  hitOffset: 0.1
-  UseFirePointRotation: 0
-  rotationOffset: {x: 0, y: 0, z: 0}
-  hit: {fileID: 1098451438589226, guid: afa1163e40fd2904fbf38e4c00924127, type: 3}
-  flash: {fileID: 1351939137292810, guid: 56bde4ce6c483884084a4ff8b76b3267, type: 3}
-  Detached:
-  - {fileID: 1973628126080328}
 --- !u!199 &199500896755526810
 ParticleSystemRenderer:
   serializedVersion: 6
@@ -9906,6 +9886,18 @@ MonoBehaviour:
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
   m_SoftShadowQuality: 0
+--- !u!114 &8799956785544447361
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1307497385501450}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5958f36a36a9bed43ab72500d66eefd9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1973628126080328
 GameObject:
   m_ObjectHideFlags: 0
@@ -9917,7 +9909,7 @@ GameObject:
   - component: {fileID: 4891131715782328}
   - component: {fileID: 198064937658762136}
   - component: {fileID: 199535472952102144}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Smoke
   m_TagString: Untagged
   m_Icon: {fileID: 0}
