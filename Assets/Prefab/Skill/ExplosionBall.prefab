@@ -58,6 +58,7 @@ MonoBehaviour:
     damage: 5
     lifeTime: 0
     isPierceHitPlay: 1
+    hitParticleScale: 5
     currentLevel: 1
     minLevel: 1
     maxLevel: 5

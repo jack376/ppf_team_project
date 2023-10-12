@@ -25,7 +25,7 @@ public class SkillProjectile : MonoBehaviour
     {
         if (flash != null)
         {
-            ParticlePlayFlash();
+            PlayFlashParticle();
         }
 
         if (type == SkillType.Nova)
@@ -59,15 +59,15 @@ public class SkillProjectile : MonoBehaviour
 
         if (isPierceHitPlay)
         {
-            ParticlePlayFlash();
+            PlayFlashParticle();
         }
 
-        ParticlePlayHit();
+        PlayHitParticle();
     }
 
     private void OnDestroy() // 발사체가 사라질 때 히트 파티클 재생
     {
-        ParticlePlayHit();
+        PlayHitParticle();
     }
 
     public void ProjectileMovement() // 발사체 실시간 움직임
@@ -87,15 +87,6 @@ public class SkillProjectile : MonoBehaviour
         }
     }
 
-    public void SingleTarget(Collision collision) // 일일히 콜라이더 체크하기 번거로우므로 폐기
-    {
-        IDamageable target = collision.gameObject.GetComponent<IDamageable>();
-        if (target != null)
-        {
-            target.TakeDamage(damage);
-        }
-    }
-
     public void MultiTarget(Collider[] hitColliders)
     {
         foreach (Collider collision in hitColliders)
@@ -108,7 +99,7 @@ public class SkillProjectile : MonoBehaviour
         }
     }
 
-    public void ParticlePlayHit() // 히트 파티클 재생
+    public void PlayHitParticle() // 히트 파티클 재생
     {
         if (null != hit)
         {
@@ -119,7 +110,7 @@ public class SkillProjectile : MonoBehaviour
         }
     }
 
-    public void ParticlePlayFlash() // 플래쉬 파티클 재생
+    public void PlayFlashParticle() // 플래쉬 파티클 재생
     {
         if (null != flash)
         {
@@ -130,12 +121,4 @@ public class SkillProjectile : MonoBehaviour
             Destroy(flashInstance, flashParticle.main.duration);
         }
     }
-
-    public void NovaTakeDamage()
-    {
-
-
-        //Collider[] hitColliders = Physics.OverlapSphere(center, radius, targetLayer);
-    }
-
 }

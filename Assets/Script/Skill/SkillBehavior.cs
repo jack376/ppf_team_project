@@ -19,23 +19,36 @@ public class SkillBehavior : MonoBehaviour
 
     private void Start()
     {
-        FindNearTarget();
-        if (targetQuaternion != null)
-        {
-            targetQuaternion = Quaternion.LookRotation(targetTransform.position - transform.position);
-        }
+        SetTarget();
 
-        if (skillData.shotType == ShotType.Burst)
-        {
-            StartCoroutine(CreateProjectileBurst());
-        }
-        else if (skillData.shotType == ShotType.Multi)
-        {
-            CreateProjectileMulti();
-        }
-        else
+        if (skillData.skillType == SkillType.Nova)
         {
             CreateProjectile();
+            NovaTarget();
+            return;
+        }
+
+        switch (skillData.shotType)
+        {
+            case ShotType.Burst:
+                StartCoroutine(CreateProjectileBurst());
+                break;
+            case ShotType.Multi:
+                CreateProjectileMulti();
+                break;
+            default:
+                CreateProjectile();
+                break;
+        }
+    }
+
+    private void SetTarget()
+    {
+        FindNearTarget();
+
+        if (targetTransform != null)
+        {
+            targetQuaternion = Quaternion.LookRotation(targetTransform.position - transform.position);
         }
     }
 
@@ -64,13 +77,17 @@ public class SkillBehavior : MonoBehaviour
         GameObject skill = Instantiate(projectile, GameManager.weapon.transform.position, targetQuaternion);
         SkillProjectile skillProjectile = skill.GetComponent<SkillProjectile>();
 
+        skillProjectile.type = skillData.skillType;
+
         skillProjectile.hit = hit;
         skillProjectile.flash = flash;
         skillProjectile.Detached = Detached;
-        skillProjectile.type = skillData.skillType;
+
         skillProjectile.isPierceHitPlay = skillData.isPierceHitPlay;
+
         skillProjectile.targetLayer = targetLayer;
         skillProjectile.groundLayer = groundLayer;
+
         skillProjectile.speed = skillData.speed;
         skillProjectile.splash = skillData.splash;
         skillProjectile.damage = skillData.damage;
@@ -104,5 +121,16 @@ public class SkillBehavior : MonoBehaviour
         targetQuaternion = originalRotation;
     }
 
-
+    public void NovaTarget()
+    {
+        Collider[] hitColliders = Physics.OverlapSphere(GameManager.weapon.transform.position, skillData.splash, targetLayer);
+        foreach (Collider collision in hitColliders)
+        {
+            IDamageable target = collision.gameObject.GetComponent<IDamageable>();
+            if (target != null)
+            {
+                target.TakeDamage(skillData.damage);
+            }
+        }
+    }
 }
