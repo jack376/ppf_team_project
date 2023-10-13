@@ -11,6 +11,9 @@ public class Enemy : LivingEntity
     [Header("추적할 대상 레이어"), Space(5f)]
     public LayerMask whatIsTarget;
 
+    [Header("처치 시 시간 증가"), Space(5f)]
+    public float increaseTime;
+
     // 아이템 스포너
     private ItemSpawner itemSpawner;
 
@@ -127,7 +130,7 @@ public class Enemy : LivingEntity
     public override void Die()
     {
         base.Die();
-        GameManager.gameTimeLimit += 0.1f;
+        GameManager.gameTimeLimit += increaseTime;
 
         Collider[] colliders = GetComponents<Collider>();
         foreach (Collider collider in colliders)
