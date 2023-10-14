@@ -1,11 +1,15 @@
 using System.Collections.Generic;
 using UnityEngine;
+using System.IO;
+using System.Text;
 
 public class SkillManager : MonoBehaviour
 {
     public static SkillManager Instance;
     public List<GameObject> allSkillPrefabs = new List<GameObject>();
     public Dictionary<int, GameObject> skillDictionary = new Dictionary<int, GameObject>();
+
+    public List<SkillData> skillList = new List<SkillData>();
 
     private void Awake()
     {
@@ -28,6 +32,11 @@ public class SkillManager : MonoBehaviour
         }
     }
 
+    void Start()
+    {
+        LoadSkillDataFromCSV("Assets/Resources/skills.csv");
+    }
+
     public GameObject GetSkillPrefab(int id)
     {
         skillDictionary.TryGetValue(id, out GameObject skillPrefab);
@@ -40,5 +49,83 @@ public class SkillManager : MonoBehaviour
         SkillBehavior skillBehavior = skillPrefab.GetComponent<SkillBehavior>();
 
         return skillBehavior.skillData;
+    }
+
+    void LoadSkillDataFromCSV(string filePath)
+    {
+        StreamReader sr = new StreamReader(filePath, Encoding.Default);
+
+        bool isFirstRow = true;
+        while (!sr.EndOfStream)
+        {
+            string line = sr.ReadLine();
+
+            if (isFirstRow)
+            {
+                isFirstRow = false;
+                continue;
+            }
+
+            string[] rowData = line.Split(',');
+
+            SkillData newData = new SkillData();
+
+            newData.ID        = int.Parse(rowData[0]);
+            newData.skillType = (SkillType)int.Parse(rowData[1]);
+            newData.name      = rowData[2];
+            newData.info      = rowData[3];
+
+            newData.shotType      = (ShotType)int.Parse(rowData[4]);
+            newData.shotTypeValue = float.Parse(rowData[5]);
+
+            newData.count    = int.Parse(rowData[6]);
+            newData.cooldown = float.Parse(rowData[7]);
+            newData.speed    = float.Parse(rowData[8]);
+            newData.splash   = float.Parse(rowData[9]);
+            newData.damage   = float.Parse(rowData[10]);
+            newData.lifeTime = float.Parse(rowData[11]);
+
+            newData.isPierceHitPlay = bool.Parse(rowData[12]);
+
+            newData.currentLevel = int.Parse(rowData[13]);
+            newData.minLevel     = int.Parse(rowData[14]);
+            newData.maxLevel     = int.Parse(rowData[15]);
+
+            skillList.Add(newData);
+        }
+
+        sr.Close();
+    }
+
+    void SaveSkillDataToCSV(string filePath)
+    {
+        StringBuilder sb = new StringBuilder();
+
+        sb.AppendLine("ID,SkillType,Name,Info,ShotType,ShotTypeValue,Count,Cooldown,Speed,Splash,Damage,LifeTime,IsPierceHitPlay,CurrentLevel,MinLevel,MaxLevel");
+
+        foreach (var skill in skillList)
+        {
+            sb.AppendLine
+            (
+                $"{skill.ID}," +
+                $"{(int)skill.skillType}," +
+                $"{skill.name}," +
+                $"{skill.info}," +
+                $"{(int)skill.shotType}," +
+                $"{skill.shotTypeValue}," +
+                $"{skill.count}," +
+                $"{skill.cooldown}," +
+                $"{skill.speed}," +
+                $"{skill.splash}," +
+                $"{skill.damage}," +
+                $"{skill.lifeTime}," +
+                $"{skill.isPierceHitPlay}," +
+                $"{skill.currentLevel}," +
+                $"{skill.minLevel}," +
+                $"{skill.maxLevel}"
+            );
+        }
+
+        File.WriteAllText(filePath, sb.ToString());
     }
 }
