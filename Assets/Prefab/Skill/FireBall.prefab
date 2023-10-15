@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 809145910737721244}
   - component: {fileID: 4425897396955874045}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: FireBall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -47,22 +47,20 @@ MonoBehaviour:
   skillData:
     ID: 1000001
     skillType: 0
-    name: 56546
-    info: asdf
-    shotType: 0
-    shotTypeValue: 10
+    name: "\uD30C\uC774\uC5B4\uBCFC"
+    info: "\uC77C\uC790\uB85C \uD30C\uC774\uC5B4\uBCFC\uC744 \uBC1C\uC0AC\uD55C\uB2E4."
+    shotType: 1
+    shotTypeValue: 0
     count: 1
-    cooldown: 0.5
-    speed: 25
-    splash: 7
-    damage: 15
-    lifeTime: 0.5
-    isPierceHitPlay: 1
-    currentLevel: 1
-    minLevel: 1
+    cooldown: 2
+    speed: 20
+    splash: 2
+    damage: 50
+    lifeTime: 5
+    isPierceHitPlay: 0
+    currentLevel: 0
+    minLevel: 0
     maxLevel: 5
-    effectSize: {fileID: 0}
-    effectScale: {x: 1, y: 1, z: 1}
   projectile: {fileID: 1066843573042574, guid: c98ce42aa8b5fb64fa955a3b0924a0e6, type: 3}
   hit: {fileID: 1767841913861676, guid: 7e33fe33aff4f49449f51ed88f138e9c, type: 3}
   flash: {fileID: 1840367976591474, guid: e9d1f52e709876143b75f93f52a48156, type: 3}

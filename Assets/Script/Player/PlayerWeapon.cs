@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -45,7 +44,7 @@ public class PlayerWeapon : MonoBehaviour
 
     public void LearnBaseAttack()
     {
-        int id = 12340001;
+        int id = 1000001;
         ids.Add(id);
         StartCoroutine(UseSkillCoroutine(id));
     }

@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 809145910737721244}
   - component: {fileID: 4425897396955874045}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Sword Slash
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -46,24 +46,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   skillData:
     ID: 1000006
-    skillType: 0
-    name: 56546
-    info: asdf
+    skillType: 2
+    name: "\uC18C\uB4DC \uC2AC\uB798\uC26C"
+    info: "\uD50C\uB808\uC774\uC5B4 \uC8FC\uBCC0\uC5D0 \uAC80\uC774 \uC0DD\uC131\uB418\uC5B4
+      \uD53C\uD574\uB97C \uC785\uD78C\uB2E4."
     shotType: 0
-    shotTypeValue: 10
+    shotTypeValue: 0
     count: 1
-    cooldown: 0.5
-    speed: 25
-    splash: 7
-    damage: 15
-    lifeTime: 0.5
-    isPierceHitPlay: 1
-    currentLevel: 1
-    minLevel: 1
+    cooldown: 1.5
+    speed: 50
+    splash: 4
+    damage: 70
+    lifeTime: 4
+    isPierceHitPlay: 0
+    currentLevel: 0
+    minLevel: 0
     maxLevel: 5
-    effectSize: {fileID: 0}
-    effectScale: {x: 1, y: 1, z: 1}
-  projectile: {fileID: 0}
+  projectile: {fileID: 1066843573042574, guid: c98ce42aa8b5fb64fa955a3b0924a0e6, type: 3}
   hit: {fileID: 1919708242137258, guid: 355a58bcd2f69204faaea21dc1a944cd, type: 3}
   flash: {fileID: 7699698589382392644, guid: 640e05190c0a859429b55fce13b9da16, type: 3}
   Detached: []

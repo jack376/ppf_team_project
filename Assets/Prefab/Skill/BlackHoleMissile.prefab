@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 809145910737721244}
   - component: {fileID: 4425897396955874045}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: BlackHoleMissile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -47,22 +47,21 @@ MonoBehaviour:
   skillData:
     ID: 1000003
     skillType: 0
-    name: 56546
-    info: asdf
-    shotType: 0
-    shotTypeValue: 10
+    name: "\uC911\uB825\uD3EC"
+    info: "\uAC70\uB300\uD55C \uC911\uB825 \uBBF8\uC0AC\uC77C \uD3EC\uD0C4\uC744
+      \uBC1C\uC0AC\uD55C\uB2E4."
+    shotType: 1
+    shotTypeValue: 20
     count: 1
-    cooldown: 0.5
-    speed: 25
-    splash: 7
-    damage: 15
-    lifeTime: 0.5
-    isPierceHitPlay: 1
-    currentLevel: 1
-    minLevel: 1
+    cooldown: 5
+    speed: 20
+    splash: 5
+    damage: 80
+    lifeTime: 7
+    isPierceHitPlay: 0
+    currentLevel: 0
+    minLevel: 0
     maxLevel: 5
-    effectSize: {fileID: 0}
-    effectScale: {x: 1, y: 1, z: 1}
   projectile: {fileID: 1736565358043974, guid: 87fe3fddebd51f24ca3aebd072aa6e5a, type: 3}
   hit: {fileID: 1962406821623320, guid: 602cd1bfb03b3f0469b4ac08e9831fe5, type: 3}
   flash: {fileID: 1737637573780072, guid: 2fbde86c80b42d4488ea5304f0b3b3be, type: 3}

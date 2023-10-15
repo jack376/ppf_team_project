@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 7155146212094752597}
   - component: {fileID: 1288342229211594191}
   m_Layer: 7
-  m_Name: Egglet
+  m_Name: Egglet 1
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -119,7 +119,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 2
+  m_Speed: 4
   m_Acceleration: 6
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -179,7 +179,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dropItems:
-  - {fileID: 6449782882855002263, guid: 84e3c9dee29bc104b9acf2da45a871d5, type: 3}
+  - {fileID: 6449782882855002263, guid: 0febc3b19acb9cb4dbfb2d963b3f9ce9, type: 3}
   dropChanceRate: 1
 --- !u!1001 &3683419365467622752
 PrefabInstance:

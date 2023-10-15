@@ -16,6 +16,7 @@ public class SkillManager : MonoBehaviour
         if (Instance == null)
         {
             Instance = this;
+            DontDestroyOnLoad(gameObject);
         }
         else if (Instance != this)
         {
@@ -27,14 +28,30 @@ public class SkillManager : MonoBehaviour
             SkillBehavior skillBehavior = skillPrefab.GetComponent<SkillBehavior>();
             if (skillBehavior != null)
             {
-                skillDictionary.Add(skillBehavior.skillData.ID, skillPrefab);
+                skillDictionary[skillBehavior.skillData.ID] = skillPrefab;
             }
         }
+
+        LoadSkillDataFromCSV("Assets/Resources/SkillSaveData.csv");
     }
 
     void Start()
     {
-        LoadSkillDataFromCSV("Assets/Resources/skills.csv");
+        foreach (SkillData skill in skillList)
+        {
+            if (skillDictionary.TryGetValue(skill.ID, out GameObject skillPrefab))
+            {
+                SkillBehavior skillBehavior = skillPrefab.GetComponent<SkillBehavior>();
+                if (skillBehavior != null)
+                {
+                    skillBehavior.UpdateSkillData(skill);
+                }
+            }
+            else
+            {
+                Debug.LogWarning("해당 ID 프리펩 없어");
+            }
+        }
     }
 
     public GameObject GetSkillPrefab(int id)
@@ -70,26 +87,26 @@ public class SkillManager : MonoBehaviour
 
             SkillData newData = new SkillData();
 
-            newData.ID        = int.Parse(rowData[0]);
-            newData.skillType = (SkillType)int.Parse(rowData[1]);
-            newData.name      = rowData[2];
-            newData.info      = rowData[3];
+            newData.ID              = int.Parse(rowData[0]);
+            newData.skillType       = (SkillType)int.Parse(rowData[1]);
+            newData.name            = rowData[2];
+            newData.info            = rowData[3];
 
-            newData.shotType      = (ShotType)int.Parse(rowData[4]);
-            newData.shotTypeValue = float.Parse(rowData[5]);
+            newData.shotType        = (ShotType)int.Parse(rowData[4]);
+            newData.shotTypeValue   = float.Parse(rowData[5]);
 
-            newData.count    = int.Parse(rowData[6]);
-            newData.cooldown = float.Parse(rowData[7]);
-            newData.speed    = float.Parse(rowData[8]);
-            newData.splash   = float.Parse(rowData[9]);
-            newData.damage   = float.Parse(rowData[10]);
-            newData.lifeTime = float.Parse(rowData[11]);
+            newData.count           = int.Parse(rowData[6]);
+            newData.cooldown        = float.Parse(rowData[7]);
+            newData.speed           = float.Parse(rowData[8]);
+            newData.splash          = float.Parse(rowData[9]);
+            newData.damage          = float.Parse(rowData[10]);
+            newData.lifeTime        = float.Parse(rowData[11]);
 
-            newData.isPierceHitPlay = bool.Parse(rowData[12]);
+            newData.isPierceHitPlay = int.Parse(rowData[12]);
 
-            newData.currentLevel = int.Parse(rowData[13]);
-            newData.minLevel     = int.Parse(rowData[14]);
-            newData.maxLevel     = int.Parse(rowData[15]);
+            newData.currentLevel    = int.Parse(rowData[13]);
+            newData.minLevel        = int.Parse(rowData[14]);
+            newData.maxLevel        = int.Parse(rowData[15]);
 
             skillList.Add(newData);
         }
@@ -101,7 +118,7 @@ public class SkillManager : MonoBehaviour
     {
         StringBuilder sb = new StringBuilder();
 
-        sb.AppendLine("ID,SkillType,Name,Info,ShotType,ShotTypeValue,Count,Cooldown,Speed,Splash,Damage,LifeTime,IsPierceHitPlay,CurrentLevel,MinLevel,MaxLevel");
+        sb.AppendLine("ID,skillType,name,info,shotType,shotTypeValue,count,cooldown,speed,splash,damage,lifeTime,isPierceHitPlay,currentLevel,minLevel,maxLevel");
 
         foreach (var skill in skillList)
         {

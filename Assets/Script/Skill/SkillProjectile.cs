@@ -9,7 +9,7 @@ public class SkillProjectile : MonoBehaviour
     internal GameObject[] Detached;
 
     internal SkillType type = 0;
-    internal bool isPierceHitPlay = false;
+    internal int isPierceHitPlay = 0;
 
     internal LayerMask targetLayer;
     internal LayerMask groundLayer;
@@ -57,7 +57,7 @@ public class SkillProjectile : MonoBehaviour
         Collider[] hitColliders = Physics.OverlapSphere(transform.position, splash, targetLayer);
         MultiTarget(hitColliders);
 
-        if (isPierceHitPlay)
+        if (isPierceHitPlay == 1)
         {
             PlayFlashParticle();
         }

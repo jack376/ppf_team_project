@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 809145910737721244}
   - component: {fileID: 4425897396955874045}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: ArcaneArrow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -46,27 +46,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   skillData:
     ID: 1000002
-    skillType: 0
-    name: 56546
-    info: asdf
-    shotType: 0
+    skillType: 1
+    name: "\uC544\uCF00\uC778 \uC560\uB85C\uC6B0"
+    info: "\uC77C\uC790\uB85C \uD654\uC0B4\uC744 \uBC1C\uC0AC\uD55C\uB2E4."
+    shotType: 1
     shotTypeValue: 10
-    count: 1
-    cooldown: 0.5
-    speed: 25
-    splash: 7
-    damage: 15
-    lifeTime: 0.5
-    isPierceHitPlay: 1
-    currentLevel: 1
-    minLevel: 1
+    count: 2
+    cooldown: 2
+    speed: 30
+    splash: 1
+    damage: 30
+    lifeTime: 4
+    isPierceHitPlay: 0
+    currentLevel: 0
+    minLevel: 0
     maxLevel: 5
-    effectSize: {fileID: 0}
-    effectScale: {x: 1, y: 1, z: 1}
-  projectile: {fileID: 1583607392527697616, guid: d9cd51f7af892e543b2e44d2854bb26b,
-    type: 3}
-  hit: {fileID: 1929822363404922919, guid: 03e33417c7d76114f82423bbaad9670f, type: 3}
-  flash: {fileID: 162544250836971357, guid: 52924719d5dda7f4a82e45516deb5fad, type: 3}
+  projectile: {fileID: 1519322442116508, guid: fa331b8213914f44cab65156c1ba366e, type: 3}
+  hit: {fileID: 1900636369659048, guid: c8c637b8f0130b84b8e2d623d873832d, type: 3}
+  flash: {fileID: 1687680602027628, guid: 86443fa1d98b18345bce2157b9568cc4, type: 3}
   Detached: []
   targetLayer:
     serializedVersion: 2

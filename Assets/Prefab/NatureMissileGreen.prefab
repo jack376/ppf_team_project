@@ -4964,7 +4964,7 @@ GameObject:
   - component: {fileID: 500349390599231385}
   - component: {fileID: -9066026375491481584}
   - component: {fileID: 8391021326672761995}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: NatureMissileGreen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9950,7 +9950,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 0.5
+  m_Radius: 0.75
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1308790858615379212
 GameObject:

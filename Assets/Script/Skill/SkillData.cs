@@ -24,7 +24,7 @@ public class SkillData
     public float lifeTime = 3f;
 
     [Header("관통 시 Hit 파티클 재생 여부")]
-    public bool isPierceHitPlay = false;
+    public int isPierceHitPlay = 0;
 
     [Header("현재 레벨, 최소 레벨, 최대 레벨")]
     public int currentLevel = 1; 

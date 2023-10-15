@@ -133,4 +133,9 @@ public class SkillBehavior : MonoBehaviour
             }
         }
     }
+
+    public void UpdateSkillData(SkillData newSkillData)
+    {
+        skillData = newSkillData;
+    }
 }

@@ -106,11 +106,18 @@ public class UIManager : MonoBehaviour
         Time.timeScale = 0;
 
         List<GameObject> allSkillPrefabs = SkillManager.Instance.allSkillPrefabs;
-        int skillFrontNumber = 12340000;
+        int skillFrontNumber = 1000000;
 
+        HashSet<int> uniqueRandomIds = new HashSet<int>();
         for (int i = 0; i < 3; i++)
         {
-            int randomCount = Random.Range(1, allSkillPrefabs.Count);
+            int randomCount;
+            do
+            {
+                randomCount = Random.Range(1, allSkillPrefabs.Count + 1);
+            } while (uniqueRandomIds.Contains(randomCount));
+
+            uniqueRandomIds.Add(randomCount);
             randomIds[i] = randomCount + skillFrontNumber;
         }
     }
@@ -140,5 +147,10 @@ public class UIManager : MonoBehaviour
             Time.timeScale = 1;
             paused = false;
         }
+    }
+
+    public void RestartButton()
+    {
+        SceneManager.LoadScene("LobbyScene");
     }
 }
