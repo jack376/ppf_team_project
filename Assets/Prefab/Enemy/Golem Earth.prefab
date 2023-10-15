@@ -118,20 +118,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7427d6b3d263e2498031dbd5379c18f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingHealth: 100
   enemyData:
     ID: 500000
     type: 0
     name: "\uBAAC\uC2A4\uD130 \uC774\uB984"
     info: "\uBAAC\uC2A4\uD130 \uC815\uBCF4"
     spawnCycleSecond: 0.5
-    maxHealth: 100
+    maxHealth: 300
     defense: 0
-    bodyScale: 1
-    moveSpeed: 2
-    attackDamage: 5
+    attackDamage: 15
     attackSpeed: 0.5
+    moveSpeed: 2
     attackDelay: 1
+    bodyScale: 1
     maxHealthRatio: 1.02
     moveSpeedRatio: 1.02
     attackDamageRatio: 1.02
@@ -141,6 +140,7 @@ MonoBehaviour:
   whatIsTarget:
     serializedVersion: 2
     m_Bits: 64
+  increaseTime: 0
 --- !u!1001 &5322554485635064017
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -165,6 +165,7 @@ MonoBehaviour:
   whatIsTarget:
     serializedVersion: 2
     m_Bits: 64
+  increaseTime: 0
 --- !u!114 &1288342229211594191
 MonoBehaviour:
   m_ObjectHideFlags: 0

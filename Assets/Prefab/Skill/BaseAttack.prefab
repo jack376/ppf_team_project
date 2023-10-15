@@ -46,7 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   skillData:
     ID: 12340001
-    skillType: 2
+    skillType: 0
     name: 56546
     info: asdf
     shotType: 0
