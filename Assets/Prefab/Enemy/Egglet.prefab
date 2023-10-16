@@ -149,7 +149,7 @@ MonoBehaviour:
     name: "\uBAAC\uC2A4\uD130 \uC774\uB984"
     info: "\uBAAC\uC2A4\uD130 \uC815\uBCF4"
     spawnCycleSecond: 0.5
-    maxHealth: 100
+    maxHealth: 300
     defense: 0
     attackDamage: 5
     attackSpeed: 0.5

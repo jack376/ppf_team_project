@@ -106,7 +106,7 @@ public class UIManager : MonoBehaviour
         Time.timeScale = 0;
 
         List<GameObject> allSkillPrefabs = SkillManager.Instance.allSkillPrefabs;
-        int skillFrontNumber = 1000000;
+        int skillFrontNumber = 1000300;
 
         HashSet<int> uniqueRandomIds = new HashSet<int>();
         for (int i = 0; i < 3; i++)

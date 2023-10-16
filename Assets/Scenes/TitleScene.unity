@@ -707,6 +707,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: Title
       objectReference: {fileID: 0}
+    - target: {fileID: 3000938960757145830, guid: d38c5af222248744183aa9958c32fc8b,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0.9686275
+      objectReference: {fileID: 0}
+    - target: {fileID: 3000938960757145830, guid: d38c5af222248744183aa9958c32fc8b,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0.9803922
+      objectReference: {fileID: 0}
+    - target: {fileID: 3000938960757145830, guid: d38c5af222248744183aa9958c32fc8b,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0.9803922
+      objectReference: {fileID: 0}
     - target: {fileID: 3380326895773558823, guid: d38c5af222248744183aa9958c32fc8b,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target

@@ -45,8 +45,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skillData:
-    ID: 1000002
-    skillType: 1
+    ID: 1000302
+    skillType: 0
     name: "\uC544\uCF00\uC778 \uC560\uB85C\uC6B0"
     info: "\uC77C\uC790\uB85C \uD654\uC0B4\uC744 \uBC1C\uC0AC\uD55C\uB2E4."
     shotType: 1

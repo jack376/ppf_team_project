@@ -19677,7 +19677,6 @@ GameObject:
   - component: {fileID: 4297997874738874}
   - component: {fileID: 198521153257316276}
   - component: {fileID: 199435144017190326}
-  - component: {fileID: 114113709265893788}
   m_Layer: 0
   m_Name: ProtonExplosionGreen
   m_TagString: Untagged
@@ -24570,23 +24569,6 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
---- !u!114 &114113709265893788
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1732508177996512}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5aa5c1e37409a9344a344c0468db383d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  prefabSound: {fileID: 1297775994297274, guid: 1c8ad4cafd86f004ea666c7019698980,
-    type: 3}
-  destroyWhenDone: 1
-  soundPrefabIsChild: 0
-  pitchRandomMultiplier: 1.1
 --- !u!1 &1919918973892968
 GameObject:
   m_ObjectHideFlags: 0

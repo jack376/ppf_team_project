@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skillData:
-    ID: 1000004
+    ID: 1000304
     skillType: 1
     name: "\uC790\uC5F0\uC758 \uD798"
     info: "\uC790\uC5F0\uC758 \uD798\uC73C\uB85C \uAC15\uD654\uD55C \uAC15\uB825\uD55C
@@ -62,10 +62,9 @@ MonoBehaviour:
     currentLevel: 0
     minLevel: 0
     maxLevel: 5
-  projectile: {fileID: 1308750004520360652, guid: e8e9aa70284d12548859fe3182681282,
-    type: 3}
-  hit: {fileID: 1732508177996512, guid: 4c9ea63cfecb7094a88406b92cc37fae, type: 3}
-  flash: {fileID: 5392531688824696213, guid: 91309dea79820344c9dbd346866b1cef, type: 3}
+  projectile: {fileID: 1033026374199576, guid: 5c16c201ada1f4a43965ab102abb63a9, type: 3}
+  hit: {fileID: 1765570899365652, guid: e90b0a20dc997ef4c9e67b1c8b6db6c9, type: 3}
+  flash: {fileID: 1765570899365652, guid: e90b0a20dc997ef4c9e67b1c8b6db6c9, type: 3}
   Detached: []
   targetLayer:
     serializedVersion: 2

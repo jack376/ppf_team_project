@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 162544250836971352}
   - component: {fileID: 162544250836971359}
   - component: {fileID: 162544250836971358}
-  - component: {fileID: 2345442379693969150}
   m_Layer: 0
   m_Name: Archer_Casting_Arcane_5
   m_TagString: Untagged
@@ -4941,22 +4940,6 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
---- !u!114 &2345442379693969150
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 162544250836971357}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7de00312ddc441d4cb3915fb2165c1f2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Projectile: {fileID: 7653356942258319417, guid: d10589584f0574746a44aacd786360d9,
-    type: 3}
-  Launch: {fileID: 319656082589799860, guid: 55fa725e24b38df4cba26d85341b7982, type: 3}
-  Time: 1.4
 --- !u!1 &162544251420094557
 GameObject:
   m_ObjectHideFlags: 0
@@ -9805,7 +9788,6 @@ ParticleSystemRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: 5f0e15d9bdfdf0b4fbec5c5fe030afb9, type: 2}
-  - {fileID: 2100000, guid: 5f0e15d9bdfdf0b4fbec5c5fe030afb9, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -9866,6 +9848,7 @@ GameObject:
   m_Component:
   - component: {fileID: 162544251484636209}
   - component: {fileID: 162544251484636210}
+  - component: {fileID: 3326499742469987854}
   m_Layer: 0
   m_Name: Point Light
   m_TagString: Untagged
@@ -9945,11 +9928,34 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_BoundingSphereOverride: {x: 1.02e-43, y: 1.4e-44, z: 8.053e-42, w: 1.3632e-41}
   m_UseBoundingSphereOverride: 0
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &3326499742469987854
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 162544251484636208}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 3
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_LightLayerMask: 1
+  m_RenderingLayers: 1
+  m_CustomShadowLayers: 0
+  m_ShadowLayerMask: 1
+  m_ShadowRenderingLayers: 1
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
+  m_SoftShadowQuality: 0
 --- !u!1 &162544252082235167
 GameObject:
   m_ObjectHideFlags: 0
@@ -14797,7 +14803,6 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 057b9e44e10816e40916e374162f022f, type: 2}
   - {fileID: 2100000, guid: 057b9e44e10816e40916e374162f022f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
@@ -19697,7 +19702,6 @@ ParticleSystemRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: 29c982e9ff1c47d418c96d79770fa334, type: 2}
-  - {fileID: 2100000, guid: 29c982e9ff1c47d418c96d79770fa334, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -24595,7 +24599,6 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 8e92b113b9149974ab8f5306abee7800, type: 2}
   - {fileID: 2100000, guid: 8e92b113b9149974ab8f5306abee7800, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0

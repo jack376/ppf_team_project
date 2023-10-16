@@ -44,7 +44,7 @@ public class PlayerWeapon : MonoBehaviour
 
     public void LearnBaseAttack()
     {
-        int id = 1000001;
+        int id = 1000301;
         ids.Add(id);
         StartCoroutine(UseSkillCoroutine(id));
     }
