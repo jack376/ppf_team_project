@@ -26,9 +26,10 @@ public class EnemyData
     public float moveSpeedRatio = 1.02f;
     public float attackDamageRatio = 1.02f;
 
-    // 경험치
-    // 경험치 배율
-    // 아이템 드랍률
+    [Header("경험치, 경험치 증가량 계수, 아이템 드랍률 계수"), Space(5f)]
+    public float expPoint = 25f;
+    public float expRate = 1.02f;
+    public float itemDropRate = 1.05f;
 
     [Header("레벨 - 현재, 최소, 최대"), Space(5f)]
     public int currentLevel = 1;
