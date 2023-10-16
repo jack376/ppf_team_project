@@ -25,6 +25,12 @@ public class PlayerHealth : LivingEntity
         playerRenderer = GetComponentInChildren<Renderer>();
     }
 
+    private void Start()
+    {
+        playerController.enabled = true;
+        healthSlider.gameObject.SetActive(true);
+    }
+
     private void Update()
     {
         if (!hasDied && 0f >= GameManager.gameTimeLimit)

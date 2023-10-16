@@ -48,6 +48,9 @@ MonoBehaviour:
   - {fileID: 7155146212094752597, guid: 1ba16c8024eb2844a8295f290bbf78f4, type: 3}
   - {fileID: 7155146212094752597, guid: 1ba16c8024eb2844a8295f290bbf78f4, type: 3}
   - {fileID: 7155146212094752597, guid: 1ba16c8024eb2844a8295f290bbf78f4, type: 3}
+  - {fileID: 7155146212094752597, guid: 1ba16c8024eb2844a8295f290bbf78f4, type: 3}
+  - {fileID: 7155146212094752597, guid: 1ba16c8024eb2844a8295f290bbf78f4, type: 3}
+  - {fileID: 7155146212094752597, guid: ba919b96519aece418cd2c12f8099bdb, type: 3}
   spawnPoints:
   - {fileID: 0}
   - {fileID: 0}
@@ -58,6 +61,6 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   spawnRadius: 4
-  spawnInterval: 0.5
-  spawnTime: 60
+  spawnInterval: 0.1
+  spawnTime: 15
   corpseDestroyTime: 1

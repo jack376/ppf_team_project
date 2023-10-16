@@ -8,7 +8,7 @@ public class SkillBehavior : MonoBehaviour
     public GameObject projectile;
     public GameObject hit;
     public GameObject flash;
-    public GameObject[] Detached;
+    internal GameObject[] Detached;
 
     public LayerMask targetLayer;
     public LayerMask groundLayer;
@@ -77,6 +77,7 @@ public class SkillBehavior : MonoBehaviour
         GameObject skill = Instantiate(projectile, GameManager.weapon.transform.position, targetQuaternion);
         SkillProjectile skillProjectile = skill.GetComponent<SkillProjectile>();
 
+        skillProjectile.targetTransform = targetTransform;
         skillProjectile.type = skillData.skillType;
 
         skillProjectile.hit = hit;

@@ -1,10 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class EnemySpawner : MonoBehaviour
 {
-    // 게임 시작부터 끝까지만 유지하도록 나중에 수정하기
     public static List<Enemy> currentEnemies = new List<Enemy>();
 
     public List<Enemy> enemyGroup = new List<Enemy>();
@@ -17,9 +17,17 @@ public class EnemySpawner : MonoBehaviour
 
     private int wave;
 
-    private void Start()
+    private void Awake()
     {
-        StartCoroutine(SpawnWaveCoroutine());
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        if (scene.name == "InGameScene")
+        {
+            StartCoroutine(SpawnWaveCoroutine());
+        }
     }
 
     private IEnumerator SpawnWaveCoroutine()
@@ -28,9 +36,6 @@ public class EnemySpawner : MonoBehaviour
 
         while (true)
         {
-            //yield return new WaitUntil(() => currentEnemies.Count <= 0); 
-            // 맵에 몬스터가 없을 때 
-
             wave++;
             for (int i = 0; i < spawnPoints.Length; i++)
             {
@@ -40,6 +45,11 @@ public class EnemySpawner : MonoBehaviour
  
             yield return new WaitForSeconds(spawnTime);
         }
+    }
+
+    private void OnDestroy()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
     }
 
     private void CreateEnemies(Transform spawnPoint)

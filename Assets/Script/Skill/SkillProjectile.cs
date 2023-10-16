@@ -19,8 +19,9 @@ public class SkillProjectile : MonoBehaviour
     internal float damage = 10f;
     internal float lifeTime = 3f;
 
+    internal Transform targetTransform;
     private float hoverHeight = 1f;
-    private Quaternion initialRotation;
+    private Vector3 direction = Vector3.forward;
 
     private void Start() // 발사체가 발사될 때 플래시 파티클 재생 
     {
@@ -34,14 +35,17 @@ public class SkillProjectile : MonoBehaviour
             lifeTime = 0f;
         }
 
-        initialRotation = transform.rotation;
-
+        direction = Vector3.forward;
         Destroy(gameObject, lifeTime);
     }
 
     private void FixedUpdate()
     {
-        transform.rotation = initialRotation;
+        if (targetTransform != null)
+        {
+            direction = (targetTransform.position - transform.position).normalized;
+        }
+
         ProjectileMovement();
         ProjectileHover();
     }
@@ -76,6 +80,15 @@ public class SkillProjectile : MonoBehaviour
 
     public void ProjectileMovement() // 발사체 실시간 움직임
     {
+        if (targetTransform != null)
+        {
+            transform.LookAt(targetTransform.position);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+
         transform.Translate(Vector3.forward * (speed * Time.fixedDeltaTime));
     }
 

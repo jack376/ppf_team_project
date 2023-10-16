@@ -159,13 +159,16 @@ MonoBehaviour:
     maxHealthRatio: 1.02
     moveSpeedRatio: 1.02
     attackDamageRatio: 1.02
+    expPoint: 25
+    expRate: 1.02
+    itemDropRate: 1.05
     currentLevel: 1
     minLevel: 1
     maxLevel: 99
   whatIsTarget:
     serializedVersion: 2
     m_Bits: 64
-  increaseTime: 0
+  increaseTime: 1
 --- !u!114 &1288342229211594191
 MonoBehaviour:
   m_ObjectHideFlags: 0

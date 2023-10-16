@@ -54,17 +54,16 @@ MonoBehaviour:
     count: 3
     cooldown: 3
     speed: 35
-    splash: 1
+    splash: 2
     damage: 45
     lifeTime: 7
     isPierceHitPlay: 0
     currentLevel: 0
     minLevel: 0
     maxLevel: 5
-  projectile: {fileID: 2434221572446746926, guid: 57a8f117caaf65840b1820ed0f595302,
-    type: 3}
-  hit: {fileID: 2695938950007877682, guid: 0f442a8c740bb814d8f47a7cebdd6aad, type: 3}
-  flash: {fileID: 205910734199310658, guid: 95ed363142af426448deada74c52db4c, type: 3}
+  projectile: {fileID: 1762457832057232, guid: b243715daaaf5734aa6c9a6b66f975ca, type: 3}
+  hit: {fileID: 1479929942879240, guid: 4776bca22f3b439449b75f5931a27440, type: 3}
+  flash: {fileID: 1479929942879240, guid: 4776bca22f3b439449b75f5931a27440, type: 3}
   Detached: []
   targetLayer:
     serializedVersion: 2

@@ -47,12 +47,14 @@ public class GameManager : MonoBehaviour
     {
         isGameover = true;
         UIManager.Instance.SetActiveGameoverUI(true);
+
         AutoSaveData();
+        SceneManager.sceneLoaded -= OnSceneLoaded;
     }
 
     public void GameRestart()
     {
-        SceneManager.LoadScene("InGameScene");
+        SceneManager.LoadScene("LobbyScene");
         isGameover = true;
     }
 

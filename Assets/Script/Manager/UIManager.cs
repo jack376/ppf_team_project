@@ -148,9 +148,4 @@ public class UIManager : MonoBehaviour
             paused = false;
         }
     }
-
-    public void RestartButton()
-    {
-        SceneManager.LoadScene("LobbyScene");
-    }
 }

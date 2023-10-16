@@ -12,7 +12,7 @@ public class Enemy : LivingEntity
     public LayerMask whatIsTarget;
 
     [Header("처치 시 시간 증가"), Space(5f)]
-    public float increaseTime;
+    public float increaseTime = 1.0f;
 
     // 아이템 스포너
     private ItemSpawner itemSpawner;
@@ -92,7 +92,7 @@ public class Enemy : LivingEntity
                     }
                 }
             }
-            yield return new WaitForSeconds(0.25f);
+            yield return new WaitForSeconds(0.33f);
         }
     }
 
