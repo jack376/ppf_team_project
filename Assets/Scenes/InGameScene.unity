@@ -4810,7 +4810,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330585543}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.4068386, y: 0.000000015718026, z: -0.000000007000219, w: 0.9135001}
+  m_LocalRotation: {x: 0.4068386, y: -0.000000015718031, z: 0.0000000070002213, w: 0.9135001}
   m_LocalPosition: {x: 15.22, y: 65.65, z: -95.009995}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -5797,6 +5797,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 6859770289734426535, guid: c2af3e4e5f0280c42a576e6584f64cea,
+        type: 3}
+      propertyPath: m_Constraints
+      value: 80
+      objectReference: {fileID: 0}
     - target: {fileID: 7757244242110365183, guid: c2af3e4e5f0280c42a576e6584f64cea,
         type: 3}
       propertyPath: joystick
@@ -5984,7 +5989,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1620157485}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.4068386, y: 0.000000015718026, z: -0.000000007000219, w: 0.9135001}
+  m_LocalRotation: {x: 0.4068386, y: -0.000000015718031, z: 0.0000000070002213, w: 0.9135001}
   m_LocalPosition: {x: 15.22, y: 65.65, z: -95.009995}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0

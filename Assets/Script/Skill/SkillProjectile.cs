@@ -20,6 +20,7 @@ public class SkillProjectile : MonoBehaviour
     internal float lifeTime = 3f;
 
     private float hoverHeight = 1f;
+    private Quaternion initialRotation;
 
     private void Start() // 발사체가 발사될 때 플래시 파티클 재생 
     {
@@ -33,11 +34,14 @@ public class SkillProjectile : MonoBehaviour
             lifeTime = 0f;
         }
 
+        initialRotation = transform.rotation;
+
         Destroy(gameObject, lifeTime);
     }
 
     private void FixedUpdate()
     {
+        transform.rotation = initialRotation;
         ProjectileMovement();
         ProjectileHover();
     }
@@ -77,12 +81,11 @@ public class SkillProjectile : MonoBehaviour
 
     public void ProjectileHover() // 발사체가 땅에 부딪히지 않도록 y축으로 hoverHeight 만큼 공중 부양 
     {
-
         RaycastHit hit;
         if (Physics.Raycast(transform.position, Vector3.down, out hit, Mathf.Infinity, groundLayer))
         {
-            Vector3 fixPosition = hit.point;
-            fixPosition.y += hoverHeight;
+            Vector3 fixPosition = transform.position;
+            fixPosition.y = hit.point.y + hoverHeight;
             transform.position = fixPosition;
         }
     }
