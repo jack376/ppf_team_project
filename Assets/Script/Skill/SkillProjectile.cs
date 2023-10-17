@@ -1,30 +1,34 @@
+using System.Collections;
 using UnityEngine;
+using UnityEngine.Pool;
+using static UnityEditor.ShaderGraph.Internal.KeywordDependentCollection;
 
 public class SkillProjectile : MonoBehaviour
 {
-    internal SkillProjectile skillProjectile;
+    public GameObject hit;
+    public GameObject flash;
+    public GameObject[] Detached;
 
-    internal GameObject hit;
-    internal GameObject flash;
-    internal GameObject[] Detached;
+    public SkillType type = 0;
+    public int isPierceHitPlay = 0;
 
-    internal SkillType type = 0;
-    internal int isPierceHitPlay = 0;
+    public LayerMask targetLayer;
+    public LayerMask groundLayer;
 
-    internal LayerMask targetLayer;
-    internal LayerMask groundLayer;
+    public float speed = 5f;
+    public float splash = 1f;
+    public float damage = 10f;
+    public float lifeTime = 3f;
 
-    internal float speed = 5f;
-    internal float splash = 1f;
-    internal float damage = 10f;
-    internal float lifeTime = 3f;
+    public Transform targetTransform;
 
-    internal Transform targetTransform;
     private float hoverHeight = 1f;
     private Vector3 direction = Vector3.forward;
 
     private void Start() // 발사체가 발사될 때 플래시 파티클 재생 
     {
+        gameObject.transform.position = GameManager.weapon.transform.position;
+
         if (flash != null)
         {
             PlayFlashParticle();
@@ -36,7 +40,8 @@ public class SkillProjectile : MonoBehaviour
         }
 
         direction = Vector3.forward;
-        Destroy(gameObject, lifeTime);
+
+        Invoke("ProjectileRelease", lifeTime);
     }
 
     private void FixedUpdate()
@@ -59,7 +64,7 @@ public class SkillProjectile : MonoBehaviour
 
         if (type != SkillType.Pierce) // 관통형 스킬이 아닐 경우 닿자마자 탄환 삭제
         {
-            Destroy(gameObject);
+            ProjectileRelease();
         }
 
         Collider[] hitColliders = Physics.OverlapSphere(transform.position, splash, targetLayer);
@@ -69,11 +74,9 @@ public class SkillProjectile : MonoBehaviour
         {
             PlayFlashParticle();
         }
-
-        PlayHitParticle();
     }
 
-    private void OnDestroy() // 발사체가 사라질 때 히트 파티클 재생
+    private void OnDisable() // OnDestroy() // 발사체가 사라질 때 히트 파티클 재생
     {
         PlayHitParticle();
     }
@@ -86,7 +89,7 @@ public class SkillProjectile : MonoBehaviour
         }
         else
         {
-            Destroy(gameObject);
+            ProjectileRelease();
         }
 
         transform.Translate(Vector3.forward * (speed * Time.fixedDeltaTime));
@@ -119,10 +122,9 @@ public class SkillProjectile : MonoBehaviour
     {
         if (null != hit)
         {
-            GameObject hitInstance = Instantiate(hit, transform.position, Quaternion.identity);
-
-            ParticleSystem hitParticle = hitInstance.GetComponent<ParticleSystem>();
-            Destroy(hitInstance, hitParticle.main.duration);
+            GameObject hitInstance = PoolManager.Instance.GetPool(hit.name, hit).Get();
+            hitInstance.transform.position = transform.position;
+            Invoke("HitRelease", 3f);
         }
     }
 
@@ -130,11 +132,34 @@ public class SkillProjectile : MonoBehaviour
     {
         if (null != flash)
         {
-            GameObject flashInstance = Instantiate(flash, transform.position, Quaternion.identity);
+            GameObject flashInstance = PoolManager.Instance.GetPool(flash.name, flash).Get();
+            flashInstance.transform.position = transform.position;
             flashInstance.transform.forward = gameObject.transform.forward;
-
-            ParticleSystem flashParticle = flashInstance.GetComponent<ParticleSystem>();
-            Destroy(flashInstance, flashParticle.main.duration);
+            Invoke("FlashRelease", 3f);
         }
+    }
+
+    private void HitRelease()
+    {
+        if (hit.activeInHierarchy)
+        {
+            PoolManager.Instance.GetPool(hit.name, hit).Release(hit);
+        }    
+    }
+
+    private void FlashRelease()
+    {
+        if (flash.activeInHierarchy)
+        {
+            PoolManager.Instance.GetPool(flash.name, flash).Release(flash);
+        }  
+    }
+
+    private void ProjectileRelease()
+    {
+        if (gameObject.activeInHierarchy)
+        {
+            PoolManager.Instance.GetPool(gameObject.name, gameObject).Release(gameObject);
+        }  
     }
 }

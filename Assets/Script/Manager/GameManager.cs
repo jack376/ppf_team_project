@@ -49,7 +49,6 @@ public class GameManager : MonoBehaviour
         UIManager.Instance.SetActiveGameoverUI(true);
 
         AutoSaveData();
-        SceneManager.sceneLoaded -= OnSceneLoaded;
     }
 
     public void GameRestart()

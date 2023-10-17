@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Pool;
 
 public class SkillBehavior : MonoBehaviour
 {
@@ -8,7 +9,7 @@ public class SkillBehavior : MonoBehaviour
     public GameObject projectile;
     public GameObject hit;
     public GameObject flash;
-    internal GameObject[] Detached;
+    public GameObject[] Detached;
 
     public LayerMask targetLayer;
     public LayerMask groundLayer;
@@ -74,7 +75,7 @@ public class SkillBehavior : MonoBehaviour
 
     public void CreateProjectile()
     {
-        GameObject skill = Instantiate(projectile, GameManager.weapon.transform.position, targetQuaternion);
+        GameObject skill = PoolManager.Instance.GetPool(projectile.name, projectile).Get();
         SkillProjectile skillProjectile = skill.GetComponent<SkillProjectile>();
 
         skillProjectile.targetTransform = targetTransform;

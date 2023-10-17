@@ -16,7 +16,7 @@ public class PlayerWeapon : MonoBehaviour
         Invoke("LearnBaseAttack", 3f);
     }
 
-    IEnumerator UseSkillCoroutine(int id) // 나중에 최적화, 오브젝트풀링 적용 
+    IEnumerator UseSkillCoroutine(int id)
     {
         GameObject skillPrefab = SkillManager.Instance.GetSkillPrefab(id);
         SkillBehavior skillBehavior = skillPrefab.GetComponent<SkillBehavior>();
@@ -30,7 +30,8 @@ public class PlayerWeapon : MonoBehaviour
         {
             yield return new WaitForSeconds(skillBehavior.skillData.cooldown);
             {
-                Instantiate(skillPrefab, GameManager.weapon.transform.position, Quaternion.identity);
+                GameObject useSkill = PoolManager.Instance.GetPool(skillPrefab.name, skillPrefab).Get();
+                useSkill.transform.position = GameManager.weapon.transform.position;
             }
         }
     }

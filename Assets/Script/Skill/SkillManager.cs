@@ -2,6 +2,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
 using System.Text;
+using UnityEngine.Pool;
+using Unity.Burst.CompilerServices;
 
 public class SkillManager : MonoBehaviour
 {
@@ -66,6 +68,11 @@ public class SkillManager : MonoBehaviour
         SkillBehavior skillBehavior = skillPrefab.GetComponent<SkillBehavior>();
 
         return skillBehavior.skillData;
+    }
+
+    public Dictionary<int, GameObject> GetAllSkillDictionary()
+    {
+        return skillDictionary;
     }
 
     void LoadSkillDataFromCSV(string filePath)
