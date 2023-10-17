@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2511224213912508106}
   - component: {fileID: 971571529977394928}
   - component: {fileID: 4742760389753020036}
-  - component: {fileID: -6569160953441173988}
+  - component: {fileID: 5474923320224543419}
   m_Layer: 11
   m_Name: TestItem
   m_TagString: Untagged
@@ -30,7 +30,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 12, y: 15.717, z: -53.09}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
@@ -104,9 +104,9 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 5, y: 5, z: 5}
+  m_Size: {x: 2.5, y: 2.5, z: 2.5}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &-6569160953441173988
+--- !u!114 &5474923320224543419
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -118,26 +118,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3681b81fcc28fd6488d1d133dab009aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  equipmentData:
-    ID: 100004
-    Name: Bow
+  itemData:
+    ID: 0
+    Character: 0
+    Name: 
     Rank: 0
-    Character: 1
-    BasicAttack: 116
-    BasicHP: 0
-    BasicDefence: 0
-    EditionalAttack: 0
-    EditionalMaxHP: 0
-    EditionalAttackSpeed: 0
-    EditionalSpeed: 0
-    EditionalDefence: 0
-    Enchant: 3
-    EnchantAble: 1
-    EnchantProbability: 0.85
-    EnchantResult: 100005
-    GoldNeeded: 1331
-    ComposeAble: 0
-    ComposeProbabilty: 0
-    ComposeResult: 0
-    SellPrice: 200
-    Icon: Icon_Battle
+    Attack: 0
+    HP: 0
+    Defense: 0
+    AttackSpeed: 0
+    ShotTypeValue: 0
+    MoveSpeed: 0
+    Drop: 0
+    Icon: 

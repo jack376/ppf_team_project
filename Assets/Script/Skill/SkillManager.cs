@@ -7,7 +7,7 @@ using Unity.Burst.CompilerServices;
 
 public class SkillManager : MonoBehaviour
 {
-    public static SkillManager Instance;
+    public static SkillManager Instance { get; private set; }
     public List<GameObject> allSkillPrefabs = new List<GameObject>();
     public Dictionary<int, GameObject> skillDictionary = new Dictionary<int, GameObject>();
 

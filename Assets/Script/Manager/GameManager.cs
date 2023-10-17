@@ -59,6 +59,6 @@ public class GameManager : MonoBehaviour
 
     public void AutoSaveData()
     {
-        InventoryManager.Instance.SaveInventoryDataToCSV("Assets/Resources/InventorySaveData.csv");
+        InventoryManager.Instance.SaveInventoryCSV("Assets/Resources/InventorySaveData.csv");
     }
 }

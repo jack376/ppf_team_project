@@ -19,24 +19,34 @@ public class LobbyUI : MonoBehaviour
     {
         InventoryManager.Instance.OnItemAdd += AddItemIcon;
 
-        List<EquipmentData> currentInventory = InventoryManager.Instance.inventory;
+        List<ItemData> currentInventory = InventoryManager.Instance.inventory;
         for (int i = 0; i < MaxSlot; i++)
         {
             GameObject slot = null;
             if (i < currentInventory.Count && currentInventory[i] != null)
             {
-                Sprite icon = Resources.Load<Sprite>(currentInventory[i].Icon);
+                Sprite icon = Resources.Load<Sprite>("Icons/Items/" + currentInventory[i].Icon);
                 slot = Instantiate(normalIconPrefab, inventoryContent);
 
-                GameObject iconImageGO = new GameObject("IconImage");
-                iconImageGO.transform.SetParent(slot.transform, false);
+                GameObject iconImageGo = new GameObject("IconImage");
+                iconImageGo.transform.SetParent(slot.transform, false);
 
-                Image image = iconImageGO.AddComponent<Image>();
+                Image image = iconImageGo.AddComponent<Image>();
                 image.sprite = icon;
 
                 RectTransform rect = image.GetComponent<RectTransform>();
                 rect.sizeDelta = new Vector2(iconImageSize, iconImageSize);
                 rect.anchoredPosition = Vector2.zero;
+
+                Button itemButton = slot.GetComponent<Button>();
+                if (itemButton == null)
+                {
+                    itemButton = slot.AddComponent<Button>();
+                }
+
+                ButtonHandler buttonHandler = slot.AddComponent<ButtonHandler>();
+                buttonHandler.button = itemButton;
+                buttonHandler.SetItemData(currentInventory[i]);
 
                 nextEmptySlot++;
             }
@@ -54,7 +64,7 @@ public class LobbyUI : MonoBehaviour
         InventoryManager.Instance.OnItemAdd -= AddItemIcon;
     }
 
-    private void AddItemIcon(EquipmentData itemData)
+    private void AddItemIcon(ItemData itemData)
     {
         if (nextEmptySlot < itemSlots.Count)
         {

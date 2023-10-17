@@ -1,11 +1,13 @@
-using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class PopupManager : MonoBehaviour
 {
     public static PopupManager Instance;
+    public GameObject popupPrefab;
 
-    public GameObject itemPopupPrefab;
+    private Image iconImage;
     private GameObject currentPopup;
 
     void Awake()
@@ -20,26 +22,50 @@ public class PopupManager : MonoBehaviour
         }
     }
 
-    public void ShowItemPopup(EquipmentData itemData)
+    public void ShowItemPopup(ItemData itemData)
     {
         if (currentPopup != null)
         {
             Destroy(currentPopup);
         }
 
-        currentPopup = Instantiate(itemPopupPrefab, transform);
+        currentPopup = Instantiate(popupPrefab, transform);
 
-        currentPopup.GetComponentInChildren<TextMeshProUGUI>().text = itemData.Name;
-        currentPopup.GetComponentInChildren<TextMeshProUGUI>().text = itemData.Icon;
-        currentPopup.GetComponentInChildren<TextMeshProUGUI>().text = itemData.Rank.ToString();
-        currentPopup.GetComponentInChildren<TextMeshProUGUI>().text = itemData.Enchant.ToString();
+        TextMeshProUGUI[] texts = currentPopup.GetComponentsInChildren<TextMeshProUGUI>();
+        foreach (var text in texts)
+        {
+            switch (text.gameObject.name)
+            {
+                case "NameText": text.text = $"{itemData.Name}"; break;
+                case "RankText": text.text = $"{itemData.Rank}"; break;
+                case "AttackText": text.text = $"{itemData.Attack}"; break;
+                case "HPText": text.text = $"{itemData.HP}"; break;
+                case "DefenseText": text.text = $"{itemData.Defense}"; break;
+                case "AttackSpeedText": text.text = $"{itemData.AttackSpeed}"; break;
+                case "ShotTypeValueText": text.text = $"{itemData.ShotTypeValue}"; break;
+                case "MoveSpeedText": text.text = $"{itemData.MoveSpeed}"; break;
+                case "DropText": text.text = $"{itemData.Drop}"; break;
+            }
+        }
 
-        currentPopup.GetComponentInChildren<TextMeshProUGUI>().text = itemData.BasicAttack.ToString();
-        currentPopup.GetComponentInChildren<TextMeshProUGUI>().text = itemData.BasicHP.ToString();
-        currentPopup.GetComponentInChildren<TextMeshProUGUI>().text = itemData.BasicDefence.ToString();
+        Image[] images = currentPopup.GetComponentsInChildren<Image>(true);
+        foreach (Image image in images)
+        {
+            if (image.CompareTag("Icon"))
+            {
+                iconImage = image;
+                break;
+            }
+        }
 
-        currentPopup.GetComponentInChildren<TextMeshProUGUI>().text = itemData.GoldNeeded.ToString();
-        currentPopup.GetComponentInChildren<TextMeshProUGUI>().text = itemData.SellPrice.ToString();
+        if (iconImage != null)
+        {
+            Sprite newSprite = Resources.Load<Sprite>("Icons/Items/" + itemData.Icon);
+            if (newSprite != null)
+            {
+                iconImage.sprite = newSprite;
+            }
+        }
 
         currentPopup.SetActive(true);
     }

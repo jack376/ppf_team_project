@@ -4,7 +4,7 @@ using UnityEngine.Pool;
 
 public class PoolManager : MonoBehaviour
 {
-    public static PoolManager Instance;
+    public static PoolManager Instance { get; private set; }
     public Dictionary<string, ObjectPool<GameObject>> pools;
     public GameObject poolObjectParent;
 

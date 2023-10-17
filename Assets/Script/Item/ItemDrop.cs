@@ -1,12 +1,12 @@
 using UnityEngine;
 
-public class EquipmentDrop : MonoBehaviour
+public class ItemDrop : MonoBehaviour
 {
-    public EquipmentData equipmentData;
+    public ItemData itemData;
 
     public void Use(GameObject target)
     {
-        InventoryManager.Instance.AddItem(equipmentData);
+        InventoryManager.Instance.AddItem(itemData);
     }
 
     private void OnTriggerEnter(Collider other)

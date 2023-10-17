@@ -7,10 +7,11 @@ using UnityEngine;
 public class InventoryManager : MonoBehaviour
 {
     public static InventoryManager Instance { get; private set; }
+    public event Action<ItemData> OnItemAdd;
+    public List<ItemData> inventory = new List<ItemData>();
 
-    public List<EquipmentData> inventory = new List<EquipmentData>();
-
-    public event Action<EquipmentData> OnItemAdd;
+    public Transform buttonParent;
+    public GameObject buttonPrefab;
 
     private void Awake()
     {
@@ -27,21 +28,21 @@ public class InventoryManager : MonoBehaviour
 
     void Start()
     {
-        LoadInventoryDataFromCSV("Assets/Resources/InventorySaveData.csv");
+        LoadInventoryCSV("Assets/Resources/InventorySaveData.csv");
     }
 
-    public void AddItem(EquipmentData equipmentData)
+    public void AddItem(ItemData itemData)
     {
-        inventory.Add(equipmentData);
-        OnItemAdd?.Invoke(equipmentData);
+        inventory.Add(itemData);
+        OnItemAdd?.Invoke(itemData);
     }
 
-    public void RemoveItem(EquipmentData equipmentData)
+    public void RemoveItem(ItemData itemData)
     {
-        inventory.Remove(equipmentData);
+        inventory.Remove(itemData);
     }
 
-    public void LoadInventoryDataFromCSV(string filePath)
+    public void LoadInventoryCSV(string filePath)
     {
         StreamReader streamReader = new StreamReader(filePath, Encoding.Default);
 
@@ -58,77 +59,52 @@ public class InventoryManager : MonoBehaviour
 
             string[] rowData = line.Split(',');
 
-            EquipmentData newData = new EquipmentData();
+            ItemData newData = new ItemData();
 
-            newData.ID                   = int.Parse(rowData[0]);
-            newData.Name                 = rowData[1];
-            newData.Character            = int.Parse(rowData[2]);
-            newData.Rank                 = int.Parse(rowData[3]);
-
-            newData.BasicAttack          = int.Parse(rowData[4]);
-            newData.BasicDefence         = int.Parse(rowData[5]);
-            newData.BasicHP              = int.Parse(rowData[6]);
-
-            newData.EditionalAttack      = float.Parse(rowData[7]);
-            newData.EditionalMaxHP       = float.Parse(rowData[8]);
-            newData.EditionalAttackSpeed = float.Parse(rowData[9]);
-            newData.EditionalSpeed       = float.Parse(rowData[10]);
-            newData.EditionalDefence     = float.Parse(rowData[11]);
-
-            newData.EnchantAble          = int.Parse(rowData[12]);
-            newData.Enchant              = int.Parse(rowData[13]);
-            newData.GoldNeeded           = int.Parse(rowData[14]);
-            newData.EnchantProbability   = float.Parse(rowData[15]);
-            newData.EnchantResult        = int.Parse(rowData[16]);
-
-            newData.ComposeAble          = int.Parse(rowData[17]);
-            newData.ComposeProbabilty    = int.Parse(rowData[18]);
-            newData.ComposeResult        = int.Parse(rowData[19]);
-
-            newData.SellPrice            = int.Parse(rowData[20]);
-            newData.Icon                 = rowData[21];
+            newData.ID            = int.Parse(rowData[0]);
+            newData.Character     = int.Parse(rowData[1]);
+            newData.Name          = rowData[2];
+            newData.Rank          = (ItemRank)int.Parse(rowData[3]);
+            newData.Attack        = float.Parse(rowData[4]);
+            newData.HP            = float.Parse(rowData[5]);
+            newData.Defense       = float.Parse(rowData[6]);
+            newData.AttackSpeed   = float.Parse(rowData[7]);
+            newData.ShotTypeValue = float.Parse(rowData[8]);
+            newData.MoveSpeed     = float.Parse(rowData[9]);
+            newData.Drop          = float.Parse(rowData[10]);
+            newData.Icon          = rowData[11];
 
             inventory.Add(newData);
         }
-        Debug.Log("Load");
+        Debug.Log("Inventory Load");
         streamReader.Close();
     }
 
-    public void SaveInventoryDataToCSV(string filePath)
+    public void SaveInventoryCSV(string filePath)
     {
         StringBuilder stringBuilder = new StringBuilder();
 
-        stringBuilder.AppendLine("ID,Name,Character,Rank,BasicAttack,BasicDefence,BasicHP,EditionalAttack,EditionalMaxHP,EditionalAttackSpeed,EditionalSpeed,EditionalDefence,EnchantAble,Enchant,GoldNeeded,EnchantProbability,EnchantResult,ComposeAble,ComposeProbabilty,ComposeResult,SellPrice");
+        stringBuilder.AppendLine("ID,Character,Name,Rank,Attack,HP,Defense,AttackSpeed,ShotTypeValue,MoveSpeed,Drop,Icon");
 
-        foreach (var item in inventory)
+        foreach (ItemData item in inventory)
         {
             stringBuilder.AppendLine
             (
                 $"{item.ID}," +
-                $"{item.Name}," +
                 $"{item.Character}," +
+                $"{item.Name}," +
                 $"{item.Rank}," +
-                $"{item.BasicAttack}," +
-                $"{item.BasicDefence}," +
-                $"{item.BasicHP}," +
-                $"{item.EditionalAttack}," +
-                $"{item.EditionalMaxHP}," +
-                $"{item.EditionalAttackSpeed}," +
-                $"{item.EditionalSpeed}," +
-                $"{item.EditionalDefence}," +
-                $"{item.EnchantAble}," +
-                $"{item.Enchant}," +
-                $"{item.GoldNeeded}," +
-                $"{item.EnchantProbability}," +
-                $"{item.EnchantResult}," +
-                $"{item.ComposeAble}," +
-                $"{item.ComposeProbabilty}," +
-                $"{item.ComposeResult}," +
-                $"{item.SellPrice}," +
+                $"{item.Attack}," +
+                $"{item.HP}," +
+                $"{item.Defense}," +
+                $"{item.AttackSpeed}," +
+                $"{item.ShotTypeValue}," +
+                $"{item.MoveSpeed}," +
+                $"{item.Drop}," +
                 $"{item.Icon}"
             );
         }
-        Debug.Log("Save");
+        Debug.Log("Inventory Save");
         File.WriteAllText(filePath, stringBuilder.ToString());
     }
 }
