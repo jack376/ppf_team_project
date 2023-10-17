@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.Pool;
@@ -75,25 +76,29 @@ public class SkillBehavior : MonoBehaviour
 
     public void CreateProjectile()
     {
-        GameObject skill = PoolManager.Instance.GetPool(projectile.name, projectile).Get();
+        GameObject skill = PoolManager.Instance.GetPool(projectile.name).Get();
         SkillProjectile skillProjectile = skill.GetComponent<SkillProjectile>();
 
-        skillProjectile.targetTransform = targetTransform;
-        skillProjectile.type = skillData.skillType;
+        skillProjectile.projectileName  = projectile.name;
+        skillProjectile.hitName         = hit.name;
+        skillProjectile.flashName       = flash.name;
 
-        skillProjectile.hit = hit;
-        skillProjectile.flash = flash;
-        skillProjectile.Detached = Detached;
+        skillProjectile.targetTransform = targetTransform;
+        skillProjectile.type            = skillData.skillType;
+
+        skillProjectile.hit             = hit;
+        skillProjectile.flash           = flash;
+        skillProjectile.Detached        = Detached;
 
         skillProjectile.isPierceHitPlay = skillData.isPierceHitPlay;
 
-        skillProjectile.targetLayer = targetLayer;
-        skillProjectile.groundLayer = groundLayer;
+        skillProjectile.targetLayer     = targetLayer;
+        skillProjectile.groundLayer     = groundLayer;
 
-        skillProjectile.speed = skillData.speed;
-        skillProjectile.splash = skillData.splash;
-        skillProjectile.damage = skillData.damage;
-        skillProjectile.lifeTime = skillData.lifeTime;
+        skillProjectile.speed           = skillData.speed;
+        skillProjectile.splash          = skillData.splash;
+        skillProjectile.damage          = skillData.damage;
+        skillProjectile.lifeTime        = skillData.lifeTime;
     }
 
     private IEnumerator CreateProjectileBurst()

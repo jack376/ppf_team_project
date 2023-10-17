@@ -28,11 +28,9 @@ public class PlayerWeapon : MonoBehaviour
 
         while (true)
         {
+            GameObject useSkill = PoolManager.Instance.GetPool(skillPrefab.name).Get();
+            useSkill.transform.position = GameManager.weapon.transform.position;
             yield return new WaitForSeconds(skillBehavior.skillData.cooldown);
-            {
-                GameObject useSkill = PoolManager.Instance.GetPool(skillPrefab.name, skillPrefab).Get();
-                useSkill.transform.position = GameManager.weapon.transform.position;
-            }
         }
     }
 

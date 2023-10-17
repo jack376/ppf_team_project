@@ -5,8 +5,8 @@ using UnityEngine.Pool;
 public class PoolManager : MonoBehaviour
 {
     public static PoolManager Instance;
-    private Dictionary<string, ObjectPool<GameObject>> pools;
-    private GameObject poolObjectParent;
+    public Dictionary<string, ObjectPool<GameObject>> pools;
+    public GameObject poolObjectParent;
 
     private void Awake()
     {
@@ -22,27 +22,46 @@ public class PoolManager : MonoBehaviour
         }
     }
 
-    public ObjectPool<GameObject> GetPool(string id, GameObject prefab, int initialSize = 100)
+    private void Start()
+    {
+        foreach (GameObject skillPrefab in SkillManager.Instance.allSkillPrefabs)
+        {
+            SkillBehavior skillBehavior = skillPrefab.GetComponent<SkillBehavior>();
+
+            CreatePool(skillPrefab.name, skillPrefab);
+            CreatePool(skillBehavior.projectile.name, skillBehavior.projectile);
+            CreatePool(skillBehavior.hit.name, skillBehavior.hit);
+            CreatePool(skillBehavior.flash.name, skillBehavior.flash);
+        }
+    }
+
+    public ObjectPool<GameObject> GetPool(string id)
     {
         if (!pools.ContainsKey(id))
         {
-            var newPool = new ObjectPool<GameObject>
-            (
-                createFunc:      ()       => Instantiate(prefab, GameManager.weapon.transform.position, Quaternion.identity),
-                actionOnGet:     instance => instance.SetActive(true),
-                actionOnRelease: instance =>
-                {
-                    instance.SetActive(false);
-                    instance.transform.SetParent(poolObjectParent.transform, false);
-                },
-                actionOnDestroy: null,
-                collectionCheck: true,
-                defaultCapacity: initialSize,
-                maxSize:         initialSize
-            );
-
-            pools.Add(id, newPool);
+            Debug.Log(id + "키가 없어");
         }
         return pools[id];
+    }
+
+    public void CreatePool(string id, GameObject prefab, int initialSize = 50)
+    {
+        ObjectPool<GameObject> newPool = new ObjectPool<GameObject>
+        (
+            createFunc: () => Instantiate(prefab, GameManager.weapon.transform.position, Quaternion.identity),
+            actionOnGet: instance =>
+            {
+                instance.transform.position = GameManager.weapon.transform.position;
+                instance.SetActive(true);
+            },
+            actionOnRelease: instance =>
+            {
+                instance.SetActive(false);
+                instance.transform.SetParent(poolObjectParent.transform, false);
+                instance.transform.position = GameManager.weapon.transform.position;
+            },
+            defaultCapacity: initialSize
+        );
+        pools.Add(id, newPool);
     }
 }
