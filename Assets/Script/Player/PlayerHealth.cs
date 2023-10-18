@@ -10,12 +10,10 @@ public class PlayerHealth : LivingEntity
     private Renderer playerRenderer;
     private Animator playerAnimator;
 
-    // 피격 시 컬러 변경에 쓰일 필드
     private Color hitFlickerColor = Color.red;
     private int hitFlickerCount = 3;
     private float hitFlickerTime = 0.05f;
 
-    // Die가 여러번 호출되지 않도록
     private bool hasDied = false;
 
     private void Awake()
@@ -40,12 +38,13 @@ public class PlayerHealth : LivingEntity
         }
     }
 
-    // 오버라이드된 LivingEntity 부모 클래스의 OnEnable 호출
     protected override void OnEnable()
     {
         base.OnEnable();
 
         playerController.enabled = true;
+
+        health = PlayerStatManager.Instance.playerStat.maxHealth;
 
         healthSlider.gameObject.SetActive(true);
         healthSlider.minValue = 0f;
@@ -53,14 +52,12 @@ public class PlayerHealth : LivingEntity
         healthSlider.value = health;
     }
 
-    // 오버라이드된 LivingEntity 부모 클래스의 Healing 호출
     public override void Healing(float newHealth)
     {
         base.Healing(newHealth);
         healthSlider.value = health;
     }
 
-    // 오버라이드된 LivingEntity 부모 클래스의 TakeDamage 호출
     public override void TakeDamage(float damage)
     {
         base.TakeDamage(damage);
@@ -68,7 +65,6 @@ public class PlayerHealth : LivingEntity
         healthSlider.value = health;
     }
 
-    // 몬스터 피격 시 컬러 점멸 효과 및 피격 애니메이션 재생
     private IEnumerator DamagedHitColor()
     {
         if (GameManager.isGameover)
@@ -88,7 +84,6 @@ public class PlayerHealth : LivingEntity
         }
     }
 
-    // 죽었을 때 부모 클래스 Die 호출, 플레이어 컨트롤러 스크립트 비활성화
     public override void Die()
     {
         base.Die();
