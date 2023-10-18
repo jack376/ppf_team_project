@@ -1,0 +1,260 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1480240962427412395
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5898012270991567244}
+  - component: {fileID: 3981323751702276186}
+  - component: {fileID: 5467656202504510264}
+  - component: {fileID: 4916707348975825826}
+  - component: {fileID: 8502887050024551692}
+  - component: {fileID: 7155146212094752597}
+  - component: {fileID: 1288342229211594191}
+  m_Layer: 7
+  m_Name: Golem Earth
+  m_TagString: Enemy
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5898012270991567244
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1480240962427412395}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_ConstrainProportionsScale: 1
+  m_Children:
+  - {fileID: 1629842476597727696}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!54 &3981323751702276186
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1480240962427412395}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!136 &5467656202504510264
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1480240962427412395}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.4903984
+  m_Height: 2.1475215
+  m_Direction: 1
+  m_Center: {x: 0, y: 1.0737607, z: 0}
+--- !u!65 &4916707348975825826
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1480240962427412395}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.5, y: 0.6, z: 0.5}
+  m_Center: {x: 0, y: 0.75, z: 0.1}
+--- !u!195 &8502887050024551692
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1480240962427412395}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 2
+  m_Acceleration: 6
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 1
+  m_BaseOffset: 0
+  m_WalkableMask: 1
+  m_ObstacleAvoidanceType: 4
+--- !u!114 &7155146212094752597
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1480240962427412395}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7427d6b3d263e2498031dbd5379c18f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyData:
+    ID: 500000
+    type: 0
+    name: "\uBAAC\uC2A4\uD130 \uC774\uB984"
+    info: "\uBAAC\uC2A4\uD130 \uC815\uBCF4"
+    spawnCycleSecond: 0.5
+    maxHealth: 300
+    defense: 0
+    attackDamage: 5
+    attackSpeed: 0.5
+    moveSpeed: 2
+    attackDelay: 1
+    bodyScale: 1
+    maxHealthRatio: 1.02
+    moveSpeedRatio: 1.02
+    attackDamageRatio: 1.02
+    expPoint: 25
+    expRate: 1.02
+    itemDropRate: 1.05
+    currentLevel: 1
+    minLevel: 1
+    maxLevel: 99
+  whatIsTarget:
+    serializedVersion: 2
+    m_Bits: 64
+  increaseTime: 1
+--- !u!114 &1288342229211594191
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1480240962427412395}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a6b25514ec2cac4198bb4f09b11fc4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dropItems:
+  - {fileID: 6449782882855002263, guid: 84e3c9dee29bc104b9acf2da45a871d5, type: 3}
+  dropChanceRate: 1
+--- !u!1001 &769335926346722271
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 5898012270991567244}
+    m_Modifications:
+    - target: {fileID: 1691303173787263157, guid: 7716b4d4ebabb0744820e15ea6c9ed5f,
+        type: 3}
+      propertyPath: m_Name
+      value: Golem Earth
+      objectReference: {fileID: 0}
+    - target: {fileID: 2032082111789595151, guid: 7716b4d4ebabb0744820e15ea6c9ed5f,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2032082111789595151, guid: 7716b4d4ebabb0744820e15ea6c9ed5f,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2032082111789595151, guid: 7716b4d4ebabb0744820e15ea6c9ed5f,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2032082111789595151, guid: 7716b4d4ebabb0744820e15ea6c9ed5f,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2032082111789595151, guid: 7716b4d4ebabb0744820e15ea6c9ed5f,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2032082111789595151, guid: 7716b4d4ebabb0744820e15ea6c9ed5f,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2032082111789595151, guid: 7716b4d4ebabb0744820e15ea6c9ed5f,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2032082111789595151, guid: 7716b4d4ebabb0744820e15ea6c9ed5f,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2032082111789595151, guid: 7716b4d4ebabb0744820e15ea6c9ed5f,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2032082111789595151, guid: 7716b4d4ebabb0744820e15ea6c9ed5f,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 7716b4d4ebabb0744820e15ea6c9ed5f, type: 3}
+--- !u!4 &1629842476597727696 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2032082111789595151, guid: 7716b4d4ebabb0744820e15ea6c9ed5f,
+    type: 3}
+  m_PrefabInstance: {fileID: 769335926346722271}
+  m_PrefabAsset: {fileID: 0}

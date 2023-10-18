@@ -136,12 +136,16 @@ MonoBehaviour:
     maxHealthRatio: 1.02
     moveSpeedRatio: 1.02
     attackDamageRatio: 1.02
+    expPoint: 25
+    expRate: 1.02
+    itemDropRate: 1.05
     currentLevel: 1
     minLevel: 1
     maxLevel: 99
   whatIsTarget:
     serializedVersion: 2
     m_Bits: 64
+  increaseTime: 1
 --- !u!1001 &1161521361926508924
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -410,6 +414,16 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 2143963233185509706, guid: 646cf81af973f0647b302702d8983dd5,
+        type: 3}
+      propertyPath: m_Avatar
+      value: 
+      objectReference: {fileID: 9000000, guid: eecb4f4e0bf0aee45a92a52e9dec8aeb, type: 3}
+    - target: {fileID: 2143963233185509706, guid: 646cf81af973f0647b302702d8983dd5,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 242edde3011c7a346bc9651788b72c62, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

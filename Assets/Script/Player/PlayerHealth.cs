@@ -44,7 +44,7 @@ public class PlayerHealth : LivingEntity
 
         playerController.enabled = true;
 
-        health = PlayerStatManager.Instance.playerStat.maxHealth;
+        //health = PlayerStatManager.Instance.playerStat.maxHealth;
 
         healthSlider.gameObject.SetActive(true);
         healthSlider.minValue = 0f;
