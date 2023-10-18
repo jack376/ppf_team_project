@@ -139,6 +139,16 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: -5146193121827953671, guid: 7908f1a2bde075d478e43a6e8b8277be,
+        type: 3}
+      propertyPath: m_ProbeAnchor
+      value: 
+      objectReference: {fileID: 1560276273394526625}
+    - target: {fileID: -5146193121827953671, guid: 7908f1a2bde075d478e43a6e8b8277be,
+        type: 3}
+      propertyPath: m_LightProbeUsage
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: -4634681892573474364, guid: 7908f1a2bde075d478e43a6e8b8277be,
         type: 3}
       propertyPath: m_Layer
@@ -657,6 +667,12 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 6859770289734426535}
   m_SourcePrefab: {fileID: 100100000, guid: 7908f1a2bde075d478e43a6e8b8277be, type: 3}
+--- !u!4 &1560276273394526625 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3346200311583617947, guid: 7908f1a2bde075d478e43a6e8b8277be,
+    type: 3}
+  m_PrefabInstance: {fileID: 4311950856524700218}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &5257615441061724979 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -927199367670048503, guid: 7908f1a2bde075d478e43a6e8b8277be,
@@ -677,7 +693,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   joystick: {fileID: 0}
   moveSpeed: 12
-  rotateSpeed: 15
+  rotateSpeed: 25
 --- !u!114 &940199370598259012
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.16788375, g: 0.21073635, b: 0.28994125, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -97,9 +97,9 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 112000002, guid: faa4b86ef3c40464a90105bd7feb5ad9,
+  m_LightingDataAsset: {fileID: 112000000, guid: b2788e74b40baa140bf7ff1d01e4f427,
     type: 2}
-  m_LightingSettings: {fileID: 4890085278179872738, guid: ec6fa0b5bd7ddb448b254b282adfcd12,
+  m_LightingSettings: {fileID: 4890085278179872738, guid: f57df8d39a17f6f438ca8271fe79a1bb,
     type: 2}
 --- !u!196 &4
 NavMeshSettings:
@@ -187,7 +187,7 @@ Light:
     m_Type: 1
     m_Resolution: -1
     m_CustomResolution: -1
-    m_Strength: 0.431
+    m_Strength: 0.707
     m_Bias: 0.82
     m_NormalBias: 1.64
     m_NearPlane: 0.1
@@ -217,7 +217,7 @@ Light:
     serializedVersion: 2
     m_Bits: 3543
   m_RenderingLayerMask: 1
-  m_Lightmapping: 2
+  m_Lightmapping: 1
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -709,7 +709,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330585543}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.4068386, y: -0.000000015718031, z: 0.0000000070002213, w: 0.9135001}
+  m_LocalRotation: {x: 0.4068386, y: 0.000000015718028, z: -0.0000000070002195, w: 0.9135001}
   m_LocalPosition: {x: 15.22, y: 65.65, z: -95.009995}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -736,7 +736,7 @@ MonoBehaviour:
   m_RendererIndex: 0
   m_VolumeLayerMask:
     serializedVersion: 2
-    m_Bits: 1
+    m_Bits: 4294967295
   m_VolumeTrigger: {fileID: 0}
   m_VolumeFrameworkUpdateModeOption: 2
   m_RenderPostProcessing: 1
@@ -1357,11 +1357,6 @@ PrefabInstance:
       objectReference: {fileID: 1486787809}
     - target: {fileID: 3745767433576590716, guid: c2af3e4e5f0280c42a576e6584f64cea,
         type: 3}
-      propertyPath: expRatio
-      value: 1.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3745767433576590716, guid: c2af3e4e5f0280c42a576e6584f64cea,
-        type: 3}
       propertyPath: expSlider
       value: 
       objectReference: {fileID: 1486787807}
@@ -1370,21 +1365,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 6859770289734426535, guid: c2af3e4e5f0280c42a576e6584f64cea,
-        type: 3}
-      propertyPath: m_Constraints
-      value: 80
-      objectReference: {fileID: 0}
     - target: {fileID: 7757244242110365183, guid: c2af3e4e5f0280c42a576e6584f64cea,
         type: 3}
       propertyPath: joystick
       value: 
       objectReference: {fileID: 1486787808}
-    - target: {fileID: 7757244242110365183, guid: c2af3e4e5f0280c42a576e6584f64cea,
-        type: 3}
-      propertyPath: rotateSpeed
-      value: 25
-      objectReference: {fileID: 0}
     - target: {fileID: 9128115554211672352, guid: c2af3e4e5f0280c42a576e6584f64cea,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1567,7 +1552,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1620157485}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.4068386, y: -0.000000015718031, z: 0.0000000070002213, w: 0.9135001}
+  m_LocalRotation: {x: 0.4068386, y: 0.000000015718028, z: -0.0000000070002195, w: 0.9135001}
   m_LocalPosition: {x: 15.22, y: 65.65, z: -95.009995}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
