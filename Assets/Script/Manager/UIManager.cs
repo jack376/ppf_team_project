@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using TMPro;
 using System.Collections;
 using UnityEngine.UI;
@@ -14,8 +13,6 @@ public class UIManager : MonoBehaviour
     public TextMeshProUGUI currentLevelUI;
 
     public GameObject gameoverUI;
-    //public GameObject skillSelectWindowUI;
-
     public Button[] skillSelectButtons;
 
     private PlayerWeapon playerWeapon;
@@ -50,13 +47,11 @@ public class UIManager : MonoBehaviour
         }
     }
 
-    // 게임 오버 시 게임 오버 UI 활성화
     public void SetActiveGameoverUI(bool active)
     {
         gameoverUI.SetActive(active);
     }
 
-    // 카운트 다운 코루틴
     private IEnumerator StartCountdown()
     {
         countdownText.gameObject.SetActive(true);
@@ -76,7 +71,6 @@ public class UIManager : MonoBehaviour
         StartCoroutine(UpdateTimer());
     }
 
-    // 게임 시간 코루틴
     private IEnumerator UpdateTimer()
     {
         while (!GameManager.isGameover)
@@ -106,7 +100,7 @@ public class UIManager : MonoBehaviour
         Time.timeScale = 0;
 
         List<GameObject> allSkillPrefabs = SkillManager.Instance.allSkillPrefabs;
-        int skillFrontNumber = 1000300;
+        int skillFrontNumber = 10000000;
 
         HashSet<int> uniqueRandomIds = new HashSet<int>();
         for (int i = 0; i < 3; i++)

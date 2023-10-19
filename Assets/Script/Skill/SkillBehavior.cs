@@ -1,7 +1,5 @@
-using System;
 using System.Collections;
 using UnityEngine;
-using UnityEngine.Pool;
 
 public class SkillBehavior : MonoBehaviour
 {
@@ -54,7 +52,7 @@ public class SkillBehavior : MonoBehaviour
         }
     }
 
-    private void FindNearTarget() // 리스트 내에서 가장 가까운 타겟 검사
+    private void FindNearTarget()
     {
         float nearDistance = searchRadius;
 

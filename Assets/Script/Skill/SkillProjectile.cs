@@ -140,7 +140,7 @@ public class SkillProjectile : MonoBehaviour
         if (hit != null)
         {
             GameObject hitInstance = PoolManager.Instance.GetPool(hitName).Get();
-            hitInstance.transform.position = GameManager.weapon.transform.position;
+            hitInstance.transform.position = transform.position;
 
             Invoke("ReleaseHitParticle", 1f);
         }

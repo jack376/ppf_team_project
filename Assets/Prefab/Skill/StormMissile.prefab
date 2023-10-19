@@ -45,26 +45,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skillData:
-    ID: 1000305
+    ID: 10000005
     skillType: 0
     name: "\uD3ED\uD48D \uBBF8\uC0AC\uC77C"
     info: "\uC804\uC790 \uD50C\uB77C\uC988\uB9C8 \uBBF8\uC0AC\uC77C\uC744 \uBC1C\uC0AC\uD55C\uB2E4."
     shotType: 2
-    shotTypeValue: 140
-    count: 7
+    shotTypeValue: 60
+    count: 3
     cooldown: 3
     speed: 35
     splash: 1
     damage: 45
     lifeTime: 7
     isPierceHitPlay: 0
-    currentLevel: 3
+    currentLevel: 0
     minLevel: 0
     maxLevel: 5
-  projectile: {fileID: 2434221572446746926, guid: 57a8f117caaf65840b1820ed0f595302,
-    type: 3}
-  hit: {fileID: 2695938950007877682, guid: 0f442a8c740bb814d8f47a7cebdd6aad, type: 3}
-  flash: {fileID: 205910734199310658, guid: 95ed363142af426448deada74c52db4c, type: 3}
+  projectile: {fileID: 1018882707796302, guid: f013a7465c9b4274bbd66d2ff9761187, type: 3}
+  hit: {fileID: 1486957119801806, guid: cab6c62da7f9f2840be63f9dd3c34637, type: 3}
+  flash: {fileID: 1177731487666324, guid: b60b851266323fb4b9becb9f63f748c9, type: 3}
   Detached: []
   targetLayer:
     serializedVersion: 2

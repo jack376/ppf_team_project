@@ -9,7 +9,7 @@ public class EnemySpawner : MonoBehaviour
     
     public Transform[] spawnPoints;
 
-    public Enemy bossPrefab;
+    public List<Enemy> bossPrefabs = new List<Enemy>();
     public List<Enemy> enemyPrefabs = new List<Enemy>();
 
     public float spawnRadius = 4f;
@@ -25,17 +25,27 @@ public class EnemySpawner : MonoBehaviour
     public float bossSpawnCooldown = 300f;
     public float lastBossSpawnTime = 0f;
 
+    public float intervalDecreaseTime = 60f;  // spawnInterval이 감소하는 빈도 (예: 매 60초마다)
+    public float cooldownDecreaseTime = 120f; // spawnCooldown이 감소하는 빈도 (예: 매 120초마다)
+
+    public float intervalDecreaseAmount = 0.01f; // spawnInterval이 감소하는 양 (예: 0.01초)
+    public float cooldownDecreaseAmount = 0.1f;  // spawnCooldown이 감소하는 양 (예: 0.1초)
+
+    private float lastIntervalDecreaseTime = 0f; // 마지막으로 spawnInterval이 감소한 시간
+    private float lastCooldownDecreaseTime = 0f; // 마지막으로 spawnCooldown이 감소한 시간
+
     private float nextBigWaveTime = 0f;
     private bool isBigWave = false;
     private float corpseDestroyTime = 1f;
     private float lastPowerUpTime;
 
-    private void Awake()
+    private void OnEnable()
     {
         SceneManager.sceneLoaded += OnSceneLoaded;
     }
-    private void OnDestroy()
+    private void OnDisable()
     {
+        StopAllCoroutines();
         SceneManager.sceneLoaded -= OnSceneLoaded;
     }
 
@@ -52,12 +62,26 @@ public class EnemySpawner : MonoBehaviour
             CreateBoss();
             lastBossSpawnTime = Time.time;
         }
+
+        if (Time.time - lastIntervalDecreaseTime > intervalDecreaseTime)
+        {
+            spawnInterval = Mathf.Max(spawnInterval - intervalDecreaseAmount, 0);
+            lastIntervalDecreaseTime = Time.time;
+        }
+
+        if (Time.time - lastCooldownDecreaseTime > cooldownDecreaseTime)
+        {
+            spawnCooldown = Mathf.Max(spawnCooldown - cooldownDecreaseAmount, 0);
+            lastCooldownDecreaseTime = Time.time;
+        }
     }
+
 
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         if (scene.name == "InGameScene")
         {
+            lastBossSpawnTime = Time.time;
             StartCoroutine(SpawnWaveCoroutine());
         }
     }
@@ -118,10 +142,12 @@ public class EnemySpawner : MonoBehaviour
         }
     }
 
-    void CreateBoss()
+    private void CreateBoss()
     {
-        Transform randomSpawnPoint = spawnPoints[Random.Range(0, spawnPoints.Length)];
-        Enemy boss = Instantiate(bossPrefab, randomSpawnPoint.position, randomSpawnPoint.rotation);
+        Transform randomSpawnPoint   = spawnPoints[Random.Range(0, spawnPoints.Length)];
+        Enemy     selectedBossPrefab = bossPrefabs[Random.Range(0, bossPrefabs.Count)];
+
+        Enemy boss = Instantiate(selectedBossPrefab, randomSpawnPoint.position, Quaternion.identity);
         currentEnemies.Add(boss);
 
         boss.onDeath += () =>

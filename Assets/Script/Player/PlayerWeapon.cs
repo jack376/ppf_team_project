@@ -13,7 +13,7 @@ public class PlayerWeapon : MonoBehaviour
             StartCoroutine(UseSkillCoroutine(id));
         }
 
-        Invoke("LearnBaseAttack", 3f);
+        Invoke("LearnBaseAttack", 4f);
     }
 
     IEnumerator UseSkillCoroutine(int id)
@@ -36,14 +36,13 @@ public class PlayerWeapon : MonoBehaviour
 
     public void LearnSkill(int id)
     {
-        Debug.Log("Get Skill" + id);
         ids.Add(id);
         StartCoroutine(UseSkillCoroutine(id));
     }
 
     public void LearnBaseAttack()
     {
-        int id = 1000301; // 임시
+        int id = 10000001;
         ids.Add(id);
         StartCoroutine(UseSkillCoroutine(id));
     }

@@ -2,8 +2,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
 using System.Text;
-using UnityEngine.Pool;
-using Unity.Burst.CompilerServices;
 
 public class SkillManager : MonoBehaviour
 {
@@ -48,10 +46,6 @@ public class SkillManager : MonoBehaviour
                 {
                     skillBehavior.UpdateSkillData(skill);
                 }
-            }
-            else
-            {
-                Debug.LogWarning("해당 ID 프리펩 없어");
             }
         }
     }
@@ -119,37 +113,5 @@ public class SkillManager : MonoBehaviour
         }
 
         sr.Close();
-    }
-
-    void SaveSkillDataToCSV(string filePath)
-    {
-        StringBuilder sb = new StringBuilder();
-
-        sb.AppendLine("ID,skillType,name,info,shotType,shotTypeValue,count,cooldown,speed,splash,damage,lifeTime,isPierceHitPlay,currentLevel,minLevel,maxLevel");
-
-        foreach (var skill in skillList)
-        {
-            sb.AppendLine
-            (
-                $"{skill.ID}," +
-                $"{(int)skill.skillType}," +
-                $"{skill.name}," +
-                $"{skill.info}," +
-                $"{(int)skill.shotType}," +
-                $"{skill.shotTypeValue}," +
-                $"{skill.count}," +
-                $"{skill.cooldown}," +
-                $"{skill.speed}," +
-                $"{skill.splash}," +
-                $"{skill.damage}," +
-                $"{skill.lifeTime}," +
-                $"{skill.isPierceHitPlay}," +
-                $"{skill.currentLevel}," +
-                $"{skill.minLevel}," +
-                $"{skill.maxLevel}"
-            );
-        }
-
-        File.WriteAllText(filePath, sb.ToString());
     }
 }

@@ -45,9 +45,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   allSkillPrefabs:
-  - {fileID: 7900397933835047178, guid: bf446da7040943a42b192c322de81bdd, type: 3}
-  - {fileID: 7900397933835047178, guid: 1c62b393d8becd846a12ed9194465d44, type: 3}
-  - {fileID: 7900397933835047178, guid: 65b83f1f59270ed48b91e18c6a72b111, type: 3}
-  - {fileID: 7900397933835047178, guid: 4d4eced6a893c5341899a1b1caa5cc16, type: 3}
-  - {fileID: 7900397933835047178, guid: 8e399111ffa3ad641931897ca63b451b, type: 3}
+  - {fileID: 7900397933835047178, guid: 514661a7acc9dc949b9e733b8cbcc99d, type: 3}
+  - {fileID: 7900397933835047178, guid: 8b6cdaea696ba7d46aea04ef814c9916, type: 3}
+  - {fileID: 7900397933835047178, guid: 663b72f9b6ce4ab4aa438bb343722de3, type: 3}
+  - {fileID: 7900397933835047178, guid: d02d734ced919444faf1d9c5565b42ea, type: 3}
+  - {fileID: 7900397933835047178, guid: 8287da5bfa4cb4942b32306fc98fc23a, type: 3}
+  - {fileID: 7900397933835047178, guid: 1a4d7792dc7384f4d87276b6ab3052cf, type: 3}
   skillList: []
