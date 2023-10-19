@@ -51,20 +51,20 @@ MonoBehaviour:
     info: "\uC790\uC5F0\uC758 \uD798\uC73C\uB85C \uAC15\uD654\uD55C \uAC15\uB825\uD55C
       \uD0C4\uD658\uC744 \uBC1C\uC0AC\uD55C\uB2E4."
     shotType: 2
-    shotTypeValue: 100
-    count: 5
+    shotTypeValue: 50
+    count: 2
     cooldown: 4
     speed: 25
     splash: 2
     damage: 40
     lifeTime: 4
     isPierceHitPlay: 0
-    currentLevel: 3
+    currentLevel: 0
     minLevel: 0
     maxLevel: 5
-  projectile: {fileID: 1698648575761504, guid: cf263124cbe15f448b6a2ec0ef11bd54, type: 3}
-  hit: {fileID: 1012929371636226, guid: 7e59152fc3be99d4aa2760fb61212ce2, type: 3}
-  flash: {fileID: 1179295499806372, guid: a18abcc036ab57445b15bc526991da46, type: 3}
+  projectile: {fileID: 1980571578861810, guid: cb9749d31a33c734f94f33df4f9e0c43, type: 3}
+  hit: {fileID: 1159183624466508, guid: 7ca99df88fbdb8d4180250684a943ef5, type: 3}
+  flash: {fileID: 1418520085859340, guid: f68d36db88ab7d146b688c487aaace5c, type: 3}
   Detached: []
   targetLayer:
     serializedVersion: 2

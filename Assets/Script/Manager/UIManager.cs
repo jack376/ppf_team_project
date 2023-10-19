@@ -13,7 +13,7 @@ public class UIManager : MonoBehaviour
     public TextMeshProUGUI currentLevelUI;
 
     public GameObject gameoverUI;
-    public Button[] skillSelectButtons;
+    public Button[] skillSelectButtons = new Button[5];
 
     private PlayerWeapon playerWeapon;
     private int[] randomIds = new int[3];
@@ -93,14 +93,7 @@ public class UIManager : MonoBehaviour
 
     public void OpenSkillSelectWindow()
     {
-        foreach(Button button in skillSelectButtons)
-        {
-            button.gameObject.SetActive(true);
-        }
-        Time.timeScale = 0;
-
         List<GameObject> allSkillPrefabs = SkillManager.Instance.allSkillPrefabs;
-        int skillFrontNumber = 10000000;
 
         HashSet<int> uniqueRandomIds = new HashSet<int>();
         for (int i = 0; i < 3; i++)
@@ -112,21 +105,34 @@ public class UIManager : MonoBehaviour
             } while (uniqueRandomIds.Contains(randomCount));
 
             uniqueRandomIds.Add(randomCount);
-            randomIds[i] = randomCount + skillFrontNumber;
+            randomIds[i] = randomCount + 10000000;
+            Debug.Log(randomIds[i]);
+            Debug.Log(randomCount + 10000000);
+
+            switch (randomIds[i])
+            {
+                case 10000001: skillSelectButtons[0].gameObject.SetActive(true); break;
+                case 10000002: skillSelectButtons[1].gameObject.SetActive(true); break;
+                case 10000003: skillSelectButtons[2].gameObject.SetActive(true); break;
+                case 10000004: skillSelectButtons[3].gameObject.SetActive(true); break;
+                case 10000005: skillSelectButtons[4].gameObject.SetActive(true); break;
+            }
         }
+
+        Time.timeScale = 0;
     }
 
-    public void OnSkillButtonClicked(int buttonIndex)
+    public void OnSkillButtonClicked(int number)
     {
-        playerWeapon.LearnSkill(randomIds[buttonIndex]);
-
-        foreach (Button button in skillSelectButtons)
+        playerWeapon.LearnSkill(number);
+        foreach (var button in skillSelectButtons)
         {
             button.gameObject.SetActive(false);
         }
+
         Time.timeScale = 1;
 
-        Debug.Log("Button clicked: " + buttonIndex);
+        Debug.Log("Button clicked: " + number);
     }
 
     public void PausedButton()

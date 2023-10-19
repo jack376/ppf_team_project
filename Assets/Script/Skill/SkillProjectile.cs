@@ -24,36 +24,20 @@ public class SkillProjectile : MonoBehaviour
     internal string flashName;
 
     private float hoverHeight = 1f;
-    private float flowTime = 0f;
     private Vector3 direction = Vector3.forward;
 
     private void Start()
     {
+        Destroy(gameObject, lifeTime);
+
         if (type == SkillType.Nova)
         {
             lifeTime = 0f;
-        }
-
-        direction = Vector3.forward;
-    }
-
-    private void Update()
-    {
-        flowTime += Time.deltaTime;
-        if (flowTime >= lifeTime)
-        {
-            PlayHitParticle();
-            ReleaseProjectile();
         }
     }
 
     private void FixedUpdate()
     {
-        if (targetTransform != null)
-        {
-            direction = (targetTransform.position - transform.position).normalized;
-        }
-
         ProjectileMovement();
         ProjectileHover();
     }
@@ -65,51 +49,27 @@ public class SkillProjectile : MonoBehaviour
             return;
         }
 
-        if (isPierceHitPlay == 1)
-        {
-            PlayFlashParticle();
-        }
-
         Collider[] hitColliders = Physics.OverlapSphere(transform.position, splash, targetLayer);
         MultiTarget(hitColliders);
 
         if (type != SkillType.Pierce)
         {
-            PlayHitParticle();
-            ReleaseProjectile();
+            Destroy(gameObject);
         }
-    }
-
-    private void OnEnable()
-    {
-        flowTime = 0.01f;
-        if (flash != null)
+        else
         {
             PlayFlashParticle();
         }
     }
 
-    private void OnDisable()
+    private void OnDestroy()
     {
-        if (type != SkillType.Nova)
-        {
-            PlayHitParticle();
-        }
+        PlayHitParticle();
     }
 
     public void ProjectileMovement()
     {
-        if (targetTransform != null)
-        {
-            transform.LookAt(targetTransform.position);
-        }
-        else
-        {
-            PlayHitParticle();
-            ReleaseProjectile();
-        }
-
-        transform.Translate(Vector3.forward * (speed * Time.fixedDeltaTime));
+        transform.Translate(direction * speed * Time.fixedDeltaTime);
     }
 
     public void ProjectileHover()
@@ -139,10 +99,10 @@ public class SkillProjectile : MonoBehaviour
     {
         if (hit != null)
         {
-            GameObject hitInstance = PoolManager.Instance.GetPool(hitName).Get();
+            GameObject hitInstance = Instantiate(hit, transform.position, Quaternion.identity);
             hitInstance.transform.position = transform.position;
 
-            Invoke("ReleaseHitParticle", 1f);
+            Destroy(hitInstance, hitInstance.GetComponent<ParticleSystem>().main.duration);
         }
     }
 
@@ -150,29 +110,11 @@ public class SkillProjectile : MonoBehaviour
     {
         if (flash != null)
         {
-            GameObject flashInstance = PoolManager.Instance.GetPool(flashName).Get();
+            GameObject flashInstance = Instantiate(flash, transform.position, Quaternion.identity);
             flashInstance.transform.position = transform.position;
             flashInstance.transform.forward = gameObject.transform.forward;
 
-            Invoke("ReleaseFlashParticle", 1f);
-        }
-    }
-
-    private void ReleaseHitParticle()
-    {
-        PoolManager.Instance.GetPool(hitName).Release(PoolManager.Instance.GetPool(hitName).Get());
-    }
-
-    private void ReleaseFlashParticle()
-    {
-        PoolManager.Instance.GetPool(flashName).Release(PoolManager.Instance.GetPool(flashName).Get());
-    }
-
-    private void ReleaseProjectile()
-    {
-        if (gameObject.activeInHierarchy)
-        {
-            PoolManager.Instance.GetPool(projectileName).Release(gameObject);
+            Destroy(flashInstance, flashInstance.GetComponent<ParticleSystem>().main.duration);
         }
     }
 }

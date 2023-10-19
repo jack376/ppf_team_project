@@ -74,7 +74,8 @@ public class SkillBehavior : MonoBehaviour
 
     public void CreateProjectile()
     {
-        GameObject skill = PoolManager.Instance.GetPool(projectile.name).Get();
+        //GameObject skill = PoolManager.Instance.GetPool(projectile.name).Get();
+        GameObject skill = Instantiate(projectile, GameManager.weapon.transform.position, targetQuaternion);
         SkillProjectile skillProjectile = skill.GetComponent<SkillProjectile>();
 
         skillProjectile.projectileName  = projectile.name;
