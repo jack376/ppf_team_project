@@ -4,7 +4,7 @@ public class ItemData
     public int ID = 91000000;
     public int Character = 0;
     public string Name = "ShortAmountOfTime";
-    public ItemRank Rank = 0;
+    public string Rank = "Normal";
     public float Attack = 10f;
     public float HP = 100f;
     public float Defense = 1f;
@@ -15,12 +15,4 @@ public class ItemData
     public string Icon = "Icon_Stopwatch";
     public bool IsEquipped = false;
     public int Type = 0;
-}
-
-public enum ItemRank
-{
-    None   = 0,
-    Normal = 1,
-    Rare   = 2,
-    Unique = 3,
 }

@@ -28,7 +28,7 @@ public class SkillProjectile : MonoBehaviour
     private Vector3 direction = Vector3.forward;
 
     private void Start()
-    { 
+    {
         if (type == SkillType.Nova)
         {
             lifeTime = 0f;
@@ -82,7 +82,7 @@ public class SkillProjectile : MonoBehaviour
 
     private void OnEnable()
     {
-        flowTime = 0f;
+        flowTime = 0.01f;
         if (flash != null)
         {
             PlayFlashParticle();
@@ -91,7 +91,10 @@ public class SkillProjectile : MonoBehaviour
 
     private void OnDisable()
     {
-        //PlayHitParticle();
+        if (type != SkillType.Nova)
+        {
+            PlayHitParticle();
+        }
     }
 
     public void ProjectileMovement()
@@ -137,9 +140,9 @@ public class SkillProjectile : MonoBehaviour
         if (hit != null)
         {
             GameObject hitInstance = PoolManager.Instance.GetPool(hitName).Get();
-            hitInstance.transform.position = transform.position;
+            hitInstance.transform.position = GameManager.weapon.transform.position;
 
-            Invoke("ReleaseHitParticle", hitInstance.GetComponent<ParticleSystem>().main.duration);
+            Invoke("ReleaseHitParticle", 1f);
         }
     }
 
@@ -151,7 +154,7 @@ public class SkillProjectile : MonoBehaviour
             flashInstance.transform.position = transform.position;
             flashInstance.transform.forward = gameObject.transform.forward;
 
-            Invoke("ReleaseFlashParticle", flashInstance.GetComponent<ParticleSystem>().main.duration);
+            Invoke("ReleaseFlashParticle", 1f);
         }
     }
 

@@ -82,7 +82,7 @@ public class InventoryManager : MonoBehaviour
             newData.ID            = int.Parse(rowData[0]);
             newData.Character     = int.Parse(rowData[1]);
             newData.Name          = rowData[2];
-            newData.Rank          = (ItemRank)int.Parse(rowData[3]);
+            newData.Rank          = rowData[3];
             newData.Attack        = float.Parse(rowData[4]);
             newData.HP            = float.Parse(rowData[5]);
             newData.Defense       = float.Parse(rowData[6]);
@@ -122,7 +122,7 @@ public class InventoryManager : MonoBehaviour
             newData.ID            = int.Parse(rowData[0]);
             newData.Character     = int.Parse(rowData[1]);
             newData.Name          = rowData[2];
-            newData.Rank          = (ItemRank)int.Parse(rowData[3]);
+            newData.Rank          = rowData[3];
             newData.Attack        = float.Parse(rowData[4]);
             newData.HP            = float.Parse(rowData[5]);
             newData.Defense       = float.Parse(rowData[6]);

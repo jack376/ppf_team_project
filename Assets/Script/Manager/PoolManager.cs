@@ -57,8 +57,8 @@ public class PoolManager : MonoBehaviour
             actionOnRelease: instance =>
             {
                 instance.SetActive(false);
-                instance.transform.SetParent(poolObjectParent.transform, false);
                 instance.transform.position = GameManager.weapon.transform.position;
+                instance.transform.SetParent(poolObjectParent.transform, false);
             },
             defaultCapacity: initialSize
         );

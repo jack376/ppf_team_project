@@ -1,2 +1,2 @@
 ID,Character,Name,Rank,Attack,HP,Defense,AttackSpeed,ShotTypeValue,MoveSpeed,Drop,Icon,IsEquipped,Type
-91000001,0,활,1,1.2,1,1,0.9,1,1.2,1,Icon_Booster,true,1
+91000001,0,활,Normal,1.2,1,1,0.9,1,1.2,1,Icon_Booster,true,1
