@@ -151,9 +151,9 @@ MonoBehaviour:
     spawnCycleSecond: 0.5
     maxHealth: 100
     defense: 0
-    attackDamage: 5
+    attackDamage: 25
     attackSpeed: 0.5
-    moveSpeed: 2
+    moveSpeed: 3
     attackDelay: 1
     bodyScale: 1
     maxHealthRatio: 1.02
@@ -164,7 +164,7 @@ MonoBehaviour:
     itemDropRate: 1.05
     currentLevel: 1
     minLevel: 1
-    maxLevel: 99
+    maxLevel: 30
   whatIsTarget:
     serializedVersion: 2
     m_Bits: 64

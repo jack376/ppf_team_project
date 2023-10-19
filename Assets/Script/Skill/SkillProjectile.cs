@@ -29,11 +29,6 @@ public class SkillProjectile : MonoBehaviour
     private void Start()
     {
         Destroy(gameObject, lifeTime);
-
-        if (type == SkillType.Nova)
-        {
-            lifeTime = 0f;
-        }
     }
 
     private void FixedUpdate()
@@ -69,7 +64,7 @@ public class SkillProjectile : MonoBehaviour
 
     public void ProjectileMovement()
     {
-        transform.Translate(direction * speed * Time.fixedDeltaTime);
+        transform.Translate(Vector3.forward * (speed * Time.deltaTime));
     }
 
     public void ProjectileHover()

@@ -149,22 +149,22 @@ MonoBehaviour:
     name: "\uBAAC\uC2A4\uD130 \uC774\uB984"
     info: "\uBAAC\uC2A4\uD130 \uC815\uBCF4"
     spawnCycleSecond: 0.5
-    maxHealth: 300
+    maxHealth: 5000
     defense: 0
-    attackDamage: 5
+    attackDamage: 30
     attackSpeed: 0.5
-    moveSpeed: 2
+    moveSpeed: 4
     attackDelay: 1
     bodyScale: 1
     maxHealthRatio: 1.02
     moveSpeedRatio: 1.02
     attackDamageRatio: 1.02
-    expPoint: 25
+    expPoint: 250
     expRate: 1.02
     itemDropRate: 1.05
     currentLevel: 1
     minLevel: 1
-    maxLevel: 99
+    maxLevel: 30
   whatIsTarget:
     serializedVersion: 2
     m_Bits: 64
