@@ -6,10 +6,10 @@ using System.Text;
 public class SkillManager : MonoBehaviour
 {
     public static SkillManager Instance { get; private set; }
+    public List<SkillData> skillList = new List<SkillData>();
+
     public List<GameObject> allSkillPrefabs = new List<GameObject>();
     public Dictionary<int, GameObject> skillDictionary = new Dictionary<int, GameObject>();
-
-    public List<SkillData> skillList = new List<SkillData>();
 
     private void Awake()
     {
