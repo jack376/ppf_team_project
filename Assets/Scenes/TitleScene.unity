@@ -206,6 +206,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3284630025830469129, guid: 2e29505cf7156c54da51d7f0d7722daf,
         type: 3}
+      propertyPath: projectilePrefab
+      value: 
+      objectReference: {fileID: 4345141496655011515, guid: ee5af750c5489214e9cfe772eb4f8687,
+        type: 3}
+    - target: {fileID: 3284630025830469129, guid: 2e29505cf7156c54da51d7f0d7722daf,
+        type: 3}
       propertyPath: allSkillPrefabs.Array.size
       value: 5
       objectReference: {fileID: 0}

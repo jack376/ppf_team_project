@@ -6,7 +6,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
     public static bool isGameover { get; private set; } = true;
-    public static GameObject weapon;
+    public static GameObject player;
 
     public float timeLimit = 90f;
     public static float gameTimeLimit = 90f;
@@ -29,7 +29,7 @@ public class GameManager : MonoBehaviour
     {
         if (scene.name == "InGameScene")
         {
-            weapon = GameObject.FindWithTag("Weapon");
+            player = GameObject.FindWithTag("Player");
 
             gameTimeLimit = timeLimit;
             FindObjectOfType<PlayerHealth>().onDeath += EndGame;

@@ -15,7 +15,7 @@ public class UIManager : MonoBehaviour
     public GameObject gameoverUI;
     public Button[] skillSelectButtons = new Button[5];
 
-    private PlayerWeapon playerWeapon;
+    private PlayerSkill playerSkill;
     private int[] randomIds = new int[3];
     private bool paused = false;
 
@@ -33,8 +33,7 @@ public class UIManager : MonoBehaviour
 
     private void Start()
     {
-        playerWeapon = FindObjectOfType<PlayerWeapon>();
-
+        playerSkill = FindObjectOfType<PlayerSkill>();
 
         StartCoroutine(StartCountdown());
     }
@@ -124,7 +123,7 @@ public class UIManager : MonoBehaviour
 
     public void OnSkillButtonClicked(int number)
     {
-        playerWeapon.LearnSkill(number);
+        playerSkill.LearnSkill(number);
         foreach (var button in skillSelectButtons)
         {
             button.gameObject.SetActive(false);

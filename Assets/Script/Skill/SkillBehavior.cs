@@ -1,141 +1,47 @@
-using System.Collections;
 using UnityEngine;
 
 public class SkillBehavior : MonoBehaviour
 {
+    public ISkill skillInterface;
     public SkillData skillData;
-
-    public GameObject projectile;
-    public GameObject hit;
-    public GameObject flash;
-    public GameObject[] Detached;
 
     public LayerMask targetLayer;
     public LayerMask groundLayer;
 
     private float searchRadius = 1500f;
+    private Collider[] overlapResults = new Collider[250];
+
     private Transform targetTransform;
     private Quaternion targetQuaternion;
 
     private void Start()
-    {
-        SetTarget();
-
-        if (skillData.skillType == SkillType.Nova)
-        {
-            CreateProjectile();
-            NovaTarget();
-            return;
-        }
-
-        switch (skillData.shotType)
-        {
-            case ShotType.Burst:
-                StartCoroutine(CreateProjectileBurst());
-                break;
-            case ShotType.Multi:
-                CreateProjectileMulti();
-                break;
-            default:
-                CreateProjectile();
-                break;
-        }
-    }
-
-    private void SetTarget()
     {
         FindNearTarget();
 
         if (targetTransform != null)
         {
             targetQuaternion = Quaternion.LookRotation(targetTransform.position - transform.position);
+
+            skillInterface = SkillFactory.GetSkillType(skillData.skillType);
+            if (skillInterface != null)
+            {
+                skillInterface.Execute(skillData, targetLayer, targetQuaternion);
+            }
         }
     }
 
     private void FindNearTarget()
     {
-        float nearDistance = searchRadius;
+        int numColliders = Physics.OverlapSphereNonAlloc(transform.position, searchRadius, overlapResults, targetLayer);
+        float minDistance = float.MaxValue;
 
-        foreach (Enemy enemy in EnemySpawner.currentEnemies)
+        for (int i = 0; i < numColliders; i++)
         {
-            if (enemy == null)
+            float distance = (overlapResults[i].transform.position - transform.position).sqrMagnitude;
+            if (distance < minDistance)
             {
-                continue;
-            }
-
-            float distanceToTarget = (enemy.transform.position - transform.position).sqrMagnitude;
-            if (distanceToTarget < nearDistance)
-            {
-                nearDistance = distanceToTarget;
-                targetTransform = enemy.transform;
-            }
-        }
-    }
-
-    public void CreateProjectile()
-    {
-        //GameObject skill = PoolManager.Instance.GetPool(projectile.name).Get();
-        GameObject skill = Instantiate(projectile, GameManager.weapon.transform.position, targetQuaternion);
-        SkillProjectile skillProjectile = skill.GetComponent<SkillProjectile>();
-
-        skillProjectile.projectileName  = projectile.name;
-        skillProjectile.hitName         = hit.name;
-        skillProjectile.flashName       = flash.name;
-
-        skillProjectile.targetTransform = targetTransform;
-        skillProjectile.type            = skillData.skillType;
-
-        skillProjectile.hit             = hit;
-        skillProjectile.flash           = flash;
-        skillProjectile.Detached        = Detached;
-
-        skillProjectile.isPierceHitPlay = skillData.isPierceHitPlay;
-
-        skillProjectile.targetLayer     = targetLayer;
-        skillProjectile.groundLayer     = groundLayer;
-
-        skillProjectile.speed           = skillData.speed;
-        skillProjectile.splash          = skillData.splash;
-        skillProjectile.damage          = skillData.damage;
-        skillProjectile.lifeTime        = skillData.lifeTime;
-    }
-
-    private IEnumerator CreateProjectileBurst()
-    {
-        float burstInterval = skillData.shotTypeValue * 0.1f;
-        for (int i = 0; i < skillData.count; i++)
-        {
-            CreateProjectile();
-            yield return new WaitForSeconds(burstInterval);
-        }
-    }
-
-    private void CreateProjectileMulti()
-    {
-        Quaternion originalRotation = targetQuaternion;
-
-        float totalAngle = skillData.shotTypeValue;
-        float deltaAngle = totalAngle / (skillData.count - 1);
-        float startAngle = -totalAngle / 2;
-
-        for (int i = 0; i < skillData.count; i++)
-        {
-            float currentAngle = startAngle + (deltaAngle * i);
-            targetQuaternion = originalRotation * Quaternion.Euler(0f, currentAngle, 0f);
-            CreateProjectile();
-        }
-        targetQuaternion = originalRotation;
-    }
-
-    public void NovaTarget()
-    {
-        Collider[] hitColliders = Physics.OverlapSphere(GameManager.weapon.transform.position, skillData.splash, targetLayer);
-        foreach (Collider collision in hitColliders)
-        {
-            IDamageable target = collision.gameObject.GetComponent<IDamageable>();
-            if (target != null)
-            {
-                target.TakeDamage(skillData.damage);
+                targetTransform = overlapResults[i].transform;
+                minDistance = distance;
             }
         }
     }

@@ -6,7 +6,12 @@ public class PlayerSkill : MonoBehaviour
 {
     private Dictionary<int, Coroutine> skillCoroutines = new Dictionary<int, Coroutine>();
 
-    private void LearnSkill(int id)
+    private void Start() // 테스트용
+    {
+        LearnSkill(10000001);
+    }
+
+    public void LearnSkill(int id)
     {
         if (skillCoroutines.ContainsKey(id))
         {
@@ -43,16 +48,10 @@ public class PlayerSkill : MonoBehaviour
 
         while (true)
         {
-            GameObject useSkill = PoolManager.Instance.GetPool(skillPrefab.name).Get();
-            useSkill.transform.position = GameManager.weapon.transform.position;
+            GameObject useSkill = PoolManager.Instance.GetPool(skillPrefab).Get();
+            useSkill.transform.position = GameManager.player.transform.position;
 
             yield return new WaitForSeconds(skillBehavior.skillData.cooldown);
         }
-    }
-
-    public void LearnBaseAttack() // 테스트용
-    {
-        int id = 10000001;
-        LearnSkill(id);
     }
 }
