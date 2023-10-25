@@ -6,11 +6,12 @@ using UnityEngine;
 public class SkillManager : MonoBehaviour
 {
     public static SkillManager Instance { get; private set; }
+
     public List<SkillData> skillList = new List<SkillData>();
 
     public GameObject projectilePrefab;
     public List<GameObject> allSkillPrefabs = new List<GameObject>();
-    public Dictionary<int, GameObject> skillDictionary = new Dictionary<int, GameObject>();
+    public Dictionary<int, GameObject> skillDic = new Dictionary<int, GameObject>();
 
     private void Awake()
     {
@@ -27,32 +28,33 @@ public class SkillManager : MonoBehaviour
         //LoadSkillDataFromCSV("Assets/Resources/SkillSaveData.csv");
 
         LinkedSkillPrefab();
-
         UpdateSkillDataInPrefab();
     }
 
     private void LinkedSkillPrefab()
     {
-        foreach (GameObject skillPrefab in allSkillPrefabs)
+        foreach (var skillPrefab in allSkillPrefabs)
         {
-            SkillBehavior skillBehavior = skillPrefab.GetComponent<SkillBehavior>();
-            if (skillBehavior != null)
+            var sb = skillPrefab.GetComponent<SkillBehavior>();
+            if (sb != null)
             {
-                skillDictionary[skillBehavior.skillData.ID] = skillPrefab;
+                skillDic[sb.skillData.ID] = skillPrefab;
+                Debug.Log("LinkedSkillPrefab" + sb.skillData.ID);
             }
         }
     }
 
     private void UpdateSkillDataInPrefab()
     {
-        foreach (SkillData skill in skillList)
+        foreach (var skill in skillList)
         {
-            if (skillDictionary.TryGetValue(skill.ID, out GameObject skillPrefab))
+            if (skillDic.TryGetValue(skill.ID, out var skillPrefab))
             {
-                SkillBehavior skillBehavior = skillPrefab.GetComponent<SkillBehavior>();
-                if (skillBehavior != null)
+                var sb = skillPrefab.GetComponent<SkillBehavior>();
+                if (sb != null)
                 {
-                    skillBehavior.UpdateSkillData(skill);
+                    sb.UpdateSkillData(skill);
+                    Debug.Log("UpdateSkillDataInPrefab" + skill.ID);
                 }
             }
         }
@@ -60,65 +62,55 @@ public class SkillManager : MonoBehaviour
 
     public GameObject GetSkillPrefab(int id)
     {
-        skillDictionary.TryGetValue(id, out GameObject skillPrefab);
-        Debug.Log(id);
+        skillDic.TryGetValue(id, out var skillPrefab);
         return skillPrefab;
     }
 
     public SkillData GetSkillData(int id)
     {
-        skillDictionary.TryGetValue(id, out GameObject skillPrefab);
-        SkillBehavior skillBehavior = skillPrefab.GetComponent<SkillBehavior>();
-
-        return skillBehavior.skillData;
+        skillDic.TryGetValue(id, out var skillPrefab);
+        return skillPrefab.GetComponent<SkillBehavior>().skillData;
     }
 
-    /*
     public void LoadSkillDataFromCSV(string filePath)
     {
-        StreamReader sr = new StreamReader(filePath, Encoding.Default);
+        var sr = new StreamReader(filePath, Encoding.Default);
+        var isFirstRow = true;
 
-        bool isFirstRow = true;
         while (!sr.EndOfStream)
         {
-            string line = sr.ReadLine();
-
+            var line = sr.ReadLine();
             if (isFirstRow)
             {
                 isFirstRow = false;
                 continue;
             }
 
-            string[] rowData = line.Split(',');
+            var rowData = line.Split(',');
+            var newData = new SkillData();
 
-            SkillData newData = new SkillData();
-
-            newData.ID = int.Parse(rowData[0]);
-            newData.skillType = (SkillType)int.Parse(rowData[1]);
+            newData.ID   = int.Parse(rowData[0]);
+            newData.type = (SkillType)int.Parse(rowData[1]);
             newData.name = rowData[2];
             newData.info = rowData[3];
 
-            newData.shotType = (ShotType)int.Parse(rowData[4]);
-            newData.shotTypeValue = float.Parse(rowData[5]);
+            newData.bulletCount  = int.Parse(rowData[4]);
+            newData.pierceCount  = int.Parse(rowData[5]);
 
-            newData.bulletCount = int.Parse(rowData[6]);
-            newData.cooldown = float.Parse(rowData[7]);
-            newData.speed = float.Parse(rowData[8]);
-            newData.splash = float.Parse(rowData[9]);
-            newData.damage = float.Parse(rowData[10]);
-            newData.lifeTime = float.Parse(rowData[11]);
+            newData.cooldown     = float.Parse(rowData[6]);
+            newData.speed        = float.Parse(rowData[7]);
+            newData.splash       = float.Parse(rowData[8]);
+            newData.damage       = float.Parse(rowData[9]);
+            newData.lifeTime     = float.Parse(rowData[10]);
 
-            newData.isPierceHitPlay = int.Parse(rowData[12]);
-
-            newData.currentLevel = int.Parse(rowData[13]);
-            newData.minLevel = int.Parse(rowData[14]);
-            newData.maxLevel = int.Parse(rowData[15]);
+            newData.currentLevel = int.Parse(rowData[11]);
+            newData.minLevel     = int.Parse(rowData[12]);
+            newData.maxLevel     = int.Parse(rowData[13]);
 
             skillList.Add(newData);
         }
 
         sr.Close();
     }
-    */
 }
 

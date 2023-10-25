@@ -6,7 +6,6 @@ public class PoolManager : MonoBehaviour
 {
     public static PoolManager Instance { get; private set; }
     public Dictionary<GameObject, ObjectPool<GameObject>> pools;
-
     private GameObject poolObjectParent;
 
     private void Awake()
@@ -23,12 +22,12 @@ public class PoolManager : MonoBehaviour
         }
     }
 
-    private void Start()
+    public void Start()
     {
-        GameObject projectilePrefab = SkillManager.Instance.projectilePrefab;
-        List<GameObject> skillPrefabs = SkillManager.Instance.allSkillPrefabs;
+        var projectilePrefab = SkillManager.Instance.projectilePrefab;
+        var allSkillPrefabs  = SkillManager.Instance.allSkillPrefabs;
 
-        foreach (GameObject skillPrefab in skillPrefabs)
+        foreach (var skillPrefab in allSkillPrefabs)
         {
             CreatePool(skillPrefab, skillPrefab);
         }
@@ -41,6 +40,7 @@ public class PoolManager : MonoBehaviour
         if (!pools.ContainsKey(key))
         {
             Debug.LogWarning(key.name + "키에 맞는 프리팹이 없어");
+            return null;
         }
         return pools[key];
     }
@@ -57,22 +57,21 @@ public class PoolManager : MonoBehaviour
         }
     }
 
-    public void CreatePool(GameObject key, GameObject prefab, int initialSize = 256)
+    public void CreatePool(GameObject key, GameObject prefab, int initialSize = 5)
     {
-        Vector3 playerPosition = GameManager.player.transform.position;
-
-        ObjectPool<GameObject> newPool = new ObjectPool<GameObject>
+        var playerPos = GameManager.player.transform.position;
+        var newPool = new ObjectPool<GameObject>
         (
-            createFunc: () => Instantiate(prefab, playerPosition, Quaternion.identity),
+            createFunc: () => Instantiate(prefab, playerPos, Quaternion.identity),
             actionOnGet: instance =>
             {
-                instance.transform.position = playerPosition;
+                instance.transform.position = playerPos;
                 instance.SetActive(true);
             },
             actionOnRelease: instance =>
             {
                 instance.SetActive(false);
-                instance.transform.position = playerPosition;
+                instance.transform.position = playerPos;
                 instance.transform.SetParent(poolObjectParent.transform, false);
             },
             defaultCapacity: initialSize

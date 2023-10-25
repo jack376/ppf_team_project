@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class SkillBehavior : MonoBehaviour
 {
-    public ISkill skillInterface;
+    public ISkill skill;
     public SkillData skillData;
 
     public LayerMask targetLayer;
@@ -14,30 +14,31 @@ public class SkillBehavior : MonoBehaviour
     private Transform targetTransform;
     private Quaternion targetQuaternion;
 
-    private void Start()
+    public void Activate()
     {
-        FindNearTarget();
+        var playerPosition = GameManager.player.transform.position;
+        FindNearTarget(playerPosition);
 
         if (targetTransform != null)
         {
-            targetQuaternion = Quaternion.LookRotation(targetTransform.position - transform.position);
+            targetQuaternion = Quaternion.LookRotation(targetTransform.position - playerPosition);
 
-            skillInterface = SkillFactory.GetSkillType(skillData.skillType);
-            if (skillInterface != null)
+            skill = SkillFactory.GetSkillType(skillData.type);
+            if (skill != null)
             {
-                skillInterface.Execute(skillData, targetLayer, targetQuaternion);
+                skill.Execute(skillData, targetLayer, targetQuaternion);
             }
         }
     }
 
-    private void FindNearTarget()
+    private void FindNearTarget(Vector3 position)
     {
-        int numColliders = Physics.OverlapSphereNonAlloc(transform.position, searchRadius, overlapResults, targetLayer);
-        float minDistance = float.MaxValue;
+        var numColliders = Physics.OverlapSphereNonAlloc(position, searchRadius, overlapResults, targetLayer);
+        var minDistance = float.MaxValue;
 
         for (int i = 0; i < numColliders; i++)
         {
-            float distance = (overlapResults[i].transform.position - transform.position).sqrMagnitude;
+            var distance = (overlapResults[i].transform.position - position).sqrMagnitude;
             if (distance < minDistance)
             {
                 targetTransform = overlapResults[i].transform;

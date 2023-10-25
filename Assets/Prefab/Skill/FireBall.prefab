@@ -46,7 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   skillData:
     ID: 10000001
-    skillType: 0
+    type: 0
     name: "\uC2A4\uD0AC \uC774\uB984"
     info: "\uC2A4\uD0AC \uC815\uBCF4"
     bulletCount: 1
@@ -54,7 +54,7 @@ MonoBehaviour:
     cooldown: 1
     speed: 15
     splash: 3
-    damage: 20
+    damage: 100
     lifeTime: 0.5
     currentLevel: 0
     minLevel: 0

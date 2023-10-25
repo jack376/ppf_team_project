@@ -4,8 +4,10 @@ public class SkillFactory
     {
         switch (type)
         {
-            case SkillType.None  : return new TypeNone();
-            default: return new TypeNone();
+            case SkillType.None : 
+                return new TypeNone();
+            default: 
+                return new TypeNone();
         }
     }
 }

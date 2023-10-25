@@ -5,7 +5,7 @@ public class SkillData
 {
     [Header("스킬 ID, 스킬 타입")]
     public int ID = 10000001;
-    public SkillType skillType = 0;
+    public SkillType type = 0;
 
     [Header("스킬 이름, 스킬 상세 정보")]
     public string name = "스킬 이름"; 

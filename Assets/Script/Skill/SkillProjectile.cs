@@ -1,9 +1,9 @@
-using System.Collections;
 using UnityEngine;
-using UnityEngine.Pool;
 
 public class SkillProjectile : MonoBehaviour
 {
+    internal GameObject originalPrefab;
+
     internal LayerMask targetLayer;
     internal int pierceCount = 1;
 
@@ -12,14 +12,22 @@ public class SkillProjectile : MonoBehaviour
     internal float damage   = 100f;
     internal float lifeTime = 1f;
 
-    private void Start()
+    private float flowTime = 0f;
+
+    private void OnEnable()
     {
-        //Destroy(gameObject, lifeTime);
-        StartCoroutine(Release());
+        flowTime = 0f;
     }
 
-    private void FixedUpdate()
+    private void Update()
     {
+        flowTime += Time.deltaTime;
+        if(flowTime >= lifeTime)
+        {
+            PoolManager.Instance.GetPool(originalPrefab).Release(gameObject);
+            return;
+        }
+
         transform.position += transform.forward * (speed * Time.deltaTime);
     }
 
@@ -33,25 +41,18 @@ public class SkillProjectile : MonoBehaviour
         pierceCount--;
         if (pierceCount <= 0)
         {
-            //Destroy(gameObject);
-            PoolManager.Instance.GetPool(gameObject).Release(gameObject);
+            PoolManager.Instance.GetPool(originalPrefab).Release(gameObject);
             return;
         }
-
+        
         var hitColliders = Physics.OverlapSphere(transform.position, splash, targetLayer);
         foreach (Collider hitCollider in hitColliders)
         {
-            IDamageable target = hitCollider.gameObject.GetComponent<IDamageable>();
+            var target = hitCollider.gameObject.GetComponent<IDamageable>();
             if (target != null)
             {
                 target.TakeDamage(damage);
             }
         }
-    }
-
-    private IEnumerator Release()
-    {
-        yield return new WaitForSeconds(lifeTime);
-        PoolManager.Instance.GetPool(gameObject).Release(gameObject);
     }
 }
