@@ -9,8 +9,8 @@ public class EnemySpawner : MonoBehaviour
     
     public Transform[] spawnPoints;
 
-    public List<Enemy> bossPrefabs = new List<Enemy>();
-    public List<Enemy> enemyPrefabs = new List<Enemy>();
+    public List<GameObject> bossPrefabs = new List<GameObject>();
+    public List<GameObject> enemyPrefabs = new List<GameObject>();
 
     public float spawnRadius = 4f;
     public float spawnInterval = 0.1f;
@@ -36,7 +36,7 @@ public class EnemySpawner : MonoBehaviour
 
     private float nextBigWaveTime = 0f;
     private bool isBigWave = false;
-    private float corpseDestroyTime = 1f;
+    //private float corpseDestroyTime = 1f;
     private float lastPowerUpTime;
 
     private void OnEnable()
@@ -59,7 +59,7 @@ public class EnemySpawner : MonoBehaviour
 
         if (Time.time - lastBossSpawnTime > bossSpawnCooldown)
         {
-            CreateBoss();
+            //CreateBoss();
             lastBossSpawnTime = Time.time;
         }
 
@@ -126,28 +126,39 @@ public class EnemySpawner : MonoBehaviour
 
         for (int i = 0; i < enemiesToSpawn; i++)
         {
-            Vector3 randomPosition = spawnPoint.position + Random.insideUnitSphere * spawnRadius;
-            Enemy enemy = Instantiate(enemyPrefabs[Random.Range(0, enemyPrefabs.Count)], randomPosition, Quaternion.identity);
+            var randomPosition = spawnPoint.position + Random.insideUnitSphere * spawnRadius;
+            
+            var enemyGo = PoolManager.Instance.GetPool(enemyPrefabs[0]).Get();
+            enemyGo.gameObject.transform.position = randomPosition;
 
-            enemy.enemyData.maxHealth    *= 1 + powerUpScaleFactor;
-            enemy.enemyData.attackDamage *= 1 + powerUpScaleFactor;
-            enemy.enemyData.attackSpeed  *= 1 + powerUpScaleFactor;
+            var enemy = enemyGo.GetComponent<Enemy>();
 
-            currentEnemies.Add(enemy);
-            enemy.onDeath += () =>
+            if (enemy != null)
             {
-                currentEnemies.Remove(enemy);
-                Destroy(enemy.gameObject, corpseDestroyTime);
-            };
+                enemy.enemyData.maxHealth    *= 1 + powerUpScaleFactor;
+                enemy.enemyData.attackDamage *= 1 + powerUpScaleFactor;
+                enemy.enemyData.attackSpeed  *= 1 + powerUpScaleFactor;
+
+                currentEnemies.Add(enemy);
+                enemy.onDeath += ReleaseEnemy;
+
+                void ReleaseEnemy()
+                {
+                    enemy.onDeath -= ReleaseEnemy;
+                    currentEnemies.Remove(enemy);
+                    PoolManager.Instance.GetPool(enemyPrefabs[0]).Release(enemyGo);
+                }
+            }
         }
     }
 
+    /*
     private void CreateBoss()
     {
-        Transform randomSpawnPoint   = spawnPoints[Random.Range(0, spawnPoints.Length)];
-        Enemy     selectedBossPrefab = bossPrefabs[Random.Range(0, bossPrefabs.Count)];
+        var randomSpawnPoint   = spawnPoints[Random.Range(0, spawnPoints.Length)];
+        var selectedBossPrefab = bossPrefabs[Random.Range(0, bossPrefabs.Count)];
 
-        Enemy boss = Instantiate(selectedBossPrefab, randomSpawnPoint.position, Quaternion.identity);
+        var boss = Instantiate(selectedBossPrefab, randomSpawnPoint.position, Quaternion.identity);
         currentEnemies.Add(boss);
 
         boss.onDeath += () =>
@@ -156,4 +167,5 @@ public class EnemySpawner : MonoBehaviour
             Destroy(boss.gameObject, corpseDestroyTime);
         };
     }
+    */
 }

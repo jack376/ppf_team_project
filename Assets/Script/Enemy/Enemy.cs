@@ -14,34 +14,59 @@ public class Enemy : LivingEntity
     [Header("처치 시 시간 증가"), Space(5f)]
     public float increaseTime = 1.0f;
 
-    // 아이템 스포너
     private ItemSpawner itemSpawner;
 
-    // EnemyData에서 넘겨받을 필드
     private float attackDelay;
     private float attackSpeed;
     private float searchRadius = 250f;
 
-    // 피격 시 컬러 변경에 쓰일 필드
     private Color hitFlickerColor = Color.red;
     private int hitFlickerCount = 3;
     private float hitFlickerTime = 0.05f;
 
-    // 애니메이션, 렌더러 컴포넌트 필드
     private Animator enemyAnimator;
     private Renderer enemyRenderer;
 
-    // Nav AI 라이브러리용 필드
     private LivingEntity targetEntity;
     private NavMeshAgent pathFinder;
 
-    // Nav AI에 사용되는 프로퍼티
-    private bool hasTarget
+    private bool hasTarget { get { return targetEntity != null && !targetEntity.dead; } }
+
+    protected override void OnEnable()
     {
-        get { return targetEntity != null && !targetEntity.dead; }
+        base.OnEnable();
+
+        if (pathFinder != null)
+        {
+            pathFinder.enabled = true;
+            pathFinder.ResetPath();
+        }
+
+        var colliders = GetComponents<Collider>();
+        foreach (var collider in colliders)
+        {
+            collider.enabled = true;
+        }
+
+        StartCoroutine(UpdatePath());
+
+        itemSpawner = GetComponent<ItemSpawner>();
+        if (itemSpawner != null)
+        {
+            onDeath += itemSpawner.DropItem;
+        }
     }
 
-    // 컴포넌트 할당 및 필드 초기화
+    private void OnDisable()
+    {
+        if (pathFinder != null)
+        {
+            pathFinder.enabled = false;
+        }
+
+        onDeath -= itemSpawner.DropItem;
+    }
+
     private void Awake()
     {
         pathFinder = GetComponent<NavMeshAgent>();
@@ -55,19 +80,24 @@ public class Enemy : LivingEntity
         attackSpeed = enemyData.attackSpeed;
     }
 
-    // 플레이어 탐색 코루틴 시작
-    private void Start()
+    private void OnTriggerStay(Collider other)
     {
-        StartCoroutine(UpdatePath());
-
-        itemSpawner = GetComponent<ItemSpawner>();
-        if (itemSpawner != null)
+        if (!dead && Time.time >= attackDelay + attackSpeed)
         {
-            onDeath += itemSpawner.DropItem;
+            if (other.tag != "Player")
+            {
+                return;
+            }
+
+            var attackTarget = other.GetComponent<LivingEntity>();
+            if (attackTarget != null)
+            {
+                attackTarget.TakeDamage(enemyData.attackDamage);
+            }
+            attackDelay = Time.time;
         }
     }
 
-    // 0.25초마다 searchRadius 범위에 죽지 않은 플레이어가 존재하는지 탐색
     private IEnumerator UpdatePath()
     {
         while (!dead)
@@ -80,11 +110,11 @@ public class Enemy : LivingEntity
             else
             {
                 pathFinder.isStopped = true;
-                Collider[] colliders = Physics.OverlapSphere(transform.position, searchRadius, whatIsTarget);
+                var colliders = Physics.OverlapSphere(transform.position, searchRadius, whatIsTarget);
 
                 for (int i = 0; i < colliders.Length; i++)
                 {
-                    LivingEntity livingEntity = colliders[i].GetComponent<LivingEntity>();
+                    var livingEntity = colliders[i].GetComponent<LivingEntity>();
                     if (livingEntity != null && !livingEntity.dead)
                     {
                         targetEntity = livingEntity;
@@ -96,24 +126,25 @@ public class Enemy : LivingEntity
         }
     }
 
-    // 아직 미사용 중, 몬스터의 스탯을 변경할 때 사용되는 메서드
     public void Setup(float newHealth, float newDamage, float newSpeed, float newDefense, Color skinColor)
     {
-        enemyData.maxHealth = newHealth;
-        enemyData.attackDamage = newDamage;
-        enemyData.defense = newDefense;
-        pathFinder.speed = newSpeed;
+        enemyData.maxHealth          = newHealth;
+        enemyData.attackDamage       = newDamage;
+        enemyData.defense            = newDefense;
+        pathFinder.speed             = newSpeed;
         enemyRenderer.material.color = skinColor;
     }
 
-    // 오버라이드된 LivingEntity 부모 클래스의 TakeDamage 호출
     public override void TakeDamage(float damage)
     {
         base.TakeDamage(damage);
+        if (dead)
+        {
+            return;
+        }
         StartCoroutine(DamagedHitColor());
     }
 
-    // 몬스터 피격 시 컬러 점멸 효과
     private IEnumerator DamagedHitColor()
     {
         for (int i = 0; i < hitFlickerCount; i++)
@@ -126,40 +157,31 @@ public class Enemy : LivingEntity
         }
     }
 
-    // 죽었을 경우 Nav AI 경로 탐색 중지 및 콜라이더 비활성
     public override void Die()
     {
-        base.Die();
+        //base.Die();
+        dead = true;
         GameManager.gameTimeLimit += increaseTime;
 
-        Collider[] colliders = GetComponents<Collider>();
-        foreach (Collider collider in colliders)
+        var colliders = GetComponents<Collider>();
+        foreach (var collider in colliders)
         {
             collider.enabled = false;
         }
 
-        pathFinder.isStopped = true;
-        pathFinder.enabled = false;
+        if (pathFinder.isActiveAndEnabled)
+        {
+            pathFinder.isStopped = true;
+            pathFinder.enabled = false;
+        }
 
         enemyAnimator.SetTrigger("Die");
+        StartCoroutine(DelayedRelease());
     }
 
-    // 몬스터 박스콜라이더와 교차할 시 매 프레임 마다 트리거 작동
-    private void OnTriggerStay(Collider other)
+    private IEnumerator DelayedRelease()
     {
-        if (!dead && Time.time >= attackDelay + attackSpeed)
-        {
-            if (other.tag != "Player")
-            {
-                return;
-            }
-
-            LivingEntity attackTarget = other.GetComponent<LivingEntity>();
-            if (attackTarget != null)
-            {
-                attackTarget.TakeDamage(enemyData.attackDamage);
-            }
-            attackDelay = Time.time;
-        }
+        yield return new WaitForSeconds(1f);
+        base.DeleyDie();
     }
 }

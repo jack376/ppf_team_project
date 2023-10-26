@@ -10,7 +10,6 @@ public class SkillManager : MonoBehaviour
     public List<SkillData> skillList = new List<SkillData>();
 
     public GameObject projectilePrefab;
-
     public List<GameObject> allSkillPrefabs = new List<GameObject>();
     public List<GameObject> allParticlePrefabs = new List<GameObject>();
 

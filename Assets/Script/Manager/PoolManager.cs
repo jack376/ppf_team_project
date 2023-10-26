@@ -13,7 +13,6 @@ public class PoolManager : MonoBehaviour
         {
             Instance = this;
             pools = new Dictionary<GameObject, ObjectPool<GameObject>>();
-            //poolObjectParent = new GameObject("PoolObjectGroup");
         }
         else
         {
@@ -23,21 +22,20 @@ public class PoolManager : MonoBehaviour
 
     public void Start()
     {
-        var projectilePrefab   = SkillManager.Instance.projectilePrefab;
-        var allSkillPrefabs    = SkillManager.Instance.allSkillPrefabs;
-        var allParticlePrefabs = SkillManager.Instance.allParticlePrefabs;
-
-        foreach (var skillPrefab in allSkillPrefabs)
-        {
-            CreatePool(skillPrefab, skillPrefab);
-        }
-
-        foreach (var particlePrefab in allParticlePrefabs)
-        {
-            CreatePool(particlePrefab, particlePrefab);
-        }
-
+        var projectilePrefab = SkillManager.Instance.projectilePrefab;
         CreatePool(projectilePrefab, projectilePrefab);
+
+        InitPool(SkillManager.Instance.allSkillPrefabs);
+        InitPool(SkillManager.Instance.allParticlePrefabs);
+        InitPool(EnemyManager.Instance.allEnemyPrefabs, 250);
+    }
+
+    private void InitPool(List<GameObject> allPrefabs, int initialSize = 50)
+    {
+        foreach (var prefab in allPrefabs)
+        {
+            CreatePool(prefab, prefab, initialSize);
+        }
     }
 
     public ObjectPool<GameObject> GetPool(GameObject key)
@@ -62,7 +60,7 @@ public class PoolManager : MonoBehaviour
         }
     }
 
-    public void CreatePool(GameObject key, GameObject prefab, int initialSize = 5)
+    public void CreatePool(GameObject key, GameObject prefab, int initialSize = 50)
     {
         var playerPosition = GameManager.player.transform.position;
         var createPool = new ObjectPool<GameObject>
@@ -77,7 +75,6 @@ public class PoolManager : MonoBehaviour
             {
                 instance.SetActive(false);
                 instance.transform.position = playerPosition;
-                //instance.transform.SetParent(poolObjectParent.transform, false);
             },
             defaultCapacity: initialSize
         );
