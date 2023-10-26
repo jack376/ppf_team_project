@@ -9,11 +9,20 @@ public class ItemSpawner : MonoBehaviour
     {
         if (Random.value <= dropChanceRate)
         {
-            float randomRotation = Random.Range(0f, 360f);
-            Quaternion rotation = Quaternion.Euler(0f, randomRotation, 0f);
-
             int itemIndex = Random.Range(0, dropItems.Length);
-            Instantiate(dropItems[itemIndex], transform.position, rotation);
+
+            var spawnItemGo = PoolManager.Instance.GetPool(dropItems[itemIndex]).Get();
+            spawnItemGo.transform.position = transform.position;
+            spawnItemGo.transform.rotation = Quaternion.Euler(0f, Random.Range(0f, 360f), 0f);
+
+            var spawnItem = spawnItemGo.GetComponent<Gem>();
+            spawnItem.onItemRelease += ReleaseItem;
+
+            void ReleaseItem()
+            {
+                spawnItem.onItemRelease -= ReleaseItem;
+                PoolManager.Instance.GetPool(dropItems[itemIndex]).Release(spawnItemGo);
+            }
         }
     }
 }

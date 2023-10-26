@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class ItemDrop : MonoBehaviour
@@ -14,7 +15,6 @@ public class ItemDrop : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             Use(other.gameObject);
-            Destroy(gameObject);
         }
     }
 }

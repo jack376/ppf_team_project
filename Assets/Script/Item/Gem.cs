@@ -1,7 +1,9 @@
+using System;
 using UnityEngine;
 
 public class Gem : MonoBehaviour, IItem
 {
+    public event Action onItemRelease;
     public float expPoint = 25f;
 
     public void Use(GameObject target)
@@ -19,7 +21,7 @@ public class Gem : MonoBehaviour, IItem
         if (other.CompareTag("Player"))
         {
             Use(other.gameObject);
-            Destroy(gameObject);
+            onItemRelease();
         }
     }
 }

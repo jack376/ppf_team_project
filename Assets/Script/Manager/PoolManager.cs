@@ -28,6 +28,7 @@ public class PoolManager : MonoBehaviour
         InitPool(SkillManager.Instance.allSkillPrefabs);
         InitPool(SkillManager.Instance.allParticlePrefabs);
         InitPool(EnemyManager.Instance.allEnemyPrefabs, 250);
+        InitPool(DropItemManager.Instance.allDropItemPrefabs, 250);
     }
 
     private void InitPool(List<GameObject> allPrefabs, int initialSize = 50)
@@ -68,13 +69,11 @@ public class PoolManager : MonoBehaviour
             createFunc: () => Instantiate(prefab, playerPosition, Quaternion.identity),
             actionOnGet: instance =>
             {
-                instance.transform.position = playerPosition;
                 instance.SetActive(true);
             },
             actionOnRelease: instance =>
             {
                 instance.SetActive(false);
-                instance.transform.position = playerPosition;
             },
             defaultCapacity: initialSize
         );

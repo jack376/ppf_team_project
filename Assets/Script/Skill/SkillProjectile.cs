@@ -83,16 +83,7 @@ public class SkillProjectile : MonoBehaviour
     private void OnHitParticle()
     {
         var hitParticleGo = PoolManager.Instance.GetPool(hitFxPrefab).Get();
-        if (hitParticleGo == null)
-        {
-            return;
-        }
-
         var hitParticle = hitParticleGo.GetComponent<HitParticleHandler>();
-        if (hitParticle == null)
-        {
-            return;
-        }
 
         hitParticleGo.transform.position = transform.position;
         hitParticleGo.transform.rotation = Quaternion.identity;
