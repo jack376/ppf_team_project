@@ -47,15 +47,20 @@ public class SkillProjectile : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider collision)
     {
         if ((targetLayer & 1 << collision.gameObject.layer) == 0)
         {
             return;
         }
-        
 
-        pierceCount--;
+        if (pierceCount > 1)
+        {
+            pierceCount--;
+            OnHitParticle();
+            OnSplashDamage();
+        }
+
         if (pierceCount <= 0 && isEnable)
         {
             OnHitParticle();

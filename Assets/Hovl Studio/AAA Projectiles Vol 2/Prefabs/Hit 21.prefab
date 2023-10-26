@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4862272083718382}
   - component: {fileID: 198007161596028020}
   - component: {fileID: 199593828875550396}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Lightning
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4973,7 +4973,7 @@ GameObject:
   - component: {fileID: 4114106920856708}
   - component: {fileID: 198539093415774022}
   - component: {fileID: 199429019171299536}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: SubSmoke
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9871,7 +9871,8 @@ GameObject:
   - component: {fileID: 4724092429079062}
   - component: {fileID: 198813193088697888}
   - component: {fileID: 199026521598108060}
-  m_Layer: 9
+  - component: {fileID: 6267745379402110001}
+  m_Layer: 0
   m_Name: Hit 21
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14765,6 +14766,18 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
+--- !u!114 &6267745379402110001
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1159183624466508}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56b9ada3105e0974cba7063174717d86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1163951590474050
 GameObject:
   m_ObjectHideFlags: 0
@@ -14776,7 +14789,7 @@ GameObject:
   - component: {fileID: 4603730002626802}
   - component: {fileID: 198260147977201834}
   - component: {fileID: 199179080742392608}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Fire
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19683,7 +19696,7 @@ GameObject:
   - component: {fileID: 4583017730456840}
   - component: {fileID: 198786425856977764}
   - component: {fileID: 199664460886295194}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: ShockWave
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24581,7 +24594,7 @@ GameObject:
   - component: {fileID: 4363683505166624}
   - component: {fileID: 198523286498234254}
   - component: {fileID: 199604879393742410}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: SideAura
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29488,7 +29501,7 @@ GameObject:
   - component: {fileID: 4476253803842336}
   - component: {fileID: 198104863721350958}
   - component: {fileID: 199182041869680498}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Sparks
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34386,7 +34399,7 @@ GameObject:
   - component: {fileID: 4621472535348316}
   - component: {fileID: 198387594050701350}
   - component: {fileID: 199370096976367504}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Dust
   m_TagString: Untagged
   m_Icon: {fileID: 0}

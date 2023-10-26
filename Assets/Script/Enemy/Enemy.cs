@@ -64,7 +64,10 @@ public class Enemy : LivingEntity
             pathFinder.enabled = false;
         }
 
-        onDeath -= itemSpawner.DropItem;
+        if (itemSpawner != null)
+        {
+            onDeath -= itemSpawner.DropItem;
+        }
     }
 
     private void Awake()

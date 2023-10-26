@@ -5,7 +5,7 @@ public class HitParticleHandler : MonoBehaviour
 {
     public event Action onFinish;
 
-    private float particleLifetime = 1f;
+    private float particleLifetime = 1.5f;
     private float flowTime = 0f;
 
     private void Update()

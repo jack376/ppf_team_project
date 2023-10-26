@@ -46,28 +46,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   skillData:
     ID: 10000005
-    skillType: 1
+    type: 1
+    multiShotAngle: 60
+    multiShotBulletCount: 7
     name: "\uD3ED\uD48D \uBBF8\uC0AC\uC77C"
     info: "\uC804\uC790 \uD50C\uB77C\uC988\uB9C8 \uBBF8\uC0AC\uC77C\uC744 \uBC1C\uC0AC\uD55C\uB2E4."
-    shotType: 2
-    shotTypeValue: 60
-    count: 3
-    cooldown: 3
-    speed: 35
-    splash: 1
-    damage: 45
-    lifeTime: 7
-    isPierceHitPlay: 0
+    pierceCount: 3
+    cooldown: 0.75
+    speed: 25
+    splash: 3
+    damage: 15
+    lifeTime: 0.4
     currentLevel: 0
     minLevel: 0
     maxLevel: 5
-  projectile: {fileID: 1018882707796302, guid: f013a7465c9b4274bbd66d2ff9761187, type: 3}
-  hit: {fileID: 1486957119801806, guid: cab6c62da7f9f2840be63f9dd3c34637, type: 3}
-  flash: {fileID: 1177731487666324, guid: b60b851266323fb4b9becb9f63f748c9, type: 3}
-  Detached: []
   targetLayer:
     serializedVersion: 2
     m_Bits: 128
   groundLayer:
     serializedVersion: 2
     m_Bits: 256
+  projectileParticle: {fileID: 1018882707796302, guid: f013a7465c9b4274bbd66d2ff9761187,
+    type: 3}
+  hixParticle: {fileID: 1486957119801806, guid: cab6c62da7f9f2840be63f9dd3c34637,
+    type: 3}

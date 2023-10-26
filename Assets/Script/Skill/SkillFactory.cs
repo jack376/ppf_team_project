@@ -6,6 +6,9 @@ public class SkillFactory
         {
             case SkillType.None : 
                 return new TypeNone();
+            case SkillType.Multi :
+                return new TypeMulti();
+
             default: 
                 return new TypeNone();
         }

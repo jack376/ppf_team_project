@@ -11,7 +11,8 @@ GameObject:
   - component: {fileID: 4183363048394232}
   - component: {fileID: 198895433500004992}
   - component: {fileID: 199824939374261090}
-  m_Layer: 9
+  - component: {fileID: 349278358079736144}
+  m_Layer: 0
   m_Name: Hit 6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4903,6 +4904,18 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
+--- !u!114 &349278358079736144
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1021820888038418}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56b9ada3105e0974cba7063174717d86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1164173325705602
 GameObject:
   m_ObjectHideFlags: 0
@@ -4914,7 +4927,7 @@ GameObject:
   - component: {fileID: 4828966209361316}
   - component: {fileID: 198604258031766068}
   - component: {fileID: 199192162293173740}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: SparksDonw
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9813,7 +9826,7 @@ GameObject:
   - component: {fileID: 4648497798292584}
   - component: {fileID: 198590295678052592}
   - component: {fileID: 199259269200492392}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Smoke
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14712,7 +14725,7 @@ GameObject:
   - component: {fileID: 4001141433463778}
   - component: {fileID: 198465342024155052}
   - component: {fileID: 199559483800193924}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Flash
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19611,7 +19624,7 @@ GameObject:
   - component: {fileID: 4984235599726800}
   - component: {fileID: 198627688660421338}
   - component: {fileID: 199053643536668702}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: BlackSmoke
   m_TagString: Untagged
   m_Icon: {fileID: 0}

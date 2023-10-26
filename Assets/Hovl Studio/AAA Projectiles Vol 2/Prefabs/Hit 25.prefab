@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4551115970188028}
   - component: {fileID: 198462716587967406}
   - component: {fileID: 199363118221860904}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Glow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4910,7 +4910,7 @@ GameObject:
   - component: {fileID: 4062635478436120}
   - component: {fileID: 198711841754489868}
   - component: {fileID: 199540499320692524}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Flash
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9809,7 +9809,8 @@ GameObject:
   - component: {fileID: 4230077601245578}
   - component: {fileID: 198149439886552118}
   - component: {fileID: 199975126801552102}
-  m_Layer: 9
+  - component: {fileID: -5547421311923884944}
+  m_Layer: 0
   m_Name: Hit 25
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14700,6 +14701,18 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
+--- !u!114 &-5547421311923884944
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1157033039736294}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56b9ada3105e0974cba7063174717d86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1995928419330504
 GameObject:
   m_ObjectHideFlags: 0
@@ -14711,7 +14724,7 @@ GameObject:
   - component: {fileID: 4316484882106980}
   - component: {fileID: 198843330316428732}
   - component: {fileID: 199503102989363366}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Sparks
   m_TagString: Untagged
   m_Icon: {fileID: 0}

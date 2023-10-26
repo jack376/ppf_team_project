@@ -47,14 +47,15 @@ MonoBehaviour:
   skillData:
     ID: 10000001
     type: 0
-    name: "\uC2A4\uD0AC \uC774\uB984"
+    multiShotAngle: 45
+    multiShotBulletCount: 5
+    name: "\uD30C\uC774\uC5B4\uBCFC"
     info: "\uC2A4\uD0AC \uC815\uBCF4"
-    bulletCount: 1
-    pierceCount: 1
+    pierceCount: 2
     cooldown: 1
     speed: 15
-    splash: 15
-    damage: 100
+    splash: 3
+    damage: 15
     lifeTime: 0.5
     currentLevel: 0
     minLevel: 0

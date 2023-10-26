@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4981560275409536}
   - component: {fileID: 198326271889182640}
   - component: {fileID: 199774086830341144}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Sparks
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4919,7 +4919,7 @@ GameObject:
   - component: {fileID: 4217359869869602}
   - component: {fileID: 198593690513550110}
   - component: {fileID: 199098828882841936}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Flash
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9818,7 +9818,7 @@ GameObject:
   - component: {fileID: 4415130120509694}
   - component: {fileID: 198004511847487982}
   - component: {fileID: 199845200909762176}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: SparksDonw
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14717,7 +14717,7 @@ GameObject:
   - component: {fileID: 4993612237085236}
   - component: {fileID: 198213722762581584}
   - component: {fileID: 199899822510488698}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Smoke
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19616,7 +19616,8 @@ GameObject:
   - component: {fileID: 4076744592146404}
   - component: {fileID: 198988523848601504}
   - component: {fileID: 199101181032109626}
-  m_Layer: 9
+  - component: {fileID: -2936375599974845405}
+  m_Layer: 0
   m_Name: Hit 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24630,6 +24631,18 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
+--- !u!114 &-2936375599974845405
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1780996139795400}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56b9ada3105e0974cba7063174717d86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1903841016889560
 GameObject:
   m_ObjectHideFlags: 0
@@ -24642,7 +24655,7 @@ GameObject:
   - component: {fileID: 198960292596305598}
   - component: {fileID: 199858974777785312}
   - component: {fileID: 108149970116591424}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Flash
   m_TagString: Untagged
   m_Icon: {fileID: 0}

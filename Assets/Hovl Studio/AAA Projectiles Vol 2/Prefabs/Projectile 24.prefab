@@ -12,11 +12,8 @@ GameObject:
   - component: {fileID: 198681707099616660}
   - component: {fileID: 199781326384758696}
   - component: {fileID: 108021847242203924}
-  - component: {fileID: 54637759880830186}
-  - component: {fileID: 135729131846127588}
   - component: {fileID: -1503298829339123173}
-  - component: {fileID: -4523452998566556418}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Projectile 24
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4966,54 +4963,6 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
---- !u!54 &54637759880830186
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1253354654402752}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 1
-  m_Constraints: 32
-  m_CollisionDetection: 0
---- !u!135 &135729131846127588
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1253354654402752}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Radius: 0.05
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &-1503298829339123173
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5037,18 +4986,6 @@ MonoBehaviour:
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
   m_SoftShadowQuality: 0
---- !u!114 &-4523452998566556418
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1253354654402752}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5958f36a36a9bed43ab72500d66eefd9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1864313438439992
 GameObject:
   m_ObjectHideFlags: 0
@@ -5060,7 +4997,7 @@ GameObject:
   - component: {fileID: 4075191426284842}
   - component: {fileID: 198881115075753784}
   - component: {fileID: 199524803630879244}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Flares
   m_TagString: Untagged
   m_Icon: {fileID: 0}

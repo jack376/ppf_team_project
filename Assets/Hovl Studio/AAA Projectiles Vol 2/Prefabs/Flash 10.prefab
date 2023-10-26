@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4020249096283684}
   - component: {fileID: 198317178407408692}
   - component: {fileID: 199710501713261578}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: FlashSparks
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4919,7 +4919,7 @@ GameObject:
   - component: {fileID: 4844425560330192}
   - component: {fileID: 198428836442132168}
   - component: {fileID: 199825750281911058}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Flash 10
   m_TagString: Untagged
   m_Icon: {fileID: 0}

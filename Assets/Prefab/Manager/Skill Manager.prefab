@@ -44,11 +44,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bcb43e5cf81512149ba7dce762464f6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  skillList: []
+  projectilePrefab: {fileID: 4345141496655011515, guid: ee5af750c5489214e9cfe772eb4f8687,
+    type: 3}
   allSkillPrefabs:
   - {fileID: 7900397933835047178, guid: 514661a7acc9dc949b9e733b8cbcc99d, type: 3}
   - {fileID: 7900397933835047178, guid: 8b6cdaea696ba7d46aea04ef814c9916, type: 3}
   - {fileID: 7900397933835047178, guid: 663b72f9b6ce4ab4aa438bb343722de3, type: 3}
   - {fileID: 7900397933835047178, guid: d02d734ced919444faf1d9c5565b42ea, type: 3}
   - {fileID: 7900397933835047178, guid: 8287da5bfa4cb4942b32306fc98fc23a, type: 3}
-  - {fileID: 7900397933835047178, guid: 1a4d7792dc7384f4d87276b6ab3052cf, type: 3}
-  skillList: []
+  allParticlePrefabs:
+  - {fileID: 1767841913861676, guid: 7e33fe33aff4f49449f51ed88f138e9c, type: 3}
+  - {fileID: 1066843573042574, guid: c98ce42aa8b5fb64fa955a3b0924a0e6, type: 3}
+  - {fileID: 1486957119801806, guid: cab6c62da7f9f2840be63f9dd3c34637, type: 3}
+  - {fileID: 1018882707796302, guid: f013a7465c9b4274bbd66d2ff9761187, type: 3}
+  - {fileID: 1900636369659048, guid: c8c637b8f0130b84b8e2d623d873832d, type: 3}
+  - {fileID: 1519322442116508, guid: fa331b8213914f44cab65156c1ba366e, type: 3}
+  - {fileID: 1736565358043974, guid: 87fe3fddebd51f24ca3aebd072aa6e5a, type: 3}
+  - {fileID: 1962406821623320, guid: 602cd1bfb03b3f0469b4ac08e9831fe5, type: 3}
+  - {fileID: 1308750004520360652, guid: e8e9aa70284d12548859fe3182681282, type: 3}
+  - {fileID: 1732508177996512, guid: 4c9ea63cfecb7094a88406b92cc37fae, type: 3}

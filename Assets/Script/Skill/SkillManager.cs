@@ -73,7 +73,7 @@ public class SkillManager : MonoBehaviour
         skillDictionary.TryGetValue(id, out var skillPrefab);
         return skillPrefab.GetComponent<SkillBehavior>().skillData;
     }
-
+    /*
     public void LoadSkillDataFromCSV(string filePath)
     {
         var sr = new StreamReader(filePath, Encoding.Default);
@@ -114,5 +114,6 @@ public class SkillManager : MonoBehaviour
 
         sr.Close();
     }
+    */
 }
 

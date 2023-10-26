@@ -11,7 +11,8 @@ GameObject:
   - component: {fileID: 4187906005371268}
   - component: {fileID: 198283024908070656}
   - component: {fileID: 199403406573463370}
-  m_Layer: 9
+  - component: {fileID: -3882329525491891342}
+  m_Layer: 0
   m_Name: Hit 9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4903,6 +4904,18 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
+--- !u!114 &-3882329525491891342
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1059669524233346}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56b9ada3105e0974cba7063174717d86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1182691994414290
 GameObject:
   m_ObjectHideFlags: 0
@@ -4914,7 +4927,7 @@ GameObject:
   - component: {fileID: 4745369122854904}
   - component: {fileID: 198151367973005276}
   - component: {fileID: 199861468156327950}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: BlackSmoke
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9813,7 +9826,7 @@ GameObject:
   - component: {fileID: 4068275470831410}
   - component: {fileID: 198618000900787862}
   - component: {fileID: 199225802269539874}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Flash
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14712,7 +14725,7 @@ GameObject:
   - component: {fileID: 4135278228526502}
   - component: {fileID: 198595779517105992}
   - component: {fileID: 199808429940458738}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Sparks
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19611,7 +19624,7 @@ GameObject:
   - component: {fileID: 4172450082002436}
   - component: {fileID: 198541237647248718}
   - component: {fileID: 199554271910308446}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: ShockWave
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -26,12 +26,12 @@ public class PoolManager : MonoBehaviour
         CreatePool(projectilePrefab, projectilePrefab);
 
         InitPool(SkillManager.Instance.allSkillPrefabs);
-        InitPool(SkillManager.Instance.allParticlePrefabs);
-        InitPool(EnemyManager.Instance.allEnemyPrefabs, 250);
-        InitPool(DropItemManager.Instance.allDropItemPrefabs, 250);
+        InitPool(SkillManager.Instance.allParticlePrefabs, 500);
+        InitPool(EnemyManager.Instance.allEnemyPrefabs, 100);
+        InitPool(DropItemManager.Instance.allDropItemPrefabs, 200);
     }
 
-    private void InitPool(List<GameObject> allPrefabs, int initialSize = 50)
+    private void InitPool(List<GameObject> allPrefabs, int initialSize = 100)
     {
         foreach (var prefab in allPrefabs)
         {
@@ -63,12 +63,12 @@ public class PoolManager : MonoBehaviour
 
     public void CreatePool(GameObject key, GameObject prefab, int initialSize = 50)
     {
-        var playerPosition = GameManager.player.transform.position;
         var createPool = new ObjectPool<GameObject>
         (
-            createFunc: () => Instantiate(prefab, playerPosition, Quaternion.identity),
+            createFunc: () => Instantiate(prefab, GameManager.player.transform.position, Quaternion.identity),
             actionOnGet: instance =>
             {
+                instance.transform.position = GameManager.player.transform.position;
                 instance.SetActive(true);
             },
             actionOnRelease: instance =>

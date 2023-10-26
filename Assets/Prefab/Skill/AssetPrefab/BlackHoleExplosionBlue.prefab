@@ -24673,6 +24673,7 @@ GameObject:
   - component: {fileID: 4936824224380114}
   - component: {fileID: 198067218504635156}
   - component: {fileID: 199419235555881206}
+  - component: {fileID: 6383664943479504707}
   m_Layer: 0
   m_Name: BlackHoleExplosionBlue
   m_TagString: Untagged
@@ -24691,7 +24692,7 @@ Transform:
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 3, y: 3, z: 3}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 4364616770785902}
   - {fileID: 4394764914356918}
@@ -24713,7 +24714,7 @@ ParticleSystem:
   lengthInSec: 2
   simulationSpeed: 1
   stopAction: 0
-  cullingMode: 0
+  cullingMode: 3
   ringBufferMode: 0
   ringBufferLoopRange: {x: 0, y: 1}
   emitterVelocityMode: 0
@@ -29526,6 +29527,7 @@ ParticleSystemRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: 8b67ed1b53a2fd04480c88b532880e84, type: 2}
+  - {fileID: 2100000, guid: aa2d87a2bcfbeeb418587b90d46b1d6f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -29576,6 +29578,18 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
+--- !u!114 &6383664943479504707
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1962406821623320}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56b9ada3105e0974cba7063174717d86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4125847079724527874
 GameObject:
   m_ObjectHideFlags: 0

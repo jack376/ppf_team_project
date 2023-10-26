@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4448062889756570}
   - component: {fileID: 198378785350317508}
   - component: {fileID: 199870212115272070}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Sparks
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4919,7 +4919,7 @@ GameObject:
   - component: {fileID: 4898851923138938}
   - component: {fileID: 198827519415228608}
   - component: {fileID: 199367750063275990}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Slash
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9818,7 +9818,7 @@ GameObject:
   - component: {fileID: 4486368905861320}
   - component: {fileID: 198285270833769406}
   - component: {fileID: 199962423193056676}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Flash
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14717,7 +14717,8 @@ GameObject:
   - component: {fileID: 4334456920557742}
   - component: {fileID: 198909843137378654}
   - component: {fileID: 199565308925648926}
-  m_Layer: 9
+  - component: {fileID: 6142356837787828322}
+  m_Layer: 0
   m_Name: Hit 12
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19608,3 +19609,15 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
+--- !u!114 &6142356837787828322
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1943573974307894}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56b9ada3105e0974cba7063174717d86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -12,12 +12,13 @@ public class EnemySpawner : MonoBehaviour
     public List<GameObject> bossPrefabs = new List<GameObject>();
     public List<GameObject> enemyPrefabs = new List<GameObject>();
 
+    public int maxEnemies = 200;
+
     public float spawnRadius = 4f;
     public float spawnInterval = 0.1f;
     public float spawnCooldown = 1f;
     public float bigWaveCooldown = 180f;
     public float bigWaveDuration = 60f;
-    public int maxEnemies = 200;
 
     public float powerUpInterval = 60f;
     public float powerUpScaleFactor = 0.1f;
@@ -35,9 +36,9 @@ public class EnemySpawner : MonoBehaviour
     private float lastCooldownDecreaseTime = 0f; // 마지막으로 spawnCooldown이 감소한 시간
 
     private float nextBigWaveTime = 0f;
-    private bool isBigWave = false;
-    //private float corpseDestroyTime = 1f;
     private float lastPowerUpTime;
+
+    private bool isBigWave = false;
 
     private void OnEnable()
     {
@@ -59,7 +60,7 @@ public class EnemySpawner : MonoBehaviour
 
         if (Time.time - lastBossSpawnTime > bossSpawnCooldown)
         {
-            //CreateBoss();
+            CreateBoss();
             lastBossSpawnTime = Time.time;
         }
 
@@ -127,8 +128,9 @@ public class EnemySpawner : MonoBehaviour
         for (int i = 0; i < enemiesToSpawn; i++)
         {
             var randomPosition = spawnPoint.position + Random.insideUnitSphere * spawnRadius;
-            
-            var enemyGo = PoolManager.Instance.GetPool(enemyPrefabs[0]).Get();
+            var randomEnemyPrefab = enemyPrefabs[Random.Range(0, enemyPrefabs.Count)];
+
+            var enemyGo = PoolManager.Instance.GetPool(randomEnemyPrefab).Get();
             enemyGo.gameObject.transform.position = randomPosition;
 
             var enemy = enemyGo.GetComponent<Enemy>();
@@ -152,20 +154,24 @@ public class EnemySpawner : MonoBehaviour
         }
     }
 
-    /*
     private void CreateBoss()
     {
         var randomSpawnPoint   = spawnPoints[Random.Range(0, spawnPoints.Length)];
-        var selectedBossPrefab = bossPrefabs[Random.Range(0, bossPrefabs.Count)];
+        var randomBossPrefab = bossPrefabs[Random.Range(0, bossPrefabs.Count)];
 
-        var boss = Instantiate(selectedBossPrefab, randomSpawnPoint.position, Quaternion.identity);
+        var bossGo = PoolManager.Instance.GetPool(randomBossPrefab).Get();
+        bossGo.gameObject.transform.position = randomSpawnPoint.position;
+
+        var boss = bossGo.GetComponent<Enemy>();
         currentEnemies.Add(boss);
 
-        boss.onDeath += () =>
+        boss.onDeath += ReleaseEnemy;
+
+        void ReleaseEnemy()
         {
+            boss.onDeath -= ReleaseEnemy;
             currentEnemies.Remove(boss);
-            Destroy(boss.gameObject, corpseDestroyTime);
-        };
+            PoolManager.Instance.GetPool(enemyPrefabs[0]).Release(bossGo);
+        }
     }
-    */
 }

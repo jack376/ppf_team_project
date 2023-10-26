@@ -53,8 +53,9 @@ public class UIManager : MonoBehaviour
 
     private IEnumerator StartCountdown()
     {
-        countdownText.gameObject.SetActive(true);
         int count = 3;
+
+        countdownText.gameObject.SetActive(true);
 
         while (count > 0)
         {
@@ -92,21 +93,20 @@ public class UIManager : MonoBehaviour
 
     public void OpenSkillSelectWindow()
     {
-        List<GameObject> allSkillPrefabs = SkillManager.Instance.allSkillPrefabs;
+        var allSkillPrefabs = SkillManager.Instance.allSkillPrefabs;
 
-        HashSet<int> uniqueRandomIds = new HashSet<int>();
+        var uniqueRandomIds = new HashSet<int>();
         for (int i = 0; i < 3; i++)
         {
             int randomCount;
-            do
-            {
-                randomCount = Random.Range(1, allSkillPrefabs.Count + 1);
-            } while (uniqueRandomIds.Contains(randomCount));
+
+            do { randomCount = Random.Range(1, allSkillPrefabs.Count + 1); } 
+            while (uniqueRandomIds.Contains(randomCount));
 
             uniqueRandomIds.Add(randomCount);
             randomIds[i] = randomCount + 10000000;
-            Debug.Log(randomIds[i]);
-            Debug.Log(randomCount + 10000000);
+            //Debug.Log(randomIds[i]);
+            //Debug.Log(randomCount + 10000000);
 
             switch (randomIds[i])
             {
@@ -131,7 +131,7 @@ public class UIManager : MonoBehaviour
 
         Time.timeScale = 1;
 
-        Debug.Log("Button clicked: " + number);
+        //Debug.Log("Button clicked: " + number);
     }
 
     public void PausedButton()

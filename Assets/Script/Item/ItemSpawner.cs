@@ -9,7 +9,7 @@ public class ItemSpawner : MonoBehaviour
     {
         if (Random.value <= dropChanceRate)
         {
-            int itemIndex = Random.Range(0, dropItems.Length);
+            var itemIndex = Random.Range(0, dropItems.Length);
 
             var spawnItemGo = PoolManager.Instance.GetPool(dropItems[itemIndex]).Get();
             spawnItemGo.transform.position = transform.position;

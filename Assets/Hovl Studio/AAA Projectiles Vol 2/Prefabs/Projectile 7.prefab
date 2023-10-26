@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4953462558359860}
   - component: {fileID: 198952639114288308}
   - component: {fileID: 199053725308072878}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Wind
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4852,11 +4852,8 @@ GameObject:
   - component: {fileID: 198524469710358768}
   - component: {fileID: 199317234387275066}
   - component: {fileID: 108176094184806404}
-  - component: {fileID: 54347867007870338}
-  - component: {fileID: 135713622178651324}
   - component: {fileID: 8096045039088846173}
-  - component: {fileID: 2976960338520609528}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Projectile 7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4873,7 +4870,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 1, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 4953462558359860}
@@ -9808,54 +9805,6 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
---- !u!54 &54347867007870338
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1519322442116508}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 1
-  m_Constraints: 32
-  m_CollisionDetection: 1
---- !u!135 &135713622178651324
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1519322442116508}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Radius: 0.2
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &8096045039088846173
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9879,18 +9828,6 @@ MonoBehaviour:
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
   m_SoftShadowQuality: 0
---- !u!114 &2976960338520609528
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1519322442116508}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5958f36a36a9bed43ab72500d66eefd9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1702276184313894
 GameObject:
   m_ObjectHideFlags: 0
@@ -9902,7 +9839,7 @@ GameObject:
   - component: {fileID: 4231067602363844}
   - component: {fileID: 198499798837834988}
   - component: {fileID: 199171664296937990}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Cone
   m_TagString: Untagged
   m_Icon: {fileID: 0}

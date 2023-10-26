@@ -54,23 +54,16 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   bossPrefabs:
-  - {fileID: 7155146212094752597, guid: 1060df7781bb755429db85adf21a4c62, type: 3}
-  - {fileID: 7155146212094752597, guid: 8461b2c5ce2a36449a91e9d81dcd9be2, type: 3}
-  - {fileID: 7155146212094752597, guid: fec5d32707c746d4e8ffe9037ca848cf, type: 3}
-  - {fileID: 7155146212094752597, guid: db1ecd4a69a7cf84f88a4e881dcab4e0, type: 3}
+  - {fileID: 1480240962427412395, guid: d474d2bae53c6514e82b54d3513b9de6, type: 3}
   enemyPrefabs:
-  - {fileID: 7155146212094752597, guid: 1ba16c8024eb2844a8295f290bbf78f4, type: 3}
-  - {fileID: 7155146212094752597, guid: 7552dfe71b90b504daed36eaff076bbb, type: 3}
-  - {fileID: 7155146212094752597, guid: d474d2bae53c6514e82b54d3513b9de6, type: 3}
-  - {fileID: 7155146212094752597, guid: 70bf127f319bb2e4592f2a50144f46a0, type: 3}
-  - {fileID: 7155146212094752597, guid: 5ca933489fb71ff4aaf46b25d2b8a5ff, type: 3}
-  - {fileID: 7155146212094752597, guid: 12d11cbd0b8356a4f8a4a330ddeb54c3, type: 3}
+  - {fileID: 1480240962427412395, guid: 1ba16c8024eb2844a8295f290bbf78f4, type: 3}
+  - {fileID: 1480240962427412395, guid: 7552dfe71b90b504daed36eaff076bbb, type: 3}
+  maxEnemies: 100
   spawnRadius: 4
   spawnInterval: 0.1
-  spawnCooldown: 1
+  spawnCooldown: 5
   bigWaveCooldown: 180
   bigWaveDuration: 60
-  maxEnemies: 200
   powerUpInterval: 60
   powerUpScaleFactor: 0.1
   bossSpawnCooldown: 300

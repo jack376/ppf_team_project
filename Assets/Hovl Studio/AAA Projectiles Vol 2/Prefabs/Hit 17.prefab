@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4241676103301968}
   - component: {fileID: 198316446777700438}
   - component: {fileID: 199062173187954526}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Derbis
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4910,7 +4910,7 @@ GameObject:
   - component: {fileID: 4875503250303432}
   - component: {fileID: 198825402336469492}
   - component: {fileID: 199406624305094724}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Smoke
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9809,7 +9809,8 @@ GameObject:
   - component: {fileID: 4854341937746198}
   - component: {fileID: 198510603497850608}
   - component: {fileID: 199173130962188016}
-  m_Layer: 9
+  - component: {fileID: 6431942114203326993}
+  m_Layer: 0
   m_Name: Hit 17
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14701,6 +14702,18 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
+--- !u!114 &6431942114203326993
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1684641875971996}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56b9ada3105e0974cba7063174717d86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1809189214046922
 GameObject:
   m_ObjectHideFlags: 0
@@ -14712,7 +14725,7 @@ GameObject:
   - component: {fileID: 4965614127604726}
   - component: {fileID: 198106388638833360}
   - component: {fileID: 199050219498804620}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Flash
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19611,7 +19624,7 @@ GameObject:
   - component: {fileID: 4318637143024682}
   - component: {fileID: 198104167782654880}
   - component: {fileID: 199941185433768010}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Flash2
   m_TagString: Untagged
   m_Icon: {fileID: 0}

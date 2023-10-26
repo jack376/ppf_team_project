@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4891818750490772}
   - component: {fileID: 198025062545460098}
   - component: {fileID: 199670703545825752}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Bubbles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4928,7 +4928,8 @@ GameObject:
   - component: {fileID: 4165826537651548}
   - component: {fileID: 198883653452546964}
   - component: {fileID: 199490580916874464}
-  m_Layer: 9
+  - component: {fileID: 3996386365235745626}
+  m_Layer: 0
   m_Name: Hit 11
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9821,6 +9822,18 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
+--- !u!114 &3996386365235745626
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1337519082417960}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56b9ada3105e0974cba7063174717d86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1338414471929286
 GameObject:
   m_ObjectHideFlags: 0
@@ -9832,7 +9845,7 @@ GameObject:
   - component: {fileID: 4450544429261542}
   - component: {fileID: 198726472762550072}
   - component: {fileID: 199696515134733506}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Flares
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14740,7 +14753,7 @@ GameObject:
   - component: {fileID: 4654099670106226}
   - component: {fileID: 198376617028102332}
   - component: {fileID: 199643550094619732}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Sparks
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19648,7 +19661,7 @@ GameObject:
   - component: {fileID: 4341019784152578}
   - component: {fileID: 198251374713343492}
   - component: {fileID: 199045426815980062}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Slash
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24547,7 +24560,7 @@ GameObject:
   - component: {fileID: 4591722220597638}
   - component: {fileID: 198627900539726466}
   - component: {fileID: 199489654140656038}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Flash
   m_TagString: Untagged
   m_Icon: {fileID: 0}

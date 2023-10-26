@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4874681785835578}
   - component: {fileID: 198032771267645886}
   - component: {fileID: 199858790215094820}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: SmokeHQ
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4861,11 +4861,8 @@ GameObject:
   - component: {fileID: 198215664331079948}
   - component: {fileID: 199500896755526810}
   - component: {fileID: 108427654974949236}
-  - component: {fileID: 54406299046715380}
-  - component: {fileID: 135464267038536590}
   - component: {fileID: 7587747508980557334}
-  - component: {fileID: 8799956785544447361}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Projectile 10
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9815,54 +9812,6 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
---- !u!54 &54406299046715380
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1307497385501450}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 1
-  m_Constraints: 32
-  m_CollisionDetection: 0
---- !u!135 &135464267038536590
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1307497385501450}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Radius: 0.25
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &7587747508980557334
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9886,18 +9835,6 @@ MonoBehaviour:
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
   m_SoftShadowQuality: 0
---- !u!114 &8799956785544447361
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1307497385501450}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5958f36a36a9bed43ab72500d66eefd9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1973628126080328
 GameObject:
   m_ObjectHideFlags: 0
@@ -9909,7 +9846,7 @@ GameObject:
   - component: {fileID: 4891131715782328}
   - component: {fileID: 198064937658762136}
   - component: {fileID: 199535472952102144}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Smoke
   m_TagString: Untagged
   m_Icon: {fileID: 0}

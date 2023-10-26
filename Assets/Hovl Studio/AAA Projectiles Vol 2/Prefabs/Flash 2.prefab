@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4077269520655242}
   - component: {fileID: 198280927657968772}
   - component: {fileID: 199771132963929918}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Flash 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4911,7 +4911,7 @@ GameObject:
   - component: {fileID: 4224952706001814}
   - component: {fileID: 198222736358913996}
   - component: {fileID: 199996326924452998}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Flash
   m_TagString: Untagged
   m_Icon: {fileID: 0}

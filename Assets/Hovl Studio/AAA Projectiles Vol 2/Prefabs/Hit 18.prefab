@@ -11,7 +11,8 @@ GameObject:
   - component: {fileID: 4123602527902504}
   - component: {fileID: 198467703744302238}
   - component: {fileID: 199623738698521896}
-  m_Layer: 9
+  - component: {fileID: 2221286786876531115}
+  m_Layer: 0
   m_Name: Hit 18
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4850,6 +4851,18 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
+--- !u!114 &2221286786876531115
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1088318192215600}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56b9ada3105e0974cba7063174717d86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1118148780318506
 GameObject:
   m_ObjectHideFlags: 0
@@ -4861,7 +4874,7 @@ GameObject:
   - component: {fileID: 4149297071833680}
   - component: {fileID: 198581163985481220}
   - component: {fileID: 199880975543126164}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: SmokeDark
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9760,7 +9773,7 @@ GameObject:
   - component: {fileID: 4673129722160990}
   - component: {fileID: 198744353143313206}
   - component: {fileID: 199114886946485226}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Smoke
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14659,7 +14672,7 @@ GameObject:
   - component: {fileID: 4928469041101818}
   - component: {fileID: 198293705915672998}
   - component: {fileID: 199277803068738022}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: ShockWave
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19558,7 +19571,7 @@ GameObject:
   - component: {fileID: 4115458661815596}
   - component: {fileID: 198067561233384474}
   - component: {fileID: 199810192364707092}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Sparks
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24457,7 +24470,7 @@ GameObject:
   - component: {fileID: 4123632225247608}
   - component: {fileID: 198984649583155790}
   - component: {fileID: 199604605458147178}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Fire
   m_TagString: Untagged
   m_Icon: {fileID: 0}

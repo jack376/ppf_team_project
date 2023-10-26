@@ -1,10 +1,22 @@
 using UnityEngine;
 
-public class TypeNone : ISkill
+public class TypeMulti : ISkill
 {
     public void Execute(SkillData skillData, LayerMask targetLayer, Quaternion targetQuaternion, GameObject hitFx, GameObject projectileFx)
     {
-        SpawnProjectile(skillData, targetLayer, targetQuaternion, hitFx, projectileFx);
+        var originalRotation = targetQuaternion;
+
+        float totalAngle = skillData.multiShotAngle;
+        float deltaAngle = totalAngle / (skillData.multiShotBulletCount - 1);
+        float startAngle = -totalAngle / 2;
+
+        for (int i = 0; i < skillData.multiShotBulletCount; i++)
+        {
+            float currentAngle = startAngle + (deltaAngle * i);
+            SpawnProjectile(skillData, targetLayer, originalRotation * Quaternion.Euler(0f, currentAngle, 0f), hitFx, projectileFx);
+        }
+
+        targetQuaternion = originalRotation;
     }
 
     private void SpawnProjectile(SkillData skillData, LayerMask targetLayer, Quaternion targetQuaternion, GameObject hitFx, GameObject projectileFx)
@@ -13,7 +25,7 @@ public class TypeNone : ISkill
         projectile.transform.rotation = targetQuaternion;
 
         var sp = projectile.GetComponent<SkillProjectile>();
-        sp.originalPrefab = SkillManager.Instance.projectilePrefab;
+        sp.originalPrefab     = SkillManager.Instance.projectilePrefab;
         sp.projectileFxPrefab = projectileFx;
         sp.hitFxPrefab        = hitFx;
         sp.targetLayer        = targetLayer;

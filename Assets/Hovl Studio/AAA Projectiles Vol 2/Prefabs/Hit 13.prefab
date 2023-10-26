@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4966217500333156}
   - component: {fileID: 198074159013571724}
   - component: {fileID: 199171294171591472}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Rays
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4910,7 +4910,7 @@ GameObject:
   - component: {fileID: 4417540431322726}
   - component: {fileID: 198518975236277540}
   - component: {fileID: 199098034150230266}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Flash
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9809,7 +9809,7 @@ GameObject:
   - component: {fileID: 4368375319415078}
   - component: {fileID: 198742058566546228}
   - component: {fileID: 199629303215778768}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Flash
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14708,7 +14708,7 @@ GameObject:
   - component: {fileID: 4572113181836282}
   - component: {fileID: 198613913256103890}
   - component: {fileID: 199986257882398306}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Sparks
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19607,7 +19607,8 @@ GameObject:
   - component: {fileID: 4731271032525924}
   - component: {fileID: 198165982210011596}
   - component: {fileID: 199242675796946664}
-  m_Layer: 9
+  - component: {fileID: -2402695464956400696}
+  m_Layer: 0
   m_Name: Hit 13
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24620,3 +24621,15 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
+--- !u!114 &-2402695464956400696
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1914345040822934}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56b9ada3105e0974cba7063174717d86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

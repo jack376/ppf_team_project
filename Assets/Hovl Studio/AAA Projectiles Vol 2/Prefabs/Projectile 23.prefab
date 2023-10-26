@@ -12,11 +12,8 @@ GameObject:
   - component: {fileID: 198312651631224828}
   - component: {fileID: 199865254318283598}
   - component: {fileID: 108204780233298718}
-  - component: {fileID: 54953225180484114}
-  - component: {fileID: 135567518640564876}
   - component: {fileID: -5994791524732642978}
-  - component: {fileID: 5105632395258688082}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Projectile 23
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4988,54 +4985,6 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
---- !u!54 &54953225180484114
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1047741547062842}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 1
-  m_Constraints: 32
-  m_CollisionDetection: 1
---- !u!135 &135567518640564876
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1047741547062842}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Radius: 0.05
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &-5994791524732642978
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5059,18 +5008,6 @@ MonoBehaviour:
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
   m_SoftShadowQuality: 0
---- !u!114 &5105632395258688082
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1047741547062842}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5958f36a36a9bed43ab72500d66eefd9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1322666646146556
 GameObject:
   m_ObjectHideFlags: 0
@@ -5082,7 +5019,7 @@ GameObject:
   - component: {fileID: 4702282410706314}
   - component: {fileID: 198849190835321302}
   - component: {fileID: 199745842046434202}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Circle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9980,7 +9917,7 @@ GameObject:
   - component: {fileID: 4597138759503960}
   - component: {fileID: 198488797301884742}
   - component: {fileID: 199140273679472108}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Sparks
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14829,7 +14766,7 @@ GameObject:
   - component: {fileID: 4051456160791628}
   - component: {fileID: 198085877717476928}
   - component: {fileID: 199481876126283556}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19727,7 +19664,7 @@ GameObject:
   - component: {fileID: 4655542008584570}
   - component: {fileID: 198875310950276182}
   - component: {fileID: 199858921527799788}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Rim
   m_TagString: Untagged
   m_Icon: {fileID: 0}
