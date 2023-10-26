@@ -6,7 +6,6 @@ public class PoolManager : MonoBehaviour
 {
     public static PoolManager Instance { get; private set; }
     public Dictionary<GameObject, ObjectPool<GameObject>> pools;
-    private GameObject poolObjectParent;
 
     private void Awake()
     {
@@ -14,7 +13,7 @@ public class PoolManager : MonoBehaviour
         {
             Instance = this;
             pools = new Dictionary<GameObject, ObjectPool<GameObject>>();
-            poolObjectParent = new GameObject("PoolObjectGroup");
+            //poolObjectParent = new GameObject("PoolObjectGroup");
         }
         else
         {
@@ -24,12 +23,18 @@ public class PoolManager : MonoBehaviour
 
     public void Start()
     {
-        var projectilePrefab = SkillManager.Instance.projectilePrefab;
-        var allSkillPrefabs  = SkillManager.Instance.allSkillPrefabs;
+        var projectilePrefab   = SkillManager.Instance.projectilePrefab;
+        var allSkillPrefabs    = SkillManager.Instance.allSkillPrefabs;
+        var allParticlePrefabs = SkillManager.Instance.allParticlePrefabs;
 
         foreach (var skillPrefab in allSkillPrefabs)
         {
             CreatePool(skillPrefab, skillPrefab);
+        }
+
+        foreach (var particlePrefab in allParticlePrefabs)
+        {
+            CreatePool(particlePrefab, particlePrefab);
         }
 
         CreatePool(projectilePrefab, projectilePrefab);
@@ -59,23 +64,23 @@ public class PoolManager : MonoBehaviour
 
     public void CreatePool(GameObject key, GameObject prefab, int initialSize = 5)
     {
-        var playerPos = GameManager.player.transform.position;
-        var newPool = new ObjectPool<GameObject>
+        var playerPosition = GameManager.player.transform.position;
+        var createPool = new ObjectPool<GameObject>
         (
-            createFunc: () => Instantiate(prefab, playerPos, Quaternion.identity),
+            createFunc: () => Instantiate(prefab, playerPosition, Quaternion.identity),
             actionOnGet: instance =>
             {
-                instance.transform.position = playerPos;
+                instance.transform.position = playerPosition;
                 instance.SetActive(true);
             },
             actionOnRelease: instance =>
             {
                 instance.SetActive(false);
-                instance.transform.position = playerPos;
-                instance.transform.SetParent(poolObjectParent.transform, false);
+                instance.transform.position = playerPosition;
+                //instance.transform.SetParent(poolObjectParent.transform, false);
             },
             defaultCapacity: initialSize
         );
-        pools.Add(key, newPool);
+        pools.Add(key, createPool);
     }
 }

@@ -217,6 +217,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3284630025830469129, guid: 2e29505cf7156c54da51d7f0d7722daf,
         type: 3}
+      propertyPath: allParticlePrefabs.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3284630025830469129, guid: 2e29505cf7156c54da51d7f0d7722daf,
+        type: 3}
       propertyPath: allSkillPrefabs.Array.data[5]
       value: 
       objectReference: {fileID: 7900397933835047178, guid: 514661a7acc9dc949b9e733b8cbcc99d,
@@ -364,6 +369,18 @@ PrefabInstance:
       propertyPath: allSkillPrefabs.Array.data[29]
       value: 
       objectReference: {fileID: 7900397933835047178, guid: 8287da5bfa4cb4942b32306fc98fc23a,
+        type: 3}
+    - target: {fileID: 3284630025830469129, guid: 2e29505cf7156c54da51d7f0d7722daf,
+        type: 3}
+      propertyPath: allParticlePrefabs.Array.data[0]
+      value: 
+      objectReference: {fileID: 1767841913861676, guid: 7e33fe33aff4f49449f51ed88f138e9c,
+        type: 3}
+    - target: {fileID: 3284630025830469129, guid: 2e29505cf7156c54da51d7f0d7722daf,
+        type: 3}
+      propertyPath: allParticlePrefabs.Array.data[1]
+      value: 
+      objectReference: {fileID: 1066843573042574, guid: c98ce42aa8b5fb64fa955a3b0924a0e6,
         type: 3}
     - target: {fileID: 7325941548709375910, guid: 2e29505cf7156c54da51d7f0d7722daf,
         type: 3}

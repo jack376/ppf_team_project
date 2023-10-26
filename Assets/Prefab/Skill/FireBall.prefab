@@ -53,7 +53,7 @@ MonoBehaviour:
     pierceCount: 1
     cooldown: 1
     speed: 15
-    splash: 3
+    splash: 15
     damage: 100
     lifeTime: 0.5
     currentLevel: 0
@@ -65,3 +65,7 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 256
+  projectileParticle: {fileID: 1066843573042574, guid: c98ce42aa8b5fb64fa955a3b0924a0e6,
+    type: 3}
+  hixParticle: {fileID: 1767841913861676, guid: 7e33fe33aff4f49449f51ed88f138e9c,
+    type: 3}

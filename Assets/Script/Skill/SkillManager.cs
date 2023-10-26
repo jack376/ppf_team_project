@@ -10,8 +10,11 @@ public class SkillManager : MonoBehaviour
     public List<SkillData> skillList = new List<SkillData>();
 
     public GameObject projectilePrefab;
+
     public List<GameObject> allSkillPrefabs = new List<GameObject>();
-    public Dictionary<int, GameObject> skillDic = new Dictionary<int, GameObject>();
+    public List<GameObject> allParticlePrefabs = new List<GameObject>();
+
+    public Dictionary<int, GameObject> skillDictionary = new Dictionary<int, GameObject>();
 
     private void Awake()
     {
@@ -38,7 +41,7 @@ public class SkillManager : MonoBehaviour
             var sb = skillPrefab.GetComponent<SkillBehavior>();
             if (sb != null)
             {
-                skillDic[sb.skillData.ID] = skillPrefab;
+                skillDictionary[sb.skillData.ID] = skillPrefab;
                 Debug.Log("LinkedSkillPrefab" + sb.skillData.ID);
             }
         }
@@ -48,7 +51,7 @@ public class SkillManager : MonoBehaviour
     {
         foreach (var skill in skillList)
         {
-            if (skillDic.TryGetValue(skill.ID, out var skillPrefab))
+            if (skillDictionary.TryGetValue(skill.ID, out var skillPrefab))
             {
                 var sb = skillPrefab.GetComponent<SkillBehavior>();
                 if (sb != null)
@@ -62,13 +65,13 @@ public class SkillManager : MonoBehaviour
 
     public GameObject GetSkillPrefab(int id)
     {
-        skillDic.TryGetValue(id, out var skillPrefab);
+        skillDictionary.TryGetValue(id, out var skillPrefab);
         return skillPrefab;
     }
 
     public SkillData GetSkillData(int id)
     {
-        skillDic.TryGetValue(id, out var skillPrefab);
+        skillDictionary.TryGetValue(id, out var skillPrefab);
         return skillPrefab.GetComponent<SkillBehavior>().skillData;
     }
 

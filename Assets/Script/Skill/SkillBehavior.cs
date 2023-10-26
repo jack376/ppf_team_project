@@ -8,15 +8,19 @@ public class SkillBehavior : MonoBehaviour
     public LayerMask targetLayer;
     public LayerMask groundLayer;
 
+    public GameObject projectileParticle;
+    public GameObject hixParticle;
+
     private float searchRadius = 1500f;
     private Collider[] overlapResults = new Collider[250];
 
     private Transform targetTransform;
     private Quaternion targetQuaternion;
+    private Vector3 playerPosition;
 
     public void Activate()
     {
-        var playerPosition = GameManager.player.transform.position;
+        playerPosition = GameManager.player.transform.position;
         FindNearTarget(playerPosition);
 
         if (targetTransform != null)
@@ -26,7 +30,7 @@ public class SkillBehavior : MonoBehaviour
             skill = SkillFactory.GetSkillType(skillData.type);
             if (skill != null)
             {
-                skill.Execute(skillData, targetLayer, targetQuaternion);
+                skill.Execute(skillData, targetLayer, targetQuaternion, hixParticle, projectileParticle);
             }
         }
     }

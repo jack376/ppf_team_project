@@ -1,9 +1,11 @@
 fileFormatVersion: 2
-guid: 3f9c4fe947d03824995623fac82f1204
+guid: 56b9ada3105e0974cba7063174717d86
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - hitFxPrefab: {fileID: 1767841913861676, guid: 7e33fe33aff4f49449f51ed88f138e9c,
+      type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
