@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5055034967002193054}
   - component: {fileID: 1329164812253134432}
   - component: {fileID: 7595923337344208324}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: StormLines
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4935,7 +4935,7 @@ GameObject:
   - component: {fileID: 2859562256616957762}
   - component: {fileID: 2857652902488680846}
   - component: {fileID: 3010447738855008356}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: StormExplosionBlue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9858,7 +9858,7 @@ GameObject:
   - component: {fileID: 2693807920377100602}
   - component: {fileID: 2859057736952580668}
   - component: {fileID: 2857912404839180430}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SphereGlow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14756,7 +14756,7 @@ GameObject:
   - component: {fileID: 7108904322401591772}
   - component: {fileID: 1742005533180927897}
   - component: {fileID: 2210921652175385626}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Dust
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19663,7 +19663,7 @@ GameObject:
   - component: {fileID: 3574400313648601245}
   - component: {fileID: 5391144576621593338}
   - component: {fileID: 2999726020230040181}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: StormLines2
   m_TagString: Untagged
   m_Icon: {fileID: 0}

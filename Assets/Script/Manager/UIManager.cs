@@ -1,7 +1,7 @@
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 using System.Collections;
-using UnityEngine.UI;
 using System.Collections.Generic;
 
 public class UIManager : MonoBehaviour
@@ -13,7 +13,7 @@ public class UIManager : MonoBehaviour
     public TextMeshProUGUI currentLevelUI;
 
     public GameObject gameoverUI;
-    public Button[] skillSelectButtons = new Button[5];
+    public List<Button> skillSelectButtons = new List<Button>();
 
     private PlayerSkill playerSkill;
     private int[] randomIds = new int[3];
@@ -100,22 +100,12 @@ public class UIManager : MonoBehaviour
         {
             int randomCount;
 
-            do { randomCount = Random.Range(1, allSkillPrefabs.Count + 1); } 
+            do { randomCount = Random.Range(0, allSkillPrefabs.Count); }
             while (uniqueRandomIds.Contains(randomCount));
 
             uniqueRandomIds.Add(randomCount);
-            randomIds[i] = randomCount + 10000000;
-            //Debug.Log(randomIds[i]);
-            //Debug.Log(randomCount + 10000000);
 
-            switch (randomIds[i])
-            {
-                case 10000001: skillSelectButtons[0].gameObject.SetActive(true); break;
-                case 10000002: skillSelectButtons[1].gameObject.SetActive(true); break;
-                case 10000003: skillSelectButtons[2].gameObject.SetActive(true); break;
-                case 10000004: skillSelectButtons[3].gameObject.SetActive(true); break;
-                case 10000005: skillSelectButtons[4].gameObject.SetActive(true); break;
-            }
+            skillSelectButtons[randomCount].gameObject.SetActive(true);
         }
 
         Time.timeScale = 0;

@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class TypeNone : ISkill
 {
-    public void Execute(SkillData skillData, LayerMask targetLayer, Quaternion targetQuaternion, GameObject hitFx, GameObject projectileFx)
+    public void Execute(SkillData skillData, LayerMask targetLayer, Quaternion targetQuaternion, GameObject hitFx, GameObject projectileFx, Vector3 targetPosition)
     {
         SpawnProjectile(skillData, targetLayer, targetQuaternion, hitFx, projectileFx);
     }

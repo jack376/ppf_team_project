@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 876148519357356574}
   - component: {fileID: 876148519357356569}
   - component: {fileID: 876148519357356568}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Trails
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4909,7 +4909,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7308988379646286581}
   - component: {fileID: 6947921726114033318}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Point Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5004,7 +5004,7 @@ GameObject:
   - component: {fileID: 1929822363404922916}
   - component: {fileID: 1929822363404922917}
   - component: {fileID: 1929822363404922918}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Archer_Explosion_Arcane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9918,7 +9918,7 @@ GameObject:
   - component: {fileID: 1929822364409977175}
   - component: {fileID: 1929822364409977173}
   - component: {fileID: 1929822364409977174}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Sparks
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14817,7 +14817,7 @@ GameObject:
   - component: {fileID: 5755859894747973001}
   - component: {fileID: 2122182388593448483}
   - component: {fileID: 836668765440441413}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Glow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19725,7 +19725,7 @@ GameObject:
   - component: {fileID: 3646084251791311235}
   - component: {fileID: 3488739301119155687}
   - component: {fileID: 5604138281872489112}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Distortion 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24624,7 +24624,7 @@ GameObject:
   - component: {fileID: 7054202344721133439}
   - component: {fileID: 6617408368630865329}
   - component: {fileID: 334906743979846484}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Symbol
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -4931,7 +4931,7 @@ GameObject:
   - component: {fileID: 2433127212244853584}
   - component: {fileID: 2525185545230056502}
   - component: {fileID: 2526253715805937128}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Glow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9883,7 +9883,7 @@ GameObject:
   - component: {fileID: 2439560113891964176}
   - component: {fileID: 2554793174940312886}
   - component: {fileID: 2526383490146083638}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: NoiseTrail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14808,7 +14808,7 @@ GameObject:
   - component: {fileID: 6511473314308756193}
   - component: {fileID: 8959474934278445139}
   - component: {fileID: 2883219811246881453}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: VortexParticles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19693,7 +19693,7 @@ GameObject:
   - component: {fileID: 6331646886514421009}
   - component: {fileID: 3815368584579117681}
   - component: {fileID: 1249160874894913229}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: StormTrail
   m_TagString: Untagged
   m_Icon: {fileID: 0}

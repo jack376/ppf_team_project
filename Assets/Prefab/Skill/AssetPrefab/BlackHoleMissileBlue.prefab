@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4233432186957776}
   - component: {fileID: 198458354811647720}
   - component: {fileID: 199868269178256582}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: BlackHoleMissileBlue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4948,7 +4948,7 @@ GameObject:
   - component: {fileID: 4378376889787908}
   - component: {fileID: 198739759736923394}
   - component: {fileID: 199274516852534344}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Glow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9900,7 +9900,7 @@ GameObject:
   - component: {fileID: 4573416303266638}
   - component: {fileID: 198738211452351712}
   - component: {fileID: 199033675757312702}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: NoiseTrail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14825,7 +14825,7 @@ GameObject:
   - component: {fileID: 4752696308553372}
   - component: {fileID: 198286350898964152}
   - component: {fileID: 199110976250376714}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: OuterLayer
   m_TagString: Untagged
   m_Icon: {fileID: 0}

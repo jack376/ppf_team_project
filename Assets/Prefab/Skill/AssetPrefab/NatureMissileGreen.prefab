@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5744332897227324337}
   - component: {fileID: 2009392177859320143}
   - component: {fileID: 653442508101553581}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: StormLines
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9900,7 +9900,7 @@ GameObject:
   - component: {fileID: 1307661138356142258}
   - component: {fileID: 1219007039936569300}
   - component: {fileID: 1220058718652235274}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Glow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14852,7 +14852,7 @@ GameObject:
   - component: {fileID: 1313507728546600690}
   - component: {fileID: 1195134458598328020}
   - component: {fileID: 1219928802527559892}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: NoiseTrail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19778,7 +19778,7 @@ GameObject:
   - component: {fileID: 3920406047278876228}
   - component: {fileID: 6806117839558470766}
   - component: {fileID: 1280258498960101018}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: StormLines2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24728,7 +24728,7 @@ GameObject:
   - component: {fileID: 509860228795732371}
   - component: {fileID: 2500733218690469167}
   - component: {fileID: 8540673496954233473}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: StormTrail
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -46,13 +46,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   skillData:
     ID: 10000005
-    type: 1
+    type: 3
     multiShotAngle: 60
     multiShotBulletCount: 7
+    novaRadius: 14
+    areaRadius: 14
     name: "\uD3ED\uD48D \uBBF8\uC0AC\uC77C"
     info: "\uC804\uC790 \uD50C\uB77C\uC988\uB9C8 \uBBF8\uC0AC\uC77C\uC744 \uBC1C\uC0AC\uD55C\uB2E4."
     pierceCount: 3
-    cooldown: 0.75
+    cooldown: 1
     speed: 25
     splash: 3
     damage: 15
@@ -66,7 +68,6 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 256
-  projectileParticle: {fileID: 1018882707796302, guid: f013a7465c9b4274bbd66d2ff9761187,
-    type: 3}
-  hixParticle: {fileID: 1486957119801806, guid: cab6c62da7f9f2840be63f9dd3c34637,
+  projectileParticle: {fileID: 0}
+  hitParticle: {fileID: 1759752313034738, guid: 6a9a2901eadcddc4b950e6a9bf8c57ea,
     type: 3}

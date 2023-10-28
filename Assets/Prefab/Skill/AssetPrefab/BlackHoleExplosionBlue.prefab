@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4320802878124978}
   - component: {fileID: 198995850935674678}
   - component: {fileID: 199042413469160176}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: ParticlesEnd
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4936,7 +4936,7 @@ GameObject:
   - component: {fileID: 4394764914356918}
   - component: {fileID: 198398298778525668}
   - component: {fileID: 199603397869727096}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Glow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9888,7 +9888,7 @@ GameObject:
   - component: {fileID: 4938725694452466}
   - component: {fileID: 198981443834274554}
   - component: {fileID: 199188053842691814}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Particles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14813,7 +14813,7 @@ GameObject:
   - component: {fileID: 4203818812265772}
   - component: {fileID: 198419074769575626}
   - component: {fileID: 199902743990756092}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: NovaEnd
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19766,7 +19766,7 @@ GameObject:
   - component: {fileID: 4364616770785902}
   - component: {fileID: 198363952109335992}
   - component: {fileID: 199524961614810502}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: OuterLayer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24674,7 +24674,7 @@ GameObject:
   - component: {fileID: 198067218504635156}
   - component: {fileID: 199419235555881206}
   - component: {fileID: 7525424147336560127}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: BlackHoleExplosionBlue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29600,7 +29600,7 @@ GameObject:
   - component: {fileID: 5169824623330182678}
   - component: {fileID: 1656972272203170940}
   - component: {fileID: 1700485667448859431}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SphereEnd
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34498,7 +34498,7 @@ GameObject:
   - component: {fileID: 7793354448704390708}
   - component: {fileID: 923183924327301889}
   - component: {fileID: 2261430745246355321}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: CenterEnd
   m_TagString: Untagged
   m_Icon: {fileID: 0}

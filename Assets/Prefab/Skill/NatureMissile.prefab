@@ -49,6 +49,8 @@ MonoBehaviour:
     type: 0
     multiShotAngle: 60
     multiShotBulletCount: 3
+    novaRadius: 10
+    areaRadius: 10
     name: "\uC790\uC5F0\uC758 \uD798"
     info: "\uC790\uC5F0\uC758 \uD798\uC73C\uB85C \uAC15\uD654\uD55C \uAC15\uB825\uD55C
       \uD0C4\uD658\uC744 \uBC1C\uC0AC\uD55C\uB2E4."
@@ -69,5 +71,5 @@ MonoBehaviour:
     m_Bits: 256
   projectileParticle: {fileID: 1308750004520360652, guid: e8e9aa70284d12548859fe3182681282,
     type: 3}
-  hixParticle: {fileID: 1732508177996512, guid: 4c9ea63cfecb7094a88406b92cc37fae,
+  hitParticle: {fileID: 1732508177996512, guid: 4c9ea63cfecb7094a88406b92cc37fae,
     type: 3}

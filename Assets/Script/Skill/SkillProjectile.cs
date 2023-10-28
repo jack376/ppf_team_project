@@ -75,7 +75,7 @@ public class SkillProjectile : MonoBehaviour
     private void OnSplashDamage()
     {
         var hitColliders = Physics.OverlapSphere(transform.position, splash, targetLayer);
-        foreach (Collider hitCollider in hitColliders)
+        foreach (var hitCollider in hitColliders)
         {
             var target = hitCollider.gameObject.GetComponent<IDamageable>();
             if (target != null)

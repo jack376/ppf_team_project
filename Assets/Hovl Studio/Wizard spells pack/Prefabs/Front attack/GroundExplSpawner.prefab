@@ -25,12 +25,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1287077351915962}
+  serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!114 &114760204925222068
 MonoBehaviour:
@@ -56,6 +57,10 @@ MonoBehaviour:
   spawnDuration: 0.5
   positionOffset: 0.9
   changeScale: 1
+  effectWithAnimation: 0
+  anim: []
+  delay: 0
+  playMeshEffect: 0
 --- !u!82 &82896063825512214
 AudioSource:
   m_ObjectHideFlags: 0

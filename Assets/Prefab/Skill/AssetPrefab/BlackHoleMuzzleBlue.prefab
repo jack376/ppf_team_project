@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4389258889571382}
   - component: {fileID: 198055100865341102}
   - component: {fileID: 199424592343844004}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: StartRing
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4937,7 +4937,7 @@ GameObject:
   - component: {fileID: 4778778235288058}
   - component: {fileID: 198807612589186344}
   - component: {fileID: 199751467958677778}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: BlackHoleMuzzleBlue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9892,7 +9892,7 @@ GameObject:
   - component: {fileID: 4790293977850134}
   - component: {fileID: 198172477617353958}
   - component: {fileID: 199655628062458778}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: NoiseParticles
   m_TagString: Untagged
   m_Icon: {fileID: 0}

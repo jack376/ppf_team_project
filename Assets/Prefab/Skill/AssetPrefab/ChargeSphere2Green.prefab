@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6397290695672450590}
   - component: {fileID: 9000227321880810019}
   - component: {fileID: 555627066014093833}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Glow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4963,7 +4963,7 @@ GameObject:
   - component: {fileID: 2461855141497210595}
   - component: {fileID: 3714883467944293660}
   - component: {fileID: 13947152074722343}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Particles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9889,7 +9889,7 @@ GameObject:
   - component: {fileID: 1274422775794181789}
   - component: {fileID: 6211891183925874440}
   - component: {fileID: 4993651214168953000}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: ChargeSphere2Green
   m_TagString: Untagged
   m_Icon: {fileID: 0}

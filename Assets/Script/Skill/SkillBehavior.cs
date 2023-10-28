@@ -9,7 +9,7 @@ public class SkillBehavior : MonoBehaviour
     public LayerMask groundLayer;
 
     public GameObject projectileParticle;
-    public GameObject hixParticle;
+    public GameObject hitParticle;
 
     private float searchRadius = 1500f;
     private Collider[] overlapResults = new Collider[250];
@@ -30,7 +30,7 @@ public class SkillBehavior : MonoBehaviour
             skill = SkillFactory.GetSkillType(skillData.type);
             if (skill != null)
             {
-                skill.Execute(skillData, targetLayer, targetQuaternion, hixParticle, projectileParticle);
+                skill.Execute(skillData, targetLayer, targetQuaternion, hitParticle, projectileParticle, targetTransform.position);
             }
         }
     }

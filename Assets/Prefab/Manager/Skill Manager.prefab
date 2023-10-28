@@ -53,6 +53,7 @@ MonoBehaviour:
   - {fileID: 7900397933835047178, guid: 663b72f9b6ce4ab4aa438bb343722de3, type: 3}
   - {fileID: 7900397933835047178, guid: d02d734ced919444faf1d9c5565b42ea, type: 3}
   - {fileID: 7900397933835047178, guid: 8287da5bfa4cb4942b32306fc98fc23a, type: 3}
+  - {fileID: 7900397933835047178, guid: 82a4f9477751f3b4aa83adf155f37083, type: 3}
   allParticlePrefabs:
   - {fileID: 1767841913861676, guid: 7e33fe33aff4f49449f51ed88f138e9c, type: 3}
   - {fileID: 1066843573042574, guid: c98ce42aa8b5fb64fa955a3b0924a0e6, type: 3}
@@ -64,3 +65,5 @@ MonoBehaviour:
   - {fileID: 1736565358043974, guid: 2752299bc6a5fe24d807ce578b8cc6e4, type: 3}
   - {fileID: 1308750004520360652, guid: e8e9aa70284d12548859fe3182681282, type: 3}
   - {fileID: 1732508177996512, guid: 4c9ea63cfecb7094a88406b92cc37fae, type: 3}
+  - {fileID: 1759752313034738, guid: 6a9a2901eadcddc4b950e6a9bf8c57ea, type: 3}
+  - {fileID: 1919708242137258, guid: 3c7b3cb3b4124d3458da59afe4784cf9, type: 3}

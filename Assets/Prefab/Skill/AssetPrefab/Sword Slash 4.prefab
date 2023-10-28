@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4916409273614420}
   - component: {fileID: 198051888856156710}
   - component: {fileID: 199336532132337416}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Flare
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -50,7 +50,7 @@ ParticleSystem:
   emitterVelocityMode: 0
   looping: 1
   prewarm: 0
-  playOnAwake: 0
+  playOnAwake: 1
   useUnscaledTime: 0
   autoRandomSeed: 1
   startDelay:
@@ -4909,7 +4909,7 @@ GameObject:
   - component: {fileID: 4944134932107200}
   - component: {fileID: 198252306368054788}
   - component: {fileID: 199526074459384706}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Sparks
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4948,7 +4948,7 @@ ParticleSystem:
   emitterVelocityMode: 0
   looping: 1
   prewarm: 0
-  playOnAwake: 0
+  playOnAwake: 1
   useUnscaledTime: 0
   autoRandomSeed: 1
   startDelay:
@@ -9807,7 +9807,7 @@ GameObject:
   - component: {fileID: 4115839583698584}
   - component: {fileID: 198376580526262882}
   - component: {fileID: 199754855573087566}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Hit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9848,7 +9848,7 @@ ParticleSystem:
   emitterVelocityMode: 0
   looping: 1
   prewarm: 0
-  playOnAwake: 0
+  playOnAwake: 1
   useUnscaledTime: 0
   autoRandomSeed: 1
   startDelay:
@@ -14707,7 +14707,7 @@ GameObject:
   - component: {fileID: 4397973579682624}
   - component: {fileID: 198706051281196560}
   - component: {fileID: 199514181662899644}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Slash
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14746,7 +14746,7 @@ ParticleSystem:
   emitterVelocityMode: 0
   looping: 1
   prewarm: 0
-  playOnAwake: 0
+  playOnAwake: 1
   useUnscaledTime: 0
   autoRandomSeed: 1
   startDelay:
@@ -19614,7 +19614,7 @@ GameObject:
   - component: {fileID: 4310501628179458}
   - component: {fileID: 198505989357831430}
   - component: {fileID: 199360289814798142}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SparksCore
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19653,7 +19653,7 @@ ParticleSystem:
   emitterVelocityMode: 0
   looping: 1
   prewarm: 0
-  playOnAwake: 0
+  playOnAwake: 1
   useUnscaledTime: 0
   autoRandomSeed: 1
   startDelay:
@@ -24521,6 +24521,7 @@ GameObject:
   - component: {fileID: 4362472259802890}
   - component: {fileID: 198393960337124616}
   - component: {fileID: 199415115864821468}
+  - component: {fileID: -4438389632956522577}
   m_Layer: 9
   m_Name: Sword Slash 4
   m_TagString: Untagged
@@ -24538,7 +24539,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
   m_LocalPosition: {x: 0, y: 1, z: 0}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 4397973579682624}
@@ -24564,9 +24565,9 @@ ParticleSystem:
   ringBufferMode: 0
   ringBufferLoopRange: {x: 0, y: 1}
   emitterVelocityMode: 0
-  looping: 0
+  looping: 1
   prewarm: 0
-  playOnAwake: 0
+  playOnAwake: 1
   useUnscaledTime: 0
   autoRandomSeed: 1
   startDelay:
@@ -29423,6 +29424,18 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
+--- !u!114 &-4438389632956522577
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1919708242137258}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56b9ada3105e0974cba7063174717d86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1930896904671498
 GameObject:
   m_ObjectHideFlags: 0
@@ -29434,7 +29447,7 @@ GameObject:
   - component: {fileID: 4624025447585346}
   - component: {fileID: 198065213080244804}
   - component: {fileID: 199889092726415878}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Distortion(Delete for Mobile)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29473,7 +29486,7 @@ ParticleSystem:
   emitterVelocityMode: 0
   looping: 1
   prewarm: 0
-  playOnAwake: 0
+  playOnAwake: 1
   useUnscaledTime: 0
   autoRandomSeed: 1
   startDelay:
@@ -34332,7 +34345,7 @@ GameObject:
   - component: {fileID: 4538181413818704}
   - component: {fileID: 198186001838530818}
   - component: {fileID: 199480126557985106}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Smoke
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34371,7 +34384,7 @@ ParticleSystem:
   emitterVelocityMode: 0
   looping: 1
   prewarm: 0
-  playOnAwake: 0
+  playOnAwake: 1
   useUnscaledTime: 0
   autoRandomSeed: 1
   startDelay:
@@ -39230,7 +39243,7 @@ GameObject:
   - component: {fileID: 4434336648080768}
   - component: {fileID: 198955105259457166}
   - component: {fileID: 199524475446189140}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Debris
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39269,7 +39282,7 @@ ParticleSystem:
   emitterVelocityMode: 0
   looping: 1
   prewarm: 0
-  playOnAwake: 0
+  playOnAwake: 1
   useUnscaledTime: 0
   autoRandomSeed: 1
   startDelay:

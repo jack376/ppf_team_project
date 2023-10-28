@@ -10,7 +10,12 @@ public class PlayerSkill : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.Q)) // 테스트 코드
         {
-            LearnSkill(10000001);
+            LearnSkill(10000006);
+        }
+
+        if (GameManager.isGameover)
+        {
+            return;
         }
 
         List<GameObject> skillReadyList = new List<GameObject>();

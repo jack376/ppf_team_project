@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class TypeMulti : ISkill
 {
-    public void Execute(SkillData skillData, LayerMask targetLayer, Quaternion targetQuaternion, GameObject hitFx, GameObject projectileFx)
+    public void Execute(SkillData skillData, LayerMask targetLayer, Quaternion targetQuaternion, GameObject hitFx, GameObject projectileFx, Vector3 targetPosition)
     {
         var originalRotation = targetQuaternion;
 

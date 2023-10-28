@@ -8,6 +8,8 @@ public class SkillData
     public SkillType type = 0;
     public float multiShotAngle = 45f;
     public int multiShotBulletCount = 5;
+    public float novaRadius = 10f;
+    public float areaRadius = 10f;
 
     [Header("스킬 이름, 스킬 상세 정보")]
     public string name = "스킬 이름"; 
