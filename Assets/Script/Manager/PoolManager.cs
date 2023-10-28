@@ -25,13 +25,20 @@ public class PoolManager : MonoBehaviour
         var projectilePrefab = SkillManager.Instance.projectilePrefab;
         CreatePool(projectilePrefab, projectilePrefab);
 
-        InitPool(SkillManager.Instance.allSkillPrefabs);
-        InitPool(SkillManager.Instance.allParticlePrefabs, 500);
-        InitPool(EnemyManager.Instance.allEnemyPrefabs, 100);
-        InitPool(DropItemManager.Instance.allDropItemPrefabs, 200);
+        //InitPool(SkillManager.Instance.allSkillPrefabs);
+        InitPool(SkillManager.Instance.allParticlePrefabs);
+        InitPool(EnemyManager.Instance.allEnemyPrefabs);
+        InitPool(DropItemManager.Instance.allDropItemPrefabs);
+
+        /*
+        foreach (var key in pools.Keys)
+        {
+            Debug.Log(key.name);
+        }
+        */
     }
 
-    private void InitPool(List<GameObject> allPrefabs, int initialSize = 100)
+    private void InitPool(List<GameObject> allPrefabs, int initialSize = 50)
     {
         foreach (var prefab in allPrefabs)
         {

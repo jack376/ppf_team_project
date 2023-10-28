@@ -13,7 +13,7 @@ public class TypeNone : ISkill
         projectile.transform.rotation = targetQuaternion;
 
         var sp = projectile.GetComponent<SkillProjectile>();
-        sp.originalPrefab = SkillManager.Instance.projectilePrefab;
+        sp.originalPrefab     = SkillManager.Instance.projectilePrefab;
         sp.projectileFxPrefab = projectileFx;
         sp.hitFxPrefab        = hitFx;
         sp.targetLayer        = targetLayer;

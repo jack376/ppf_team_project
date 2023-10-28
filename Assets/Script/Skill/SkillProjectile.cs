@@ -37,7 +37,7 @@ public class SkillProjectile : MonoBehaviour
         {
             if (isEnable)
             {
-                OnHitParticle();
+                OnHitParticle(hitFxPrefab);
                 OnSplashDamage();
                 ReleaseProjectileFx();
                 isEnable = false;
@@ -57,13 +57,13 @@ public class SkillProjectile : MonoBehaviour
         if (pierceCount > 1)
         {
             pierceCount--;
-            OnHitParticle();
+            OnHitParticle(hitFxPrefab);
             OnSplashDamage();
         }
 
         if (pierceCount <= 0 && isEnable)
         {
-            OnHitParticle();
+            OnHitParticle(hitFxPrefab);
             OnSplashDamage();
             ReleaseProjectileFx();
             isEnable = false;
@@ -85,14 +85,13 @@ public class SkillProjectile : MonoBehaviour
         }
     }
 
-    private void OnHitParticle()
+    private void OnHitParticle(GameObject hitFxPrefab)
     {
         var hitParticleGo = PoolManager.Instance.GetPool(hitFxPrefab).Get();
-        var hitParticle = hitParticleGo.GetComponent<HitParticleHandler>();
-
         hitParticleGo.transform.position = transform.position;
         hitParticleGo.transform.rotation = Quaternion.identity;
 
+        var hitParticle = hitParticleGo.GetComponent<HitParticleHandler>();
         hitParticle.onFinish += ReleaseParticle;
 
         void ReleaseParticle()

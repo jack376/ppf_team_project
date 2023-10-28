@@ -51,11 +51,11 @@ MonoBehaviour:
     multiShotBulletCount: 5
     name: "\uD30C\uC774\uC5B4\uBCFC"
     info: "\uC2A4\uD0AC \uC815\uBCF4"
-    pierceCount: 2
+    pierceCount: 0
     cooldown: 1
     speed: 15
     splash: 3
-    damage: 15
+    damage: 50
     lifeTime: 0.5
     currentLevel: 0
     minLevel: 0

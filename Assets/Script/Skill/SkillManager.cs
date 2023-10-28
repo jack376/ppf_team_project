@@ -1,6 +1,4 @@
 using System.Collections.Generic;
-using System.IO;
-using System.Text;
 using UnityEngine;
 
 public class SkillManager : MonoBehaviour
@@ -116,4 +114,3 @@ public class SkillManager : MonoBehaviour
     }
     */
 }
-

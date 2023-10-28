@@ -15,8 +15,6 @@ public class TypeMulti : ISkill
             float currentAngle = startAngle + (deltaAngle * i);
             SpawnProjectile(skillData, targetLayer, originalRotation * Quaternion.Euler(0f, currentAngle, 0f), hitFx, projectileFx);
         }
-
-        targetQuaternion = originalRotation;
     }
 
     private void SpawnProjectile(SkillData skillData, LayerMask targetLayer, Quaternion targetQuaternion, GameObject hitFx, GameObject projectileFx)
