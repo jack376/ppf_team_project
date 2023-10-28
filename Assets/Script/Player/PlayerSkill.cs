@@ -53,5 +53,7 @@ public class PlayerSkill : MonoBehaviour
             learnSkillPrefab.Add(skillPrefab);
             skillCooldowns[skillPrefab] = 0f;
         }
+
+        Debug.Log("LearnSkill" + id);
     }
 }

@@ -68,7 +68,7 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 256
-  projectileParticle: {fileID: 1066843573042574, guid: c98ce42aa8b5fb64fa955a3b0924a0e6,
+  projectileParticle: {fileID: 1066843573042574, guid: 99b14c65ec6ba3c4db74bfeceae22a1b,
     type: 3}
-  hitParticle: {fileID: 1767841913861676, guid: 7e33fe33aff4f49449f51ed88f138e9c,
+  hitParticle: {fileID: 1767841913861676, guid: c4d4e95a61fb1664998caf872c3e1725,
     type: 3}
