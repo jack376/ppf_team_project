@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 7155146212094752597}
   - component: {fileID: 1288342229211594191}
   m_Layer: 7
-  m_Name: Golem Fire
+  m_Name: Spider King
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -34,7 +34,7 @@ Transform:
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 1
   m_Children:
-  - {fileID: 2282027425146789561}
+  - {fileID: 2340026400733886017}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &3981323751702276186
@@ -83,10 +83,10 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.54477096
-  m_Height: 2.7735758
+  m_Radius: 0.3096463
+  m_Height: 1.5453917
   m_Direction: 1
-  m_Center: {x: 0, y: 1.3867879, z: 0}
+  m_Center: {x: 0, y: 0.77269584, z: 0}
 --- !u!195 &8502887050024551692
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -127,17 +127,17 @@ MonoBehaviour:
     name: "\uBAAC\uC2A4\uD130 \uC774\uB984"
     info: "\uBAAC\uC2A4\uD130 \uC815\uBCF4"
     spawnCycleSecond: 0.5
-    maxHealth: 100
+    maxHealth: 5000
     defense: 0
-    attackDamage: 25
+    attackDamage: 30
     attackSpeed: 0.5
-    moveSpeed: 3
+    moveSpeed: 4
     attackDelay: 1
     bodyScale: 1
     maxHealthRatio: 1.02
     moveSpeedRatio: 1.02
     attackDamageRatio: 1.02
-    expPoint: 25
+    expPoint: 250
     expRate: 1.02
     itemDropRate: 1.05
     currentLevel: 1
@@ -147,6 +147,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   increaseTime: 1
+  damageTextPrefab: {fileID: 3730045718335000793, guid: 0fbc7164a137b42458357f748e733f60,
+    type: 3}
 --- !u!114 &1288342229211594191
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -162,7 +164,7 @@ MonoBehaviour:
   dropItems:
   - {fileID: 6449782882855002263, guid: 84e3c9dee29bc104b9acf2da45a871d5, type: 3}
   dropChanceRate: 1
---- !u!1001 &3095868384681237106
+--- !u!1001 &6884899541927135598
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -170,69 +172,69 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5898012270991567244}
     m_Modifications:
-    - target: {fileID: 3845467420191573195, guid: f24e9db5fc2e65342a1c7ae8d518056e,
+    - target: {fileID: 9220383817017189135, guid: e759efec5c83bcd4881016981af20831,
+        type: 3}
+      propertyPath: m_Name
+      value: Spider King
+      objectReference: {fileID: 0}
+    - target: {fileID: 9220383817017491247, guid: e759efec5c83bcd4881016981af20831,
         type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3845467420191573195, guid: f24e9db5fc2e65342a1c7ae8d518056e,
+    - target: {fileID: 9220383817017491247, guid: e759efec5c83bcd4881016981af20831,
         type: 3}
       propertyPath: m_LocalPosition.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3845467420191573195, guid: f24e9db5fc2e65342a1c7ae8d518056e,
+    - target: {fileID: 9220383817017491247, guid: e759efec5c83bcd4881016981af20831,
         type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3845467420191573195, guid: f24e9db5fc2e65342a1c7ae8d518056e,
+    - target: {fileID: 9220383817017491247, guid: e759efec5c83bcd4881016981af20831,
         type: 3}
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 3845467420191573195, guid: f24e9db5fc2e65342a1c7ae8d518056e,
+    - target: {fileID: 9220383817017491247, guid: e759efec5c83bcd4881016981af20831,
         type: 3}
       propertyPath: m_LocalRotation.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3845467420191573195, guid: f24e9db5fc2e65342a1c7ae8d518056e,
+    - target: {fileID: 9220383817017491247, guid: e759efec5c83bcd4881016981af20831,
         type: 3}
       propertyPath: m_LocalRotation.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3845467420191573195, guid: f24e9db5fc2e65342a1c7ae8d518056e,
+    - target: {fileID: 9220383817017491247, guid: e759efec5c83bcd4881016981af20831,
         type: 3}
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3845467420191573195, guid: f24e9db5fc2e65342a1c7ae8d518056e,
+    - target: {fileID: 9220383817017491247, guid: e759efec5c83bcd4881016981af20831,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3845467420191573195, guid: f24e9db5fc2e65342a1c7ae8d518056e,
+    - target: {fileID: 9220383817017491247, guid: e759efec5c83bcd4881016981af20831,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3845467420191573195, guid: f24e9db5fc2e65342a1c7ae8d518056e,
+    - target: {fileID: 9220383817017491247, guid: e759efec5c83bcd4881016981af20831,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4473772703222537841, guid: f24e9db5fc2e65342a1c7ae8d518056e,
-        type: 3}
-      propertyPath: m_Name
-      value: Golem Fire
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: f24e9db5fc2e65342a1c7ae8d518056e, type: 3}
---- !u!4 &2282027425146789561 stripped
+  m_SourcePrefab: {fileID: 100100000, guid: e759efec5c83bcd4881016981af20831, type: 3}
+--- !u!4 &2340026400733886017 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 3845467420191573195, guid: f24e9db5fc2e65342a1c7ae8d518056e,
+  m_CorrespondingSourceObject: {fileID: 9220383817017491247, guid: e759efec5c83bcd4881016981af20831,
     type: 3}
-  m_PrefabInstance: {fileID: 3095868384681237106}
+  m_PrefabInstance: {fileID: 6884899541927135598}
   m_PrefabAsset: {fileID: 0}

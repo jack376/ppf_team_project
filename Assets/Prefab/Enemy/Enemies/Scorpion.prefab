@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 7155146212094752597}
   - component: {fileID: 1288342229211594191}
   m_Layer: 7
-  m_Name: Egglet
+  m_Name: Scorpion
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -34,7 +34,7 @@ Transform:
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 1
   m_Children:
-  - {fileID: 6521918690636666127}
+  - {fileID: 5862847113846110616}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &3981323751702276186
@@ -83,10 +83,10 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.225
-  m_Height: 1.1
+  m_Radius: 0.28951436
+  m_Height: 1.5929885
   m_Direction: 1
-  m_Center: {x: 0, y: 0.55, z: 0}
+  m_Center: {x: 0, y: 0.79649425, z: 0}
 --- !u!195 &8502887050024551692
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -147,6 +147,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   increaseTime: 1
+  damageTextPrefab: {fileID: 3730045718335000793, guid: 0fbc7164a137b42458357f748e733f60,
+    type: 3}
 --- !u!114 &1288342229211594191
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -162,7 +164,7 @@ MonoBehaviour:
   dropItems:
   - {fileID: 6449782882855002263, guid: 84e3c9dee29bc104b9acf2da45a871d5, type: 3}
   dropChanceRate: 1
---- !u!1001 &3683419365467622752
+--- !u!1001 &7890227572660181880
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -170,127 +172,57 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5898012270991567244}
     m_Modifications:
-    - target: {fileID: 7610133508913660993, guid: 4cc22bc9bbfb9074782265ec91ae0660,
-        type: 3}
-      propertyPath: m_Layer
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7610133508913660995, guid: 4cc22bc9bbfb9074782265ec91ae0660,
-        type: 3}
-      propertyPath: m_Layer
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7610133508913660997, guid: 4cc22bc9bbfb9074782265ec91ae0660,
-        type: 3}
-      propertyPath: m_Layer
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7610133508913660999, guid: 4cc22bc9bbfb9074782265ec91ae0660,
-        type: 3}
-      propertyPath: m_Layer
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7610133508913661001, guid: 4cc22bc9bbfb9074782265ec91ae0660,
-        type: 3}
-      propertyPath: m_Layer
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7610133508913661003, guid: 4cc22bc9bbfb9074782265ec91ae0660,
-        type: 3}
-      propertyPath: m_Layer
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7610133508913661005, guid: 4cc22bc9bbfb9074782265ec91ae0660,
-        type: 3}
-      propertyPath: m_Layer
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7610133508913661007, guid: 4cc22bc9bbfb9074782265ec91ae0660,
+    - target: {fileID: 3992842270661408858, guid: a40ae229e9ea4b847b46c9f71fb633ad,
         type: 3}
       propertyPath: m_Name
-      value: Egglet
+      value: Scorpion
       objectReference: {fileID: 0}
-    - target: {fileID: 7610133508913661007, guid: 4cc22bc9bbfb9074782265ec91ae0660,
-        type: 3}
-      propertyPath: m_Layer
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7610133508913661013, guid: 4cc22bc9bbfb9074782265ec91ae0660,
-        type: 3}
-      propertyPath: m_Layer
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7610133508913661015, guid: 4cc22bc9bbfb9074782265ec91ae0660,
-        type: 3}
-      propertyPath: m_Layer
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7610133508913661017, guid: 4cc22bc9bbfb9074782265ec91ae0660,
-        type: 3}
-      propertyPath: m_Layer
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7610133508913661019, guid: 4cc22bc9bbfb9074782265ec91ae0660,
-        type: 3}
-      propertyPath: m_Layer
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7610133508913661021, guid: 4cc22bc9bbfb9074782265ec91ae0660,
-        type: 3}
-      propertyPath: m_Layer
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7610133508913661023, guid: 4cc22bc9bbfb9074782265ec91ae0660,
-        type: 3}
-      propertyPath: m_Layer
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7610133508914092143, guid: 4cc22bc9bbfb9074782265ec91ae0660,
+    - target: {fileID: 4333232840991810272, guid: a40ae229e9ea4b847b46c9f71fb633ad,
         type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7610133508914092143, guid: 4cc22bc9bbfb9074782265ec91ae0660,
+    - target: {fileID: 4333232840991810272, guid: a40ae229e9ea4b847b46c9f71fb633ad,
         type: 3}
       propertyPath: m_LocalPosition.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7610133508914092143, guid: 4cc22bc9bbfb9074782265ec91ae0660,
+    - target: {fileID: 4333232840991810272, guid: a40ae229e9ea4b847b46c9f71fb633ad,
         type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7610133508914092143, guid: 4cc22bc9bbfb9074782265ec91ae0660,
+    - target: {fileID: 4333232840991810272, guid: a40ae229e9ea4b847b46c9f71fb633ad,
         type: 3}
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 7610133508914092143, guid: 4cc22bc9bbfb9074782265ec91ae0660,
+    - target: {fileID: 4333232840991810272, guid: a40ae229e9ea4b847b46c9f71fb633ad,
         type: 3}
       propertyPath: m_LocalRotation.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7610133508914092143, guid: 4cc22bc9bbfb9074782265ec91ae0660,
+    - target: {fileID: 4333232840991810272, guid: a40ae229e9ea4b847b46c9f71fb633ad,
         type: 3}
       propertyPath: m_LocalRotation.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7610133508914092143, guid: 4cc22bc9bbfb9074782265ec91ae0660,
+    - target: {fileID: 4333232840991810272, guid: a40ae229e9ea4b847b46c9f71fb633ad,
         type: 3}
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7610133508914092143, guid: 4cc22bc9bbfb9074782265ec91ae0660,
+    - target: {fileID: 4333232840991810272, guid: a40ae229e9ea4b847b46c9f71fb633ad,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7610133508914092143, guid: 4cc22bc9bbfb9074782265ec91ae0660,
+    - target: {fileID: 4333232840991810272, guid: a40ae229e9ea4b847b46c9f71fb633ad,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7610133508914092143, guid: 4cc22bc9bbfb9074782265ec91ae0660,
+    - target: {fileID: 4333232840991810272, guid: a40ae229e9ea4b847b46c9f71fb633ad,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
@@ -299,10 +231,10 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 4cc22bc9bbfb9074782265ec91ae0660, type: 3}
---- !u!4 &6521918690636666127 stripped
+  m_SourcePrefab: {fileID: 100100000, guid: a40ae229e9ea4b847b46c9f71fb633ad, type: 3}
+--- !u!4 &5862847113846110616 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 7610133508914092143, guid: 4cc22bc9bbfb9074782265ec91ae0660,
+  m_CorrespondingSourceObject: {fileID: 4333232840991810272, guid: a40ae229e9ea4b847b46c9f71fb633ad,
     type: 3}
-  m_PrefabInstance: {fileID: 3683419365467622752}
+  m_PrefabInstance: {fileID: 7890227572660181880}
   m_PrefabAsset: {fileID: 0}

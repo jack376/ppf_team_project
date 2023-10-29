@@ -58,6 +58,7 @@ MonoBehaviour:
   enemyPrefabs:
   - {fileID: 1480240962427412395, guid: 1ba16c8024eb2844a8295f290bbf78f4, type: 3}
   - {fileID: 1480240962427412395, guid: 7552dfe71b90b504daed36eaff076bbb, type: 3}
+  - {fileID: 1480240962427412395, guid: d474d2bae53c6514e82b54d3513b9de6, type: 3}
   maxEnemies: 100
   spawnRadius: 4
   spawnInterval: 0.1

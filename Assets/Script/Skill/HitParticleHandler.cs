@@ -5,13 +5,13 @@ public class HitParticleHandler : MonoBehaviour
 {
     public event Action onFinish;
 
-    private float particleLifetime = 1.5f;
+    private float particleLifeTime = 1.5f;
     private float flowTime = 0f;
 
     private void Update()
     {
         flowTime += Time.deltaTime;
-        if (flowTime >= particleLifetime)
+        if (flowTime >= particleLifeTime)
         {
             if(onFinish != null)
             {

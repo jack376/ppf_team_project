@@ -54,7 +54,7 @@ public class SkillManager : MonoBehaviour
                 if (sb != null)
                 {
                     sb.UpdateSkillData(skill);
-                    Debug.Log("UpdateSkillDataInPrefab" + skill.ID);
+                    //Debug.Log("UpdateSkillDataInPrefab" + skill.ID);
                 }
             }
         }

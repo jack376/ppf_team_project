@@ -16,7 +16,6 @@ public class UIManager : MonoBehaviour
     public List<Button> skillSelectButtons = new List<Button>();
 
     private PlayerSkill playerSkill;
-    private int[] randomIds = new int[3];
     private bool paused = false;
 
     private void Awake()

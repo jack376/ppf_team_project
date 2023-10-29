@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 7155146212094752597}
   - component: {fileID: 1288342229211594191}
   m_Layer: 7
-  m_Name: Phantom
+  m_Name: Grim Reaper
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -34,7 +34,7 @@ Transform:
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 1
   m_Children:
-  - {fileID: 9064362327654478033}
+  - {fileID: 8420163749803471241}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &3981323751702276186
@@ -83,10 +83,10 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.225
-  m_Height: 1.1
+  m_Radius: 0.37349615
+  m_Height: 1.974288
   m_Direction: 1
-  m_Center: {x: 0, y: 0.55, z: 0}
+  m_Center: {x: 0, y: 0.987144, z: 0}
 --- !u!195 &8502887050024551692
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -147,6 +147,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   increaseTime: 1
+  damageTextPrefab: {fileID: 3730045718335000793, guid: 0fbc7164a137b42458357f748e733f60,
+    type: 3}
 --- !u!114 &1288342229211594191
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -162,7 +164,7 @@ MonoBehaviour:
   dropItems:
   - {fileID: 6449782882855002263, guid: 84e3c9dee29bc104b9acf2da45a871d5, type: 3}
   dropChanceRate: 1
---- !u!1001 &6482860384607016022
+--- !u!1001 &506235713799031358
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -170,69 +172,69 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5898012270991567244}
     m_Modifications:
-    - target: {fileID: 2611149553095877767, guid: 6493e9bff11e3ca47baa8b5890428b62,
+    - target: {fileID: 8348808267265457079, guid: 54a1bec6ff900e647a1ac4e8c8de2d5c,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2611149553095877767, guid: 6493e9bff11e3ca47baa8b5890428b62,
+    - target: {fileID: 8348808267265457079, guid: 54a1bec6ff900e647a1ac4e8c8de2d5c,
         type: 3}
       propertyPath: m_LocalPosition.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2611149553095877767, guid: 6493e9bff11e3ca47baa8b5890428b62,
+    - target: {fileID: 8348808267265457079, guid: 54a1bec6ff900e647a1ac4e8c8de2d5c,
         type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2611149553095877767, guid: 6493e9bff11e3ca47baa8b5890428b62,
+    - target: {fileID: 8348808267265457079, guid: 54a1bec6ff900e647a1ac4e8c8de2d5c,
         type: 3}
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 2611149553095877767, guid: 6493e9bff11e3ca47baa8b5890428b62,
+    - target: {fileID: 8348808267265457079, guid: 54a1bec6ff900e647a1ac4e8c8de2d5c,
         type: 3}
       propertyPath: m_LocalRotation.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2611149553095877767, guid: 6493e9bff11e3ca47baa8b5890428b62,
+    - target: {fileID: 8348808267265457079, guid: 54a1bec6ff900e647a1ac4e8c8de2d5c,
         type: 3}
       propertyPath: m_LocalRotation.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2611149553095877767, guid: 6493e9bff11e3ca47baa8b5890428b62,
+    - target: {fileID: 8348808267265457079, guid: 54a1bec6ff900e647a1ac4e8c8de2d5c,
         type: 3}
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2611149553095877767, guid: 6493e9bff11e3ca47baa8b5890428b62,
+    - target: {fileID: 8348808267265457079, guid: 54a1bec6ff900e647a1ac4e8c8de2d5c,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2611149553095877767, guid: 6493e9bff11e3ca47baa8b5890428b62,
+    - target: {fileID: 8348808267265457079, guid: 54a1bec6ff900e647a1ac4e8c8de2d5c,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2611149553095877767, guid: 6493e9bff11e3ca47baa8b5890428b62,
+    - target: {fileID: 8348808267265457079, guid: 54a1bec6ff900e647a1ac4e8c8de2d5c,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2611149553095981223, guid: 6493e9bff11e3ca47baa8b5890428b62,
+    - target: {fileID: 8689480311849083149, guid: 54a1bec6ff900e647a1ac4e8c8de2d5c,
         type: 3}
       propertyPath: m_Name
-      value: Phantom
+      value: Grim Reaper
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 6493e9bff11e3ca47baa8b5890428b62, type: 3}
---- !u!4 &9064362327654478033 stripped
+  m_SourcePrefab: {fileID: 100100000, guid: 54a1bec6ff900e647a1ac4e8c8de2d5c, type: 3}
+--- !u!4 &8420163749803471241 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 2611149553095877767, guid: 6493e9bff11e3ca47baa8b5890428b62,
+  m_CorrespondingSourceObject: {fileID: 8348808267265457079, guid: 54a1bec6ff900e647a1ac4e8c8de2d5c,
     type: 3}
-  m_PrefabInstance: {fileID: 6482860384607016022}
+  m_PrefabInstance: {fileID: 506235713799031358}
   m_PrefabAsset: {fileID: 0}

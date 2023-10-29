@@ -25,20 +25,13 @@ public class PoolManager : MonoBehaviour
         var projectilePrefab = SkillManager.Instance.projectilePrefab;
         CreatePool(projectilePrefab, projectilePrefab);
 
-        //InitPool(SkillManager.Instance.allSkillPrefabs);
         InitPool(SkillManager.Instance.allParticlePrefabs);
         InitPool(EnemyManager.Instance.allEnemyPrefabs);
         InitPool(DropItemManager.Instance.allDropItemPrefabs);
-
-        /*
-        foreach (var key in pools.Keys)
-        {
-            Debug.Log(key.name);
-        }
-        */
+        InitPool(DamageTextManager.Instance.allDamageTextPrefabs);
     }
 
-    private void InitPool(List<GameObject> allPrefabs, int initialSize = 50)
+    private void InitPool(List<GameObject> allPrefabs, int initialSize = 500)
     {
         foreach (var prefab in allPrefabs)
         {
@@ -68,7 +61,7 @@ public class PoolManager : MonoBehaviour
         }
     }
 
-    public void CreatePool(GameObject key, GameObject prefab, int initialSize = 50)
+    public void CreatePool(GameObject key, GameObject prefab, int initialSize = 500)
     {
         var createPool = new ObjectPool<GameObject>
         (

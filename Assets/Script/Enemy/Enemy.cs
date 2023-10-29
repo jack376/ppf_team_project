@@ -1,5 +1,6 @@
+using Cinemachine;
 using System.Collections;
-using System.Diagnostics;
+using TMPro;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -14,11 +15,15 @@ public class Enemy : LivingEntity
     [Header("처치 시 시간 증가"), Space(5f)]
     public float increaseTime = 1.0f;
 
+    [Header("데미지 텍스트 프리팹"), Space(5f)]
+    public GameObject damageTextPrefab;
+
     private ItemSpawner itemSpawner;
 
     private float attackDelay;
     private float attackSpeed;
     private float searchRadius = 250f;
+    private float delayDieTime = 1.5f;
 
     private Color hitFlickerColor = Color.red;
     private int hitFlickerCount = 3;
@@ -141,11 +146,32 @@ public class Enemy : LivingEntity
     public override void TakeDamage(float damage)
     {
         base.TakeDamage(damage);
+        ShowDamageText(damageTextPrefab, damage);
+
         if (dead)
         {
             return;
         }
+
         StartCoroutine(DamagedHitColor());
+    }
+
+    private void ShowDamageText(GameObject damageTextPrefab, float damage)
+    {
+        var damageTextGo = PoolManager.Instance.GetPool(damageTextPrefab).Get();
+        damageTextGo.transform.position = transform.position;
+
+        var damageValue = damageTextGo.GetComponentInChildren<TextMeshPro>();
+        damageValue.text = damage.ToString();
+
+        var damageText = damageTextGo.GetComponent<DamageTextHandler>();
+        damageText.onDamageText += ReleaseDamageText;
+
+        void ReleaseDamageText()
+        {
+            damageText.onDamageText -= ReleaseDamageText;
+            PoolManager.Instance.GetPool(damageTextPrefab).Release(damageTextGo);
+        }
     }
 
     private IEnumerator DamagedHitColor()
@@ -184,7 +210,7 @@ public class Enemy : LivingEntity
 
     private IEnumerator DelayedRelease()
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(delayDieTime);
         base.DeleyDie();
     }
 }
