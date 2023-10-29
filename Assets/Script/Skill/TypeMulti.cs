@@ -6,11 +6,11 @@ public class TypeMulti : ISkill
     {
         var originalRotation = targetQuaternion;
 
-        float totalAngle = skillData.multiShotAngle;
-        float deltaAngle = totalAngle / (skillData.multiShotBulletCount - 1);
+        float totalAngle = skillData.multiAngle;
+        float deltaAngle = totalAngle / (skillData.multiBulletCount - 1);
         float startAngle = -totalAngle / 2;
 
-        for (int i = 0; i < skillData.multiShotBulletCount; i++)
+        for (int i = 0; i < skillData.multiBulletCount; i++)
         {
             float currentAngle = startAngle + (deltaAngle * i);
             SpawnProjectile(skillData, targetLayer, originalRotation * Quaternion.Euler(0f, currentAngle, 0f), hitFx, projectileFx);

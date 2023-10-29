@@ -5,6 +5,7 @@ public class LivingEntity : MonoBehaviour, IDamageable
 {
     public float health { get; protected set; } = 100f;
     public bool  dead   { get; protected set; }
+
     public event Action onDeath;
 
     protected virtual void OnEnable()

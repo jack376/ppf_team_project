@@ -4,16 +4,15 @@ public class PlayerController : MonoBehaviour
 {
     public Joystick joystick;
 
-    public float moveSpeed = 5.0f;
-    public float rotateSpeed = 5.0f;
-
     private Rigidbody playerRigidbody;
     private Animator playerAnimator;
+    private PlayerData playerData;
 
     void Start()
     {
         playerRigidbody = GetComponent<Rigidbody>();
         playerAnimator  = GetComponent<Animator>();
+        playerData      = GetComponent<PlayerData>();
     }
 
     void FixedUpdate()
@@ -27,7 +26,7 @@ public class PlayerController : MonoBehaviour
         float vertical   = joystick.Vertical;
 
         var inputVector  = new Vector3(horizontal, 0f, vertical).normalized;
-        var moveVelocity = inputVector * moveSpeed;
+        var moveVelocity = inputVector * playerData.moveSpeed;
         var newPosition  = playerRigidbody.position + moveVelocity * Time.fixedDeltaTime;
 
         playerRigidbody.MovePosition(newPosition);

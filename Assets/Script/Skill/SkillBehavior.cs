@@ -2,14 +2,14 @@ using UnityEngine;
 
 public class SkillBehavior : MonoBehaviour
 {
-    public ISkill skill;
-    public SkillData skillData;
-
     public LayerMask targetLayer;
     public LayerMask groundLayer;
 
     public GameObject projectileParticle;
     public GameObject hitParticle;
+
+    public ISkill skill;
+    public SkillData skillData;
 
     private float searchRadius = 1500f;
     private Collider[] overlapResults = new Collider[250];
@@ -17,6 +17,12 @@ public class SkillBehavior : MonoBehaviour
     private Transform targetTransform;
     private Quaternion targetQuaternion;
     private Vector3 playerPosition;
+
+    private ISkill typeNone  = new TypeNone();
+    private ISkill typeMulti = new TypeMulti();
+    private ISkill typeNova  = new TypeNova();
+    private ISkill typeArea  = new TypeArea();
+    private ISkill typeBuff  = new TypeBuff();
 
     public void Activate()
     {
@@ -27,11 +33,25 @@ public class SkillBehavior : MonoBehaviour
         {
             targetQuaternion = Quaternion.LookRotation(targetTransform.position - playerPosition);
 
-            skill = SkillFactory.GetSkillType(skillData.type);
+            skill = GetSkill(skillData.type);
             if (skill != null)
             {
                 skill.Execute(skillData, targetLayer, targetQuaternion, hitParticle, projectileParticle, targetTransform.position);
             }
+        }
+    }
+
+    public ISkill GetSkill(SkillType type)
+    {
+        switch (type)
+        {
+            case SkillType.None : return typeNone;
+            case SkillType.Multi: return typeMulti;
+            case SkillType.Nova : return typeNova;
+            case SkillType.Area : return typeArea;
+            case SkillType.Buff : return typeBuff;
+
+            default: return typeNone;
         }
     }
 

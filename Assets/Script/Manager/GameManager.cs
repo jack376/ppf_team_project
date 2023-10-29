@@ -5,11 +5,12 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
+    
     public static bool isGameover { get; private set; } = true;
     public static GameObject player;
 
-    public float timeLimit = 90f;
     public static float gameTimeLimit = 90f;
+    public float timeLimit = 90f;
 
     private void Awake()
     {

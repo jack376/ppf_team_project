@@ -3,16 +3,18 @@ using UnityEngine;
 
 public class PlayerSkill : MonoBehaviour
 {
-    public List<GameObject> learnSkillPrefab = new List<GameObject>();
+    internal List<GameObject> learnSkillPrefab = new List<GameObject>();
     private Dictionary<GameObject, float> skillCooldowns = new Dictionary<GameObject, float>();
+    private PlayerData playerData;
+
+    private void Start()
+    {
+        playerData = GetComponent<PlayerData>();
+        LearnSkill(playerData.baseSkillID);
+    }
 
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Q)) // 테스트 코드
-        {
-            LearnSkill(10000006);
-        }
-
         if (GameManager.isGameover)
         {
             return;
@@ -24,6 +26,8 @@ public class PlayerSkill : MonoBehaviour
             skillCooldowns.TryGetValue(skillPrefab, out float currentCooldown);
 
             var skillBehavior = skillPrefab.GetComponent<SkillBehavior>();
+
+            //float cooldown = skillBehavior.skillData.cooldown * playerData.cooldownReduction;
             if (skillBehavior && currentCooldown >= skillBehavior.skillData.cooldown)
             {
                 skillReadyList.Add(skillPrefab);

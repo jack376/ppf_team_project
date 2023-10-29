@@ -6,21 +6,23 @@ public class PlayerHealth : LivingEntity
 {
     public Slider healthSlider;
 
+    private Color hitFlickerColor = Color.red;
+    private int   hitFlickerCount = 3;
+    private float hitFlickerTime  = 0.05f;
+
+    private bool hasDied = false;
+
     private PlayerController playerController;
     private Renderer playerRenderer;
     private Animator playerAnimator;
-
-    private Color hitFlickerColor = Color.red;
-    private int hitFlickerCount = 3;
-    private float hitFlickerTime = 0.05f;
-
-    private bool hasDied = false;
+    private PlayerData playerData;
 
     private void Awake()
     {
         playerController = GetComponent<PlayerController>();
-        playerAnimator = GetComponent<Animator>();
-        playerRenderer = GetComponentInChildren<Renderer>();
+        playerAnimator   = GetComponent<Animator>();
+        playerRenderer   = GetComponentInChildren<Renderer>();
+        playerData       = GetComponent<PlayerData>();
     }
 
     private void Start()
@@ -42,14 +44,13 @@ public class PlayerHealth : LivingEntity
     {
         base.OnEnable();
 
+        health = playerData.maxHealth;
         playerController.enabled = true;
-
-        //health = PlayerStatManager.Instance.playerStat.maxHealth;
 
         healthSlider.gameObject.SetActive(true);
         healthSlider.minValue = 0f;
-        healthSlider.maxValue = health;
-        healthSlider.value = health;
+        healthSlider.maxValue = playerData.maxHealth;
+        healthSlider.value    = playerData.maxHealth;
     }
 
     public override void Healing(float newHealth)

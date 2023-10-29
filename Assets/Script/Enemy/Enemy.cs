@@ -77,7 +77,7 @@ public class Enemy : LivingEntity
 
     private void Awake()
     {
-        pathFinder = GetComponent<NavMeshAgent>();
+        pathFinder    = GetComponent<NavMeshAgent>();
         enemyAnimator = GetComponentInChildren<Animator>();
         enemyRenderer = GetComponentInChildren<Renderer>();
 
@@ -134,7 +134,7 @@ public class Enemy : LivingEntity
         }
     }
 
-    public void Setup(float newHealth, float newDamage, float newSpeed, float newDefense, Color skinColor)
+    public void SetEnemyStat(float newHealth, float newDamage, float newSpeed, float newDefense, Color skinColor)
     {
         enemyData.maxHealth          = newHealth;
         enemyData.attackDamage       = newDamage;

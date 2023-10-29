@@ -2021,37 +2021,6 @@ Transform:
   - {fileID: 1044350799395999838}
   m_Father: {fileID: 508862042210062177}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &6428358983579267819
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 6890326521119579097}
-  m_Layer: 0
-  m_Name: Weapon
-  m_TagString: Weapon
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &6890326521119579097
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6428358983579267819}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 1
-  m_Children: []
-  m_Father: {fileID: 5878586495484815423}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6430600005153737152
 GameObject:
   m_ObjectHideFlags: 0
@@ -2573,6 +2542,7 @@ GameObject:
   - component: {fileID: 6258855892979687746}
   - component: {fileID: 985913606744410307}
   - component: {fileID: 3209371082631003420}
+  - component: {fileID: 4956673368337649305}
   - component: {fileID: 2030672120894757214}
   - component: {fileID: 1629678606915329692}
   - component: {fileID: 1211722107114979323}
@@ -2591,12 +2561,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7480398293312281132}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 20.9, y: 0.1, z: -60.9}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 1
   m_Children:
-  - {fileID: 6890326521119579097}
   - {fileID: 4223898160002527422}
   - {fileID: 8300219809327599471}
   - {fileID: 8177115059969467977}
@@ -2639,8 +2608,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   joystick: {fileID: 0}
-  moveSpeed: 12
-  rotateSpeed: 25
 --- !u!114 &985913606744410307
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2666,6 +2633,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 760a3cc09c60c6b4580d05999db59b7a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &4956673368337649305
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7480398293312281132}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ebd0db803cec0d847bf4816f39784bd7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseSkillID: 10000002
+  maxHealth: 500
+  armorPoint: 0
+  cooldownReduction: 1
+  moveSpeed: 15
 --- !u!114 &2030672120894757214
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2718,7 +2702,7 @@ Rigidbody:
   serializedVersion: 4
   m_Mass: 1
   m_Drag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 0
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
@@ -2732,9 +2716,9 @@ Rigidbody:
   m_ImplicitTensor: 1
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 2
   m_Constraints: 80
-  m_CollisionDetection: 0
+  m_CollisionDetection: 2
 --- !u!1 &7530197267007910636
 GameObject:
   m_ObjectHideFlags: 0

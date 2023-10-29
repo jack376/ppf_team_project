@@ -60,15 +60,13 @@ public class SkillProjectile : MonoBehaviour
             OnHitParticle(hitFxPrefab);
             OnSplashDamage();
         }
-
-        if (pierceCount <= 0 && isEnable)
+        else if (pierceCount == 1 && isEnable)
         {
+            pierceCount--;
             OnHitParticle(hitFxPrefab);
             OnSplashDamage();
             ReleaseProjectileFx();
             isEnable = false;
-
-            return;
         }
     }
 

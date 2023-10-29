@@ -3,13 +3,27 @@ using UnityEngine;
 [System.Serializable]
 public class SkillData
 {
-    [Header("스킬 ID, 스킬 타입, 해당 타입에 필요한 값들")]
+    [Header("스킬 ID, 스킬 타입")]
     public int ID = 10000001;
     public SkillType type = 0;
-    public float multiShotAngle = 45f;
-    public int multiShotBulletCount = 5;
+
+    [Header("타입1 Multi")]
+    public float multiAngle = 45f;
+    public int multiBulletCount = 5;
+
+    [Header("타입2 Nova")]
     public float novaRadius = 10f;
+
+    [Header("타입3 Area")]
+    public float areaRange = 10f;
     public float areaRadius = 10f;
+
+    [Header("타입4 Buff")]
+    public float buffAddRaduis = 5f;
+    public float buffAddDamage = 5f;
+    public float buffAddMoveSpeed = 5f;
+    public float buffAddExp = 5f;
+    public float buffAddLootRange = 5f;
 
     [Header("스킬 이름, 스킬 상세 정보")]
     public string name = "스킬 이름"; 
@@ -37,4 +51,5 @@ public enum SkillType
     Multi = 1,
     Nova  = 2,
     Area  = 3,
+    Buff  = 4,
 }
