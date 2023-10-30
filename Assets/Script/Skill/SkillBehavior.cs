@@ -18,12 +18,6 @@ public class SkillBehavior : MonoBehaviour
     private Quaternion targetQuaternion;
     private Vector3 playerPosition;
 
-    private ISkill typeNone  = new TypeNone();
-    private ISkill typeMulti = new TypeMulti();
-    private ISkill typeNova  = new TypeNova();
-    private ISkill typeArea  = new TypeArea();
-    private ISkill typeBuff  = new TypeBuff();
-
     public void Activate()
     {
         playerPosition = GameManager.player.transform.position;
@@ -33,25 +27,11 @@ public class SkillBehavior : MonoBehaviour
         {
             targetQuaternion = Quaternion.LookRotation(targetTransform.position - playerPosition);
 
-            skill = GetSkill(skillData.type);
+            skill = SkillFactory.GetSkillType(skillData.type);
             if (skill != null)
             {
                 skill.Execute(skillData, targetLayer, targetQuaternion, hitParticle, projectileParticle, targetTransform.position);
             }
-        }
-    }
-
-    public ISkill GetSkill(SkillType type)
-    {
-        switch (type)
-        {
-            case SkillType.None : return typeNone;
-            case SkillType.Multi: return typeMulti;
-            case SkillType.Nova : return typeNova;
-            case SkillType.Area : return typeArea;
-            case SkillType.Buff : return typeBuff;
-
-            default: return typeNone;
         }
     }
 

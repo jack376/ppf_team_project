@@ -8,11 +8,11 @@ public class Gem : MonoBehaviour, IItem
 
     public void Use(GameObject target)
     {
-        PlayerExp playerExp = target.GetComponent<PlayerExp>();
+        var playerExp = target.GetComponent<PlayerExp>();
 
         if (playerExp != null)
         {
-            playerExp.GetExp(expPoint);
+            playerExp.GetExp(expPoint * playerExp.expRatio);
         }
     }
 

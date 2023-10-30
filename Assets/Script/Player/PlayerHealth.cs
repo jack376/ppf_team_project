@@ -13,16 +13,16 @@ public class PlayerHealth : LivingEntity
     private bool hasDied = false;
 
     private PlayerController playerController;
-    private Renderer playerRenderer;
     private Animator playerAnimator;
     private PlayerData playerData;
+    private Renderer[] playerRenderers;
 
     private void Awake()
     {
         playerController = GetComponent<PlayerController>();
         playerAnimator   = GetComponent<Animator>();
-        playerRenderer   = GetComponentInChildren<Renderer>();
         playerData       = GetComponent<PlayerData>();
+        playerRenderers  = GetComponentsInChildren<Renderer>();
     }
 
     private void Start()
@@ -61,7 +61,9 @@ public class PlayerHealth : LivingEntity
 
     public override void TakeDamage(float damage)
     {
-        base.TakeDamage(damage);
+        var finalDamage = Mathf.Max(damage - playerData.armorPoint, 0);
+
+        base.TakeDamage(finalDamage);
         StartCoroutine(DamagedHitColor());
         healthSlider.value = health;
     }
@@ -76,11 +78,17 @@ public class PlayerHealth : LivingEntity
         playerAnimator.SetBool("Hit Bool", true);
         for (int i = 0; i < hitFlickerCount; i++)
         {
-            playerRenderer.material.color = hitFlickerColor;
+            foreach (var renderer in playerRenderers)
+            {
+                renderer.material.color = hitFlickerColor;
+            }
             yield return new WaitForSeconds(hitFlickerTime);
-            playerAnimator.SetBool("Hit Bool", false);
 
-            playerRenderer.material.color = Color.white;
+            playerAnimator.SetBool("Hit Bool", false);
+            foreach (var renderer in playerRenderers)
+            {
+                renderer.material.color = Color.white;
+            }
             yield return new WaitForSeconds(hitFlickerTime);
         }
     }

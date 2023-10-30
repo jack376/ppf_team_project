@@ -19,11 +19,13 @@ public class SkillData
     public float areaRadius = 10f;
 
     [Header("타입4 Buff")]
-    public float buffAddRaduis = 5f;
+    public float buffAddRadius = 5f;
     public float buffAddDamage = 5f;
+    public float buffAddAttackSpeed = 5f;
     public float buffAddMoveSpeed = 5f;
     public float buffAddExp = 5f;
     public float buffAddLootRange = 5f;
+    public float buffDuration = 5f;
 
     [Header("스킬 이름, 스킬 상세 정보")]
     public string name = "스킬 이름"; 
