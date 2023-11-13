@@ -37,10 +37,10 @@ public class SkillBehavior : MonoBehaviour
 
     private void FindNearTarget(Vector3 position)
     {
-        var numColliders = Physics.OverlapSphereNonAlloc(position, searchRadius, overlapResults, targetLayer);
+        var colliders = Physics.OverlapSphereNonAlloc(position, searchRadius, overlapResults, targetLayer);
         var minDistance = float.MaxValue;
 
-        for (int i = 0; i < numColliders; i++)
+        for (int i = 0; i < colliders; i++)
         {
             var distance = (overlapResults[i].transform.position - position).sqrMagnitude;
             if (distance < minDistance)

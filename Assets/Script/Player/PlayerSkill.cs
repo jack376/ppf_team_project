@@ -6,10 +6,13 @@ public class PlayerSkill : MonoBehaviour
     internal List<GameObject> learnSkillPrefab = new List<GameObject>();
     private Dictionary<GameObject, float> skillCooldowns = new Dictionary<GameObject, float>();
     private PlayerData playerData;
+    private Animator playerAnimator;
 
     private void Start()
     {
         playerData = GetComponent<PlayerData>();
+        playerAnimator = GetComponent<Animator>();
+
         LearnSkill(playerData.baseSkillID);
     }
 
@@ -20,14 +23,12 @@ public class PlayerSkill : MonoBehaviour
             return;
         }
 
-        List<GameObject> skillReadyList = new List<GameObject>();
+        var skillReadyList = new List<GameObject>();
         foreach (var skillPrefab in learnSkillPrefab)
         {
             skillCooldowns.TryGetValue(skillPrefab, out float currentCooldown);
 
             var skillBehavior = skillPrefab.GetComponent<SkillBehavior>();
-
-            //float cooldown = skillBehavior.skillData.cooldown * playerData.cooldownReduction;
             if (skillBehavior && currentCooldown >= skillBehavior.skillData.cooldown)
             {
                 skillReadyList.Add(skillPrefab);
@@ -45,6 +46,7 @@ public class PlayerSkill : MonoBehaviour
             {
                 skillBehavior.Activate();
                 skillCooldowns[skillPrefab] = 0f;
+                //playerAnimator.SetBool("Attack", true);
             }
         }
     }

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 809145910737721244}
   - component: {fileID: 4425897396955874045}
   m_Layer: 9
-  m_Name: Sword Slash
+  m_Name: Buff
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -54,8 +54,8 @@ MonoBehaviour:
   hitParticle: {fileID: 1919708242137258, guid: 3c7b3cb3b4124d3458da59afe4784cf9,
     type: 3}
   skillData:
-    ID: 10000006
-    type: 2
+    ID: 10000007
+    type: 4
     multiAngle: 45
     multiBulletCount: 5
     novaRadius: 7
@@ -68,14 +68,14 @@ MonoBehaviour:
     buffAddExp: 5
     buffAddLootRange: 5
     buffDuration: 5
-    name: "\uD3ED\uD48D \uBBF8\uC0AC\uC77C"
-    info: "\uC804\uC790 \uD50C\uB77C\uC988\uB9C8 \uBBF8\uC0AC\uC77C\uC744 \uBC1C\uC0AC\uD55C\uB2E4."
-    pierceCount: 3
-    cooldown: 0.5
-    speed: 25
-    splash: 3
-    damage: 10
-    lifeTime: 0.4
+    name: "\uBC84\uD504"
+    info: "\uBC84\uD504\uBC84\uD504"
+    pierceCount: 0
+    cooldown: 10
+    speed: 0
+    splash: 0
+    damage: 0
+    lifeTime: 0
     currentLevel: 0
     minLevel: 0
     maxLevel: 5

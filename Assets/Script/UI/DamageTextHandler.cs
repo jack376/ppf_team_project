@@ -9,11 +9,11 @@ public class DamageTextHandler : MonoBehaviour
     public float moveSpeed = 1f;
     public float fadeSpeed = 1f;
 
+    private float lifeTime = 0.5f;
+    private float flowTime = 0f;
+
     private TextMeshPro textMeshPro;
     private Color initialColor;
-
-    private float damageLifeTime = 0.5f;
-    private float flowTime = 0f;
 
     private void Awake()
     {
@@ -33,10 +33,11 @@ public class DamageTextHandler : MonoBehaviour
         transform.forward = Camera.main.transform.forward;
 
         flowTime += Time.deltaTime;
-        if (flowTime >= damageLifeTime)
+        if (flowTime >= lifeTime)
         {
             var currentColor = textMeshPro.color;
             currentColor.a -= fadeSpeed * Time.deltaTime;
+
             textMeshPro.color = currentColor;
 
             if (currentColor.a <= 0)

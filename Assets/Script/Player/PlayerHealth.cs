@@ -61,9 +61,7 @@ public class PlayerHealth : LivingEntity
 
     public override void TakeDamage(float damage)
     {
-        var finalDamage = Mathf.Max(damage - playerData.armorPoint, 0);
-
-        base.TakeDamage(finalDamage);
+        base.TakeDamage(Mathf.Max(damage - playerData.armorPoint, 0));
         StartCoroutine(DamagedHitColor());
         healthSlider.value = health;
     }

@@ -1,43 +1,30 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class TypeBuff : ISkill
 {
     public void Execute(SkillData skillData, LayerMask targetLayer, Quaternion targetQuaternion, GameObject hitFx, GameObject projectileFx, Vector3 targetPosition)
     {
-        ApplyBuff(skillData);
+        OnBuffParticle(hitFx, GameManager.player.transform.position);
     }
 
-    private void ApplyBuff(SkillData skillData)
+    private void OnBuffParticle(GameObject hitFxPrefab, Vector3 originPosition)
     {
-        float duration = skillData.buffDuration;
+        // 히트 파티클 버프 파티클로 대체하기 HitParticleHandler 개조
+        // 오오라 파티클 + 셋라이프타임, 버프 능력치 적용
+        // 원래 스텟 + 버프 스텟 + 아이템 스텟 = 현재 스텟 -> 이게 적용되도록
 
-        var playerData = GameManager.player.GetComponent<PlayerData>();
-        var playerExp  = GameManager.player.GetComponent<PlayerExp>();
+        var hitParticleGo = PoolManager.Instance.GetPool(hitFxPrefab).Get();
+        hitParticleGo.transform.position = originPosition;
+        hitParticleGo.transform.rotation = Quaternion.identity;
 
-        playerData.skillDamageEnhance += skillData.buffAddDamage;
-        playerData.cooldownReduction  += skillData.buffAddAttackSpeed;
-        playerData.moveSpeed          += skillData.buffAddMoveSpeed;
-        playerExp.expRatio            += skillData.buffAddExp;
+        var hitParticle = hitParticleGo.GetComponent<HitParticleHandler>();
+        hitParticle.onFinish += ReleaseParticle;
+
+        void ReleaseParticle()
+        {
+            hitParticle.onFinish -= ReleaseParticle;
+            PoolManager.Instance.GetPool(hitFxPrefab).Release(hitParticleGo);
+        }
     }
-
-    /*
-    private void RemoveBuff()
-    {
-
-
-        // 버프 지속 시간을 설정하고, 버프 활성화 여부를 true로 설정합니다.
-        buffDuration = skillData.duration;
-        isBuffActive = true;
-
-        // 플레이어의 공격력, 이동 속도, 경험치, 루팅 범위를 원래대로 돌려놓습니다.
-        GameManager.player.attackPower -= addDamage;
-        GameManager.player.moveSpeed -= addMoveSpeed;
-        GameManager.player.expRate -= addExp;
-        GameManager.player.lootRange -= addLootRange;
-
-        // 버프 지속 시간을 초기화하고, 버프 활성화 여부를 false로 설정합니다.
-        buffDuration = 0f;
-        isBuffActive = false;
-    }
-    */
 }

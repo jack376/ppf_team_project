@@ -26,14 +26,14 @@ public class EnemySpawner : MonoBehaviour
     public float bossSpawnCooldown = 300f;
     public float lastBossSpawnTime = 0f;
 
-    public float intervalDecreaseTime = 60f;  // spawnInterval이 감소하는 빈도 (예: 매 60초마다)
-    public float cooldownDecreaseTime = 120f; // spawnCooldown이 감소하는 빈도 (예: 매 120초마다)
+    public float intervalDecreaseTime = 60f;
+    public float cooldownDecreaseTime = 120f;
 
-    public float intervalDecreaseAmount = 0.01f; // spawnInterval이 감소하는 양 (예: 0.01초)
-    public float cooldownDecreaseAmount = 0.1f;  // spawnCooldown이 감소하는 양 (예: 0.1초)
+    public float intervalDecreaseAmount = 0.01f;
+    public float cooldownDecreaseAmount = 0.1f;
 
-    private float lastIntervalDecreaseTime = 0f; // 마지막으로 spawnInterval이 감소한 시간
-    private float lastCooldownDecreaseTime = 0f; // 마지막으로 spawnCooldown이 감소한 시간
+    private float lastIntervalDecreaseTime = 0f;
+    private float lastCooldownDecreaseTime = 0f;
 
     private float nextBigWaveTime = 0f;
     private float lastPowerUpTime;
