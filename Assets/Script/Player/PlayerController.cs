@@ -26,7 +26,7 @@ public class PlayerController : MonoBehaviour
         float vertical   = joystick.Vertical;
 
         var inputVector  = new Vector3(horizontal, 0f, vertical).normalized;
-        var moveVelocity = inputVector * playerData.moveSpeed;
+        var moveVelocity = inputVector * playerData.finalMoveSpeed;
         var newPosition  = playerRigidbody.position + moveVelocity * Time.fixedDeltaTime;
 
         playerRigidbody.MovePosition(newPosition);

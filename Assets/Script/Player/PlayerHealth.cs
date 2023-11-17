@@ -44,13 +44,13 @@ public class PlayerHealth : LivingEntity
     {
         base.OnEnable();
 
-        health = playerData.maxHealth;
+        health = playerData.fianlMaxHealth;
         playerController.enabled = true;
 
         healthSlider.gameObject.SetActive(true);
         healthSlider.minValue = 0f;
-        healthSlider.maxValue = playerData.maxHealth;
-        healthSlider.value    = playerData.maxHealth;
+        healthSlider.maxValue = playerData.fianlMaxHealth;
+        healthSlider.value    = playerData.fianlMaxHealth;
     }
 
     public override void Healing(float newHealth)
@@ -61,7 +61,7 @@ public class PlayerHealth : LivingEntity
 
     public override void TakeDamage(float damage)
     {
-        base.TakeDamage(Mathf.Max(damage - playerData.armorPoint, 0));
+        base.TakeDamage(Mathf.Max(damage - playerData.finalArmorPoint, 0));
         StartCoroutine(DamagedHitColor());
         healthSlider.value = health;
     }

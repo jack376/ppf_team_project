@@ -14,13 +14,32 @@ public class SkillProjectile : MonoBehaviour
     internal float damage   = 100f;
     internal float lifeTime = 1f;
 
+    internal float currentSkillDamageEnhance = 1f;
+
+    private PlayerData playerData;
+
     private float flowTime = 0f;
     private bool isEnable = true;
 
+    private void Awake()
+    {
+        playerData = GameManager.player.GetComponent<PlayerData>();
+    }
+
     private void OnEnable()
     {
+        playerData.OnSkillDamageEnhance += UpdateSkillDamageEnhance;
+
         flowTime = 0f;
         isEnable = true;
+    }
+
+    private void OnDisable()
+    {
+        if (playerData != null)
+        {
+            playerData.OnSkillDamageEnhance -= UpdateSkillDamageEnhance;
+        }
     }
 
     private void Update()
@@ -77,7 +96,7 @@ public class SkillProjectile : MonoBehaviour
             var target = hitCollider.gameObject.GetComponent<IDamageable>();
             if (target != null)
             {
-                target.TakeDamage(damage);
+                target.TakeDamage(damage * currentSkillDamageEnhance);
             }
         }
     }
@@ -104,5 +123,10 @@ public class SkillProjectile : MonoBehaviour
         gameObject.transform.GetChild(0).parent = null;
 
         PoolManager.Instance.GetPool(originalPrefab).Release(gameObject);
+    }
+
+    private void UpdateSkillDamageEnhance(float newSkillDamageEnhance)
+    {
+        currentSkillDamageEnhance = newSkillDamageEnhance;
     }
 }

@@ -5,15 +5,17 @@ public class PlayerSkill : MonoBehaviour
 {
     internal List<GameObject> learnSkillPrefab = new List<GameObject>();
     private Dictionary<GameObject, float> skillCooldowns = new Dictionary<GameObject, float>();
+    
     private PlayerData playerData;
-    private Animator playerAnimator;
+
+    private Queue<GameObject> skillReadyQueue = new Queue<GameObject>();
+    private Dictionary<GameObject, SkillBehavior> skillBehaviorCache = new Dictionary<GameObject, SkillBehavior>();
 
     private void Start()
     {
         playerData = GetComponent<PlayerData>();
-        playerAnimator = GetComponent<Animator>();
 
-        LearnSkill(playerData.baseSkillID);
+        LearnSkill(playerData.currentSkillID);
     }
 
     private void Update()
@@ -23,15 +25,24 @@ public class PlayerSkill : MonoBehaviour
             return;
         }
 
-        var skillReadyList = new List<GameObject>();
+        // 학습된 스킬을 확인 후 쿨다운 업데이트
         foreach (var skillPrefab in learnSkillPrefab)
         {
-            skillCooldowns.TryGetValue(skillPrefab, out float currentCooldown);
-
-            var skillBehavior = skillPrefab.GetComponent<SkillBehavior>();
-            if (skillBehavior && currentCooldown >= skillBehavior.skillData.cooldown)
+            if (!skillBehaviorCache.TryGetValue(skillPrefab, out var skillBehavior))
             {
-                skillReadyList.Add(skillPrefab);
+                skillBehavior = skillPrefab.GetComponent<SkillBehavior>();
+                skillBehaviorCache[skillPrefab] = skillBehavior;
+            }
+
+            if (skillBehavior == null)
+            {
+                continue;
+            }
+
+            skillCooldowns.TryGetValue(skillPrefab, out var currentCooldown);
+            if (currentCooldown >= skillBehavior.skillData.cooldown)
+            {
+                skillReadyQueue.Enqueue(skillPrefab);
             }
             else
             {
@@ -39,17 +50,17 @@ public class PlayerSkill : MonoBehaviour
             }
         }
 
-        foreach (var skillPrefab in skillReadyList)
+        // 준비된 스킬 활성화
+        while (skillReadyQueue.Count > 0)
         {
-            var skillBehavior = skillPrefab.GetComponent<SkillBehavior>();
-            if (skillBehavior)
-            {
-                skillBehavior.Activate();
-                skillCooldowns[skillPrefab] = 0f;
-                //playerAnimator.SetBool("Attack", true);
-            }
+            var skillPrefab = skillReadyQueue.Dequeue();
+            var skillBehavior = skillBehaviorCache[skillPrefab];
+
+            skillBehavior.Activate();
+            skillCooldowns[skillPrefab] = 0f;
         }
     }
+
 
     public void LearnSkill(int id)
     {

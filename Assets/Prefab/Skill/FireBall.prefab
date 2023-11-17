@@ -44,24 +44,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e0f5892da95307449213d00af379c09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skillData:
-    ID: 10000001
-    type: 0
-    multiShotAngle: 45
-    multiShotBulletCount: 5
-    novaRadius: 10
-    areaRadius: 10
-    name: "\uD30C\uC774\uC5B4\uBCFC"
-    info: "\uC2A4\uD0AC \uC815\uBCF4"
-    pierceCount: 0
-    cooldown: 1
-    speed: 15
-    splash: 3
-    damage: 50
-    lifeTime: 0.5
-    currentLevel: 0
-    minLevel: 0
-    maxLevel: 5
   targetLayer:
     serializedVersion: 2
     m_Bits: 128
@@ -72,3 +54,29 @@ MonoBehaviour:
     type: 3}
   hitParticle: {fileID: 1767841913861676, guid: c4d4e95a61fb1664998caf872c3e1725,
     type: 3}
+  skillData:
+    ID: 10000001
+    type: 0
+    multiAngle: 45
+    multiBulletCount: 5
+    novaRadius: 10
+    areaRange: 10
+    areaRadius: 10
+    buffAddRadius: 5
+    buffAddDamage: 5
+    buffAddAttackSpeed: 5
+    buffAddMoveSpeed: 5
+    buffAddExp: 5
+    buffAddLootRange: 5
+    buffDuration: 5
+    name: "\uD30C\uC774\uC5B4\uBCFC"
+    info: "\uC2A4\uD0AC \uC815\uBCF4"
+    pierceCount: 1
+    cooldown: 1
+    speed: 15
+    splash: 3
+    damage: 50
+    lifeTime: 0.5
+    currentLevel: 0
+    minLevel: 0
+    maxLevel: 5

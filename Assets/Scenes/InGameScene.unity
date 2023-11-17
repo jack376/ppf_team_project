@@ -215,7 +215,7 @@ Light:
   m_RenderMode: 2
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4544
+    m_Bits: 7104
   m_RenderingLayerMask: 1
   m_Lightmapping: 4
   m_LightShadowCasterMode: 0
@@ -1635,6 +1635,11 @@ PrefabInstance:
       propertyPath: expSlider
       value: 
       objectReference: {fileID: 1486787807}
+    - target: {fileID: 4956673368337649305, guid: cc079d94de08da94aa2d29bbde11a1e9,
+        type: 3}
+      propertyPath: baseSkillID
+      value: 10000001
+      objectReference: {fileID: 0}
     - target: {fileID: 5878586495484815423, guid: cc079d94de08da94aa2d29bbde11a1e9,
         type: 3}
       propertyPath: m_LocalPosition.x
