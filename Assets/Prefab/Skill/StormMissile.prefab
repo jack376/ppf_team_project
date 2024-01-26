@@ -44,13 +44,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e0f5892da95307449213d00af379c09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  targetLayer:
+    serializedVersion: 2
+    m_Bits: 128
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 256
+  projectileParticle: {fileID: 0}
+  hitParticle: {fileID: 1759752313034738, guid: 6a9a2901eadcddc4b950e6a9bf8c57ea,
+    type: 3}
   skillData:
     ID: 10000005
     type: 3
-    multiShotAngle: 60
-    multiShotBulletCount: 7
+    multiAngle: 45
+    multiBulletCount: 5
     novaRadius: 14
+    areaRange: 10
     areaRadius: 14
+    buffAddRadius: 5
+    buffAddDamage: 5
+    buffAddAttackSpeed: 5
+    buffAddMoveSpeed: 5
+    buffAddExp: 5
+    buffAddLootRange: 5
+    buffDuration: 5
     name: "\uD3ED\uD48D \uBBF8\uC0AC\uC77C"
     info: "\uC804\uC790 \uD50C\uB77C\uC988\uB9C8 \uBBF8\uC0AC\uC77C\uC744 \uBC1C\uC0AC\uD55C\uB2E4."
     pierceCount: 3
@@ -62,12 +79,3 @@ MonoBehaviour:
     currentLevel: 0
     minLevel: 0
     maxLevel: 5
-  targetLayer:
-    serializedVersion: 2
-    m_Bits: 128
-  groundLayer:
-    serializedVersion: 2
-    m_Bits: 256
-  projectileParticle: {fileID: 0}
-  hitParticle: {fileID: 1759752313034738, guid: 6a9a2901eadcddc4b950e6a9bf8c57ea,
-    type: 3}

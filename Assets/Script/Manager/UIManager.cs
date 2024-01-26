@@ -37,14 +37,6 @@ public class UIManager : MonoBehaviour
         StartCoroutine(StartCountdown());
     }
 
-    private void Update()
-    {
-        if (GameManager.isGameover && Input.GetKeyDown(KeyCode.R))
-        {
-            GameManager.Instance.GameRestart();
-        }
-    }
-
     public void SetActiveGameoverUI(bool active)
     {
         gameoverUI.SetActive(active);

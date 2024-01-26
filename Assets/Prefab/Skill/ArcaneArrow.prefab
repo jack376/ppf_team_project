@@ -56,9 +56,9 @@ MonoBehaviour:
     type: 3}
   skillData:
     ID: 10000002
-    type: 0
+    type: 1
     multiAngle: 45
-    multiBulletCount: 1
+    multiBulletCount: 3
     novaRadius: 10
     areaRange: 10
     areaRadius: 10
@@ -73,10 +73,10 @@ MonoBehaviour:
     info: "\uC77C\uC790\uB85C \uD654\uC0B4\uC744 \uBC1C\uC0AC\uD55C\uB2E4."
     pierceCount: 1
     cooldown: 0.5
-    speed: 20
+    speed: 30
     splash: 2
     damage: 10
-    lifeTime: 0.75
+    lifeTime: 0.5
     currentLevel: 0
     minLevel: 0
     maxLevel: 5
