@@ -91,7 +91,7 @@ public class UIManager : MonoBehaviour
         {
             int randomCount;
 
-            do { randomCount = Random.Range(0, allSkillPrefabs.Count); }
+            do { randomCount = Random.Range(0, 6); } // 0 ~ 5
             while (uniqueRandomIds.Contains(randomCount));
 
             uniqueRandomIds.Add(randomCount);
@@ -111,7 +111,6 @@ public class UIManager : MonoBehaviour
         }
 
         Time.timeScale = 1;
-
         //Debug.Log("Button clicked: " + number);
     }
 

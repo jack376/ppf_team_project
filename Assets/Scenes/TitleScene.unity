@@ -209,6 +209,197 @@ PrefabInstance:
       propertyPath: m_Name
       value: Skill Manager
       objectReference: {fileID: 0}
+    - target: {fileID: 3284630025830469129, guid: 2e29505cf7156c54da51d7f0d7722daf,
+        type: 3}
+      propertyPath: allSkillPrefabs.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3284630025830469129, guid: 2e29505cf7156c54da51d7f0d7722daf,
+        type: 3}
+      propertyPath: allSkillPrefabs.Array.data[0]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3284630025830469129, guid: 2e29505cf7156c54da51d7f0d7722daf,
+        type: 3}
+      propertyPath: allSkillPrefabs.Array.data[1]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3284630025830469129, guid: 2e29505cf7156c54da51d7f0d7722daf,
+        type: 3}
+      propertyPath: allSkillPrefabs.Array.data[2]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3284630025830469129, guid: 2e29505cf7156c54da51d7f0d7722daf,
+        type: 3}
+      propertyPath: allSkillPrefabs.Array.data[3]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3284630025830469129, guid: 2e29505cf7156c54da51d7f0d7722daf,
+        type: 3}
+      propertyPath: allSkillPrefabs.Array.data[4]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3284630025830469129, guid: 2e29505cf7156c54da51d7f0d7722daf,
+        type: 3}
+      propertyPath: allSkillPrefabs.Array.data[5]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3284630025830469129, guid: 2e29505cf7156c54da51d7f0d7722daf,
+        type: 3}
+      propertyPath: allSkillPrefabs.Array.data[6]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3284630025830469129, guid: 2e29505cf7156c54da51d7f0d7722daf,
+        type: 3}
+      propertyPath: allSkillPrefabs.Array.data[7]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3284630025830469129, guid: 2e29505cf7156c54da51d7f0d7722daf,
+        type: 3}
+      propertyPath: allSkillPrefabs.Array.data[8]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3284630025830469129, guid: 2e29505cf7156c54da51d7f0d7722daf,
+        type: 3}
+      propertyPath: allSkillPrefabs.Array.data[9]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3284630025830469129, guid: 2e29505cf7156c54da51d7f0d7722daf,
+        type: 3}
+      propertyPath: allSkillPrefabs.Array.data[10]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3284630025830469129, guid: 2e29505cf7156c54da51d7f0d7722daf,
+        type: 3}
+      propertyPath: allSkillPrefabs.Array.data[11]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3284630025830469129, guid: 2e29505cf7156c54da51d7f0d7722daf,
+        type: 3}
+      propertyPath: allSkillPrefabs.Array.data[12]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3284630025830469129, guid: 2e29505cf7156c54da51d7f0d7722daf,
+        type: 3}
+      propertyPath: allSkillPrefabs.Array.data[13]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3284630025830469129, guid: 2e29505cf7156c54da51d7f0d7722daf,
+        type: 3}
+      propertyPath: allSkillPrefabs.Array.data[14]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3284630025830469129, guid: 2e29505cf7156c54da51d7f0d7722daf,
+        type: 3}
+      propertyPath: allSkillPrefabs.Array.data[15]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3284630025830469129, guid: 2e29505cf7156c54da51d7f0d7722daf,
+        type: 3}
+      propertyPath: allSkillPrefabs.Array.data[16]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3284630025830469129, guid: 2e29505cf7156c54da51d7f0d7722daf,
+        type: 3}
+      propertyPath: allSkillPrefabs.Array.data[17]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3284630025830469129, guid: 2e29505cf7156c54da51d7f0d7722daf,
+        type: 3}
+      propertyPath: allSkillPrefabs.Array.data[18]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3284630025830469129, guid: 2e29505cf7156c54da51d7f0d7722daf,
+        type: 3}
+      propertyPath: allSkillPrefabs.Array.data[19]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3284630025830469129, guid: 2e29505cf7156c54da51d7f0d7722daf,
+        type: 3}
+      propertyPath: allSkillPrefabs.Array.data[20]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3284630025830469129, guid: 2e29505cf7156c54da51d7f0d7722daf,
+        type: 3}
+      propertyPath: allSkillPrefabs.Array.data[21]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3284630025830469129, guid: 2e29505cf7156c54da51d7f0d7722daf,
+        type: 3}
+      propertyPath: allSkillPrefabs.Array.data[22]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3284630025830469129, guid: 2e29505cf7156c54da51d7f0d7722daf,
+        type: 3}
+      propertyPath: allSkillPrefabs.Array.data[23]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3284630025830469129, guid: 2e29505cf7156c54da51d7f0d7722daf,
+        type: 3}
+      propertyPath: allSkillPrefabs.Array.data[24]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3284630025830469129, guid: 2e29505cf7156c54da51d7f0d7722daf,
+        type: 3}
+      propertyPath: allSkillPrefabs.Array.data[25]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3284630025830469129, guid: 2e29505cf7156c54da51d7f0d7722daf,
+        type: 3}
+      propertyPath: allSkillPrefabs.Array.data[26]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3284630025830469129, guid: 2e29505cf7156c54da51d7f0d7722daf,
+        type: 3}
+      propertyPath: allSkillPrefabs.Array.data[27]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3284630025830469129, guid: 2e29505cf7156c54da51d7f0d7722daf,
+        type: 3}
+      propertyPath: allSkillPrefabs.Array.data[28]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3284630025830469129, guid: 2e29505cf7156c54da51d7f0d7722daf,
+        type: 3}
+      propertyPath: allSkillPrefabs.Array.data[29]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3284630025830469129, guid: 2e29505cf7156c54da51d7f0d7722daf,
+        type: 3}
+      propertyPath: allSkillPrefabs.Array.data[30]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3284630025830469129, guid: 2e29505cf7156c54da51d7f0d7722daf,
+        type: 3}
+      propertyPath: allSkillPrefabs.Array.data[31]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3284630025830469129, guid: 2e29505cf7156c54da51d7f0d7722daf,
+        type: 3}
+      propertyPath: allSkillPrefabs.Array.data[32]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3284630025830469129, guid: 2e29505cf7156c54da51d7f0d7722daf,
+        type: 3}
+      propertyPath: allSkillPrefabs.Array.data[33]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3284630025830469129, guid: 2e29505cf7156c54da51d7f0d7722daf,
+        type: 3}
+      propertyPath: allSkillPrefabs.Array.data[34]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3284630025830469129, guid: 2e29505cf7156c54da51d7f0d7722daf,
+        type: 3}
+      propertyPath: allSkillPrefabs.Array.data[35]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3284630025830469129, guid: 2e29505cf7156c54da51d7f0d7722daf,
+        type: 3}
+      propertyPath: allSkillPrefabs.Array.data[36]
+      value: 
+      objectReference: {fileID: 7900397933835047178, guid: 514661a7acc9dc949b9e733b8cbcc99d,
+        type: 3}
     - target: {fileID: 7325941548709375910, guid: 2e29505cf7156c54da51d7f0d7722daf,
         type: 3}
       propertyPath: m_LocalPosition.x

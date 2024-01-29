@@ -6,8 +6,8 @@ public class DamageTextHandler : MonoBehaviour
 {
     public event Action onDamageText;
 
-    public float moveSpeed = 1f;
-    public float fadeSpeed = 1f;
+    public float moveSpeed = 2f;
+    public float fadeSpeed = 0.5f;
 
     private float lifeTime = 0.5f;
     private float flowTime = 0f;

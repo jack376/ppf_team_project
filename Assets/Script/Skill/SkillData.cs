@@ -16,7 +16,7 @@ public class SkillData
 
     [Header("타입3 Area")]
     public float areaRange = 10f;
-    public float areaRadius = 10f;
+    public float areaRadius = 3f;
 
     [Header("타입4 Buff")]
     public float buffAddRadius = 5f;

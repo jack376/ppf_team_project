@@ -27,7 +27,7 @@ public class SkillFactory
             case SkillType.Buff  : return new TypeBuff();
 
             default: 
-                Debug.LogError("스킬을 찾을 수 없어");
+                Debug.LogError("스킬 타입을 찾을 수 없어");
                 return null;
         }
     }

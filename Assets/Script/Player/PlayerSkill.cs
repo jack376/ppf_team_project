@@ -64,13 +64,55 @@ public class PlayerSkill : MonoBehaviour
 
     public void LearnSkill(int id)
     {
+        var gravityCannonId = 10000003; // 그라비티캐논 ID
+        var thunderBoltId = 10000005;   // 썬더볼트 ID
+
         var skillPrefab = SkillManager.Instance.GetSkillPrefab(id);
-        if (skillPrefab && !learnSkillPrefab.Contains(skillPrefab))
+        if (skillPrefab == null)
+        {
+            Debug.LogError("Skill not found for ID: " + id);
+            return;
+        }
+
+        if (id == gravityCannonId || id == thunderBoltId)
         {
             learnSkillPrefab.Add(skillPrefab);
             skillCooldowns[skillPrefab] = 0f;
+            return;
         }
 
-        Debug.Log("LearnSkill" + id);
+        if (learnSkillPrefab.Contains(skillPrefab))
+        {
+            var skillBehavior = skillPrefab.GetComponent<SkillBehavior>();
+            if (skillBehavior != null)
+            {
+                int currentId = skillBehavior.skillData.ID;
+                int newId = currentId + 10;
+
+                if (newId < currentId + 50)
+                {
+                    learnSkillPrefab.Remove(skillPrefab);
+
+                    var upgradedSkillPrefab = SkillManager.Instance.GetSkillPrefab(newId);
+                    if (upgradedSkillPrefab != null)
+                    {
+                        learnSkillPrefab.Add(upgradedSkillPrefab);
+                        skillCooldowns[upgradedSkillPrefab] = 0f;
+                    }
+                    else
+                    {
+                        Debug.LogError("Upgraded skill not found for ID: " + newId);
+                    }
+                }
+                else
+                {
+                    Debug.LogError("Maximum skill level reached for ID: " + currentId);
+                }
+            }
+            return;
+        }
+
+        learnSkillPrefab.Add(skillPrefab);
+        skillCooldowns[skillPrefab] = 0f;
     }
 }

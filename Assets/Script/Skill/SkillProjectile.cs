@@ -2,19 +2,19 @@ using UnityEngine;
 
 public class SkillProjectile : MonoBehaviour
 {
-    internal GameObject originalPrefab;
-    internal GameObject projectileFxPrefab;
-    internal GameObject hitFxPrefab;
+    [HideInInspector] public GameObject originalPrefab;
+    [HideInInspector] public GameObject projectileFxPrefab;
+    [HideInInspector] public GameObject hitFxPrefab;
 
-    internal LayerMask targetLayer;
-    internal int pierceCount = 1;
+    [HideInInspector] public LayerMask targetLayer;
+    [HideInInspector] public int pierceCount = 1;
 
-    internal float speed    = 15f;
-    internal float splash   = 15f;
-    internal float damage   = 100f;
-    internal float lifeTime = 1f;
+    [HideInInspector] public float speed    = 15f;
+    [HideInInspector] public float splash   = 15f;
+    [HideInInspector] public float damage   = 100f;
+    [HideInInspector] public float lifeTime = 1f;
 
-    internal float currentSkillDamageEnhance = 1f;
+    [HideInInspector] public float currentSkillDamageEnhance = 1f;
 
     private PlayerData playerData;
 

@@ -32,8 +32,8 @@ public class InventoryManager : MonoBehaviour
 
     void Start()
     {
-        LoadInventoryCSV("Assets/Resources/InventorySaveData.csv");
-        LoadEquipmentCSV("Assets/Resources/EquipmentSaveData.csv");
+        //LoadInventoryCSV("Assets/Resources/InventorySaveData.csv");
+        //LoadEquipmentCSV("Assets/Resources/EquipmentSaveData.csv");
     }
 
     public void AddItem(ItemData itemData)

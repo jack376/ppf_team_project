@@ -1,5 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
+using System.IO;
+using System.Text;
 
 public class SkillManager : MonoBehaviour
 {
@@ -25,21 +27,30 @@ public class SkillManager : MonoBehaviour
             Destroy(gameObject);
         }
 
-        //LoadSkillDataFromCSV("Assets/Resources/SkillSaveData.csv");
+        SkillPrefabUpdate(Resources.LoadAll<GameObject>("Prefabs/"));
+
+        LoadSkillDataFromCSV("Assets/Resources/SkillSaveData.csv"); 
 
         LinkedSkillPrefab();
         UpdateSkillDataInPrefab();
+    }
+
+    private void SkillPrefabUpdate(GameObject[] prefabs)
+    {
+        for (var i = 0; i < prefabs.Length; i++)
+        {
+            allSkillPrefabs.Add(prefabs[i]);
+        }
     }
 
     private void LinkedSkillPrefab()
     {
         foreach (var skillPrefab in allSkillPrefabs)
         {
-            var sb = skillPrefab.GetComponent<SkillBehavior>();
-            if (sb != null)
+            if (skillPrefab.TryGetComponent<SkillBehavior>(out var skillBehevior))
             {
-                skillDictionary[sb.skillData.ID] = skillPrefab;
-                Debug.Log("LinkedSkillPrefab" + sb.skillData.ID);
+                skillDictionary[skillBehevior.skillData.ID] = skillPrefab;
+                Debug.Log("LinkedSkillPrefab" + skillBehevior.skillData.ID);
             }
         }
     }
@@ -50,11 +61,10 @@ public class SkillManager : MonoBehaviour
         {
             if (skillDictionary.TryGetValue(skill.ID, out var skillPrefab))
             {
-                var sb = skillPrefab.GetComponent<SkillBehavior>();
-                if (sb != null)
+                if (skillPrefab.TryGetComponent<SkillBehavior>(out var skillBehevior))
                 {
-                    sb.UpdateSkillData(skill);
-                    //Debug.Log("UpdateSkillDataInPrefab" + skill.ID);
+                    skillBehevior.UpdateSkillData(skill);
+                    Debug.Log("UpdateSkillDataInPrefab" + skill.ID);
                 }
             }
         }
@@ -71,7 +81,7 @@ public class SkillManager : MonoBehaviour
         skillDictionary.TryGetValue(id, out var skillPrefab);
         return skillPrefab.GetComponent<SkillBehavior>().skillData;
     }
-    /*
+
     public void LoadSkillDataFromCSV(string filePath)
     {
         var sr = new StreamReader(filePath, Encoding.Default);
@@ -87,21 +97,23 @@ public class SkillManager : MonoBehaviour
             }
 
             var rowData = line.Split(',');
+
             var newData = new SkillData();
 
             newData.ID   = int.Parse(rowData[0]);
             newData.type = (SkillType)int.Parse(rowData[1]);
+
             newData.name = rowData[2];
             newData.info = rowData[3];
 
-            newData.bulletCount  = int.Parse(rowData[4]);
-            newData.pierceCount  = int.Parse(rowData[5]);
+            newData.multiBulletCount = int.Parse(rowData[4]);
+            newData.pierceCount      = int.Parse(rowData[5]);
 
-            newData.cooldown     = float.Parse(rowData[6]);
-            newData.speed        = float.Parse(rowData[7]);
-            newData.splash       = float.Parse(rowData[8]);
-            newData.damage       = float.Parse(rowData[9]);
-            newData.lifeTime     = float.Parse(rowData[10]);
+            newData.cooldown = float.Parse(rowData[6]);
+            newData.speed    = float.Parse(rowData[7]);
+            newData.splash   = float.Parse(rowData[8]);
+            newData.damage   = float.Parse(rowData[9]);
+            newData.lifeTime = float.Parse(rowData[10]);
 
             newData.currentLevel = int.Parse(rowData[11]);
             newData.minLevel     = int.Parse(rowData[12]);
@@ -112,5 +124,4 @@ public class SkillManager : MonoBehaviour
 
         sr.Close();
     }
-    */
 }
